@@ -1,0 +1,40 @@
+AppBundle\Entity\Report:
+    type: entity
+    table: report
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nameReport:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            column: name_report
+        dateIn:
+            type: datetime
+            nullable: false
+            column: date_in
+        description:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+        organization:
+            type: integer
+            nullable: false
+            unsigned: false
+        status:
+            type: integer
+            nullable: false
+            unsigned: false
+        dateAccepted:
+            type: datetime
+            nullable: false
+            column: date_accepted
+    lifecycleCallbacks: {  }
