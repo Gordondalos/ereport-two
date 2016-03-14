@@ -1,4 +1,3 @@
-/bd
 /web/bundles/
 /app/bootstrap.php.cache
 /app/cache/*
@@ -11,3 +10,16 @@
 /vendor/
 /bin/
 /composer.phar
+/.idea/cssxfire.xml
+/.idea/symfony2.xml
+/.idea/vagrant.xml
+/.idea/workspace.xml
+/src/AppBundle/Entity/Area.php~
+/src/AppBundle/Entity/BaseForms.php~
+/src/AppBundle/Entity/FormReport.php~
+/src/AppBundle/Entity/FosUser.php~
+/src/AppBundle/Entity/Organization.php~
+/src/AppBundle/Entity/Report.php~
+/src/AppBundle/Entity/Status.php~
+/src/AppBundle/Entity/TypeReport.php~
+/src/AppBundle/Entity/User.php~
