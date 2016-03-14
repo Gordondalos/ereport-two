@@ -1,0 +1,30 @@
+status:
+    path:     /
+    defaults: { _controller: "AppBundle:Status:index" }
+
+status_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Status:show" }
+
+status_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Status:new" }
+
+status_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Status:create" }
+    methods:  POST
+
+status_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Status:edit" }
+
+status_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Status:update" }
+    methods:  [POST, PUT]
+
+status_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Status:delete" }
+    methods:  [POST, DELETE]

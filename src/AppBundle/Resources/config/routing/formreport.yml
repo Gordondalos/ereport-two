@@ -1,0 +1,30 @@
+formreport:
+    path:     /
+    defaults: { _controller: "AppBundle:FormReport:index" }
+
+formreport_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:FormReport:show" }
+
+formreport_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:FormReport:new" }
+
+formreport_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:FormReport:create" }
+    methods:  POST
+
+formreport_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:FormReport:edit" }
+
+formreport_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:FormReport:update" }
+    methods:  [POST, PUT]
+
+formreport_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:FormReport:delete" }
+    methods:  [POST, DELETE]

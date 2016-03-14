@@ -1,0 +1,30 @@
+typereport:
+    path:     /
+    defaults: { _controller: "AppBundle:TypeReport:index" }
+
+typereport_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:TypeReport:show" }
+
+typereport_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:TypeReport:new" }
+
+typereport_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:TypeReport:create" }
+    methods:  POST
+
+typereport_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:TypeReport:edit" }
+
+typereport_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:TypeReport:update" }
+    methods:  [POST, PUT]
+
+typereport_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:TypeReport:delete" }
+    methods:  [POST, DELETE]
