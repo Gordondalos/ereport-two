@@ -5,5 +5,5 @@ app:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-mains:
+appbundle:
      resource:  "@AppBundle/Resources/config/routing.yml"
