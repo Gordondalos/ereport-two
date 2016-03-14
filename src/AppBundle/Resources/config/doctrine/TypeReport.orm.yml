@@ -1,0 +1,17 @@
+AppBundle\Entity\TypeReport:
+    type: entity
+    table: type_report
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        typeName:
+            type: string
+            nullable: false
+            column: type_name
+    lifecycleCallbacks: {  }

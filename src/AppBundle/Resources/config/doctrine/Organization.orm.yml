@@ -1,0 +1,25 @@
+AppBundle\Entity\Organization:
+    type: entity
+    table: organization
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        organizationName:
+            type: string
+            nullable: false
+            column: organization_name
+        organizationPhone:
+            type: string
+            nullable: true
+            column: organization_phone
+        description:
+            type: text
+            nullable: true
+            column: organization_description
+    lifecycleCallbacks: {  }

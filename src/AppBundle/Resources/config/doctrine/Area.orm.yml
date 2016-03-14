@@ -1,0 +1,16 @@
+AppBundle\Entity\Area:
+    type: entity
+    table: area
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nameArea:
+            type: string
+            column: name_area
+    lifecycleCallbacks: {  }

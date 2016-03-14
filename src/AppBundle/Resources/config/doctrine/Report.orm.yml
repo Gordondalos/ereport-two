@@ -10,29 +10,40 @@ AppBundle\Entity\Report:
             generator:
                 strategy: IDENTITY
     fields:
-        nameReport:
-            type: string
+        formReport:
+            type: integer
+            column: form_report
+        typeReport:
+            type: integer
             nullable: false
-            length: 255
-            fixed: false
-            column: name_report
+            column: type_report
         dateIn:
             type: datetime
             nullable: false
             column: date_in
         description:
             type: text
-            nullable: false
-            length: null
-            fixed: false
+            nullable: true
+            column: description
         organization:
             type: integer
             nullable: false
             unsigned: false
+            column: organization
         status:
             type: integer
             nullable: false
             unsigned: false
+            column: status
+        fileAdress:
+            type: string
+            length: 255
+            column: file_adress
+        area:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: area
         dateAccepted:
             type: datetime
             nullable: false

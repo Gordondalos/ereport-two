@@ -1,0 +1,17 @@
+AppBundle\Entity\Status:
+    type: entity
+    table: status
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        statusName:
+            type: string
+            nullable: false
+            column: status_name
+    lifecycleCallbacks: {  }

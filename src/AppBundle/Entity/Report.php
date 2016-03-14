@@ -192,4 +192,116 @@ class Report
     {
         return $this->dateAccepted;
     }
+    /**
+     * @var string
+     */
+    private $formReport;
+
+    /**
+     * @var string
+     */
+    private $typeReport;
+
+    /**
+     * @var string
+     */
+    private $fileAdress;
+
+    /**
+     * @var integer
+     */
+    private $area;
+
+
+    /**
+     * Set formReport
+     *
+     * @param string $formReport
+     * @return Report
+     */
+    public function setFormReport($formReport)
+    {
+        $this->formReport = $formReport;
+
+        return $this;
+    }
+
+    /**
+     * Get formReport
+     *
+     * @return string 
+     */
+    public function getFormReport()
+    {
+        return $this->formReport;
+    }
+
+    /**
+     * Set typeReport
+     *
+     * @param string $typeReport
+     * @return Report
+     */
+    public function setTypeReport($typeReport)
+    {
+        $this->typeReport = $typeReport;
+
+        return $this;
+    }
+
+    /**
+     * Get typeReport
+     *
+     * @return string 
+     */
+    public function getTypeReport()
+    {
+        return $this->typeReport;
+    }
+
+    /**
+     * Set fileAdress
+     *
+     * @param string $fileAdress
+     * @return Report
+     */
+    public function setFileAdress($fileAdress)
+    {
+        $this->fileAdress = $fileAdress;
+
+        return $this;
+    }
+
+    /**
+     * Get fileAdress
+     *
+     * @return string 
+     */
+    public function getFileAdress()
+    {
+        return $this->fileAdress;
+    }
+
+    /**
+     * Set area
+     *
+     * @param integer $area
+     * @return Report
+     */
+    public function setArea($area)
+    {
+        $this->area = $area;
+
+        return $this;
+    }
+
+    /**
+     * Get area
+     *
+     * @return integer 
+     */
+    public function getArea()
+    {
+        return $this->area;
+    }
 }
