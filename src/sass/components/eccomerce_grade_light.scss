@@ -1,0 +1,374 @@
+//eccomerce_grade_light card1
+.egl-card1 {
+  max-width: 23rem;
+  .card .new {
+    position: absolute;
+    top: 1rem;
+    display: block;
+    background-color: $brand-warning;
+    right: 0;
+    z-index: 3;
+    color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 12px solid transparent;
+      border-left: 10px solid $white;
+    }
+  }
+  .active {
+    color: $brand-warning;
+  }
+  .label {
+    position: absolute;
+    @include size(2rem, 4rem);
+    right: 2rem;
+    top: 0;
+    line-height: 5;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: 1rem solid transparent;
+      border-bottom: .958rem solid $white;
+    }
+  }
+}
+
+//eccomerce_grade_light card2
+.egl-card2 {
+  max-width: 23rem;
+  .circle-buttons-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translate(35%, -50%);
+    .circle-button {
+      i {
+        position: absolute;
+        top: 50%;
+        transform: translate(153%, -50%);
+        color: $white;
+        @include size(1rem);
+      }
+      .img-circle {
+        border: 2px solid $white;
+      }
+    }
+  }
+}
+
+//eccomerce_grade_light card3
+.egl-card3 {
+  max-width: 23rem;
+  .old-price {
+    position: absolute;
+    margin-left: -6rem;
+  }
+  .heart-red {
+    color: $brand-danger;
+  }
+}
+
+//eccomerce_grade_light card4
+.egl-card4 {
+  max-width: 17rem;
+  .mrt {
+    margin-top: 0.2rem;
+  }
+}
+
+//eccomerce_grade_light card5
+.egl-card5 {
+  max-width: 17rem;
+}
+
+//eccomerce_grade_light card6
+.egl-card6 {
+  max-width: 17rem;
+  .sum {
+    &:before {
+      content: "___________";
+      position: absolute;
+      background-color: $white;
+      top: 45%;
+      transform: translateY(-50%);
+      right: 1rem;
+      padding: 0.2rem;
+    }
+    &:after {
+      content: "___________";
+      position: absolute;
+      left: 1rem;
+      background-color: $white;
+      padding: 0.2rem;
+      top: 45%;
+      transform: translateY(-50%);
+    }
+  }
+  .lco {
+    color: $brand-info;
+  }
+}
+
+//eccomerce_grade_light card7
+.egl-card7 {
+  max-width: 17rem;
+  .active {
+    color: $brand-warning;
+  }
+  .fa-plus-circle {
+    position: absolute;
+    background-color: $white;
+    top: 0;
+    right: 0;
+    font-size: $font-size-xs;
+    border-radius: $font-size-xs;
+  }
+  .fa-shopping-bag {
+    font-size: $font-size-lg;
+  }
+  .card-block {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+}
+
+//eccomerce_grade_light card8
+.egl-card8 {
+  max-width: 35rem;
+  .lcolcard {
+    background-color: $white;
+  }
+  .fa-star {
+    color: $white;
+  }
+  .card-footer {
+    padding-top: 6rem;
+    background-color: $white;
+    border-top: none;
+  }
+  .card-header {
+    border-top: 1px solid $gray-lighter;
+    font-size: $font-size-h4;
+  }
+  .pic {
+    position: absolute;
+    top: 9rem;
+    right: -2rem;
+    z-index: 1;
+  }
+  .label {
+    background-color: $brand-danger;
+    position: absolute;
+    @include size(2rem, 4rem);
+    left: 2rem;
+    top: 0;
+    line-height: 5;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: 1rem solid transparent;
+      border-bottom: .958rem solid $white;
+    }
+  }
+}
+
+//eccomerce_grade_light card9
+.egl-card9 {
+  max-width: 35rem;
+  .btn-pimary {
+    background-color: $brand-primary;
+  }
+  .low {
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+  }
+  .fa-clock-o {
+    font-size: $font-size-lg;
+    margin-top: 1.7rem;
+  }
+  .old-price {
+    position: absolute;
+    margin-left: 4rem;
+  }
+  .active {
+    border: 2px solid $brand-success;
+  }
+}
+
+//eccomerce_grade_light card10
+.egl-card10 {
+
+  .ui-slider {
+    position: relative;
+  }
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    @include size(1rem);
+    border: .3rem solid $white;
+    box-shadow: 1px 1px 4px $gray-light;
+    background-color: $brand-warning;
+    @include border-radius(1rem);
+    cursor: pointer
+  }
+  .ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    overflow: hidden;
+  }
+  .ui-slider-horizontal {
+    height: .5rem;
+  }
+  .ui-slider-horizontal .ui-slider-handle {
+    top: -5px;
+    margin-left: -6px;
+  }
+  .ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 100%;
+  }
+  .ui-slider-horizontal .ui-slider-range-min {
+    left: 0;
+  }
+  .ui-slider-horizontal .ui-slider-range-max {
+    right: 0;
+  }
+  .ui-widget-content {
+    border: 1px solid $gray-lighter;
+  }
+  .ui-widget-header {
+    background: $brand-warning;
+  }
+  .ui-corner-all {
+    @include border-radius();
+  }
+
+  #range-min, #range-max {
+    max-width: 100%;
+    outline: none !important;
+    border: none;
+
+  }
+  .dropdown-toggle:after {
+    float: right;
+    margin-top: .7rem;
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+}
+
+//eccomerce_grade_light card11
+.egl-card11 {
+
+  .dropdown-toggle:after {
+    float: right;
+    margin-top: .7rem;
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+
+
+
+  .switcher {
+    width: 50px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+
+  }
+
+  .switcher * {
+    transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    -ms-transition: all .2s;
+  }
+
+  .switcher .sw_btn {
+    background: $white;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    display: block;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    border: 2px solid  $brand-danger;
+  }
+
+  .switcher .bg {
+    background: $brand-danger;
+
+  }
+  .switcher input.switcher-value:checked ~ .sw_btn {
+    margin-left: 30px;
+    border: 2px solid  $brand-success ;
+  }
+  .switcher input.switcher-value:checked ~ .sw_btn ~ .bg { background: $brand-success }
+  .switcher input.switcher-value { display: none; }
+  .switcher .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    @include border-radius(20px);
+
+  }
+
+}
+
+//eccomerce_grade_light card12
+.egl-card12 {
+    .nav-link {
+      display: block;
+      padding: 0 0.5rem;
+      color: $gray-light;
+      &:hover {
+        border-bottom: 2px solid $brand-info;
+      }
+  }
+
+  form {
+    margin-top: 0.2rem;
+    input,
+    button {
+      background: $gray-lighter;
+    }
+  }
+}
+
+//eccomerce_grade_light card13
+.egl-card13 {
+  max-width: 17rem;
+
+  .dropdown-toggle:after {
+    float: right;
+    margin-top: .7rem;
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+}
+
+//eccomerce_grade_light card36
+.egl-card36 {
+  max-width: 17rem;
+  .colt {
+    color: $white;
+  }
+}

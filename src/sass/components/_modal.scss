@@ -1,0 +1,123 @@
+//modal1
+
+.modal1 {
+  max-width: 40rem;
+  .card-img-overlay {
+    padding-top: 100%;
+  }
+  .btn-secondary-outline {
+    margin-top: -1rem;
+    border: 1px solid $white;
+  }
+  .fa {
+    width: 1.5rem;
+  }
+  h5 small {
+    font-size: .75rem;
+    line-height: 1.5rem;
+  }
+}
+
+//modal2
+.modal2{
+  max-width: 23rem;
+  .block2{
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+  }
+  .fa {
+    width: 1.5rem;
+  }
+}
+
+//modal3
+.modal3{
+  max-width: 23rem;
+  .twitter{
+    background-color: $brand-info;
+    border-bottom-left-radius: $border-radius;
+  }
+  .facebook{
+    background-color: $brand-primary;
+    border-bottom-right-radius: $border-radius;
+  }
+  .fa {
+    width: 1.5rem;
+  }
+}
+
+//modal4
+.modal4{
+  max-width: 40rem;
+  .fa-close{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+  .fa {
+    width: 1.5rem;
+  }
+  .or{
+    &:after{
+      content: "OR";
+      position: absolute;
+      right: -1rem;
+      background-color: $white;
+      padding: 0.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .modal4{
+    .or{
+      &:after{
+        display: none;
+      }
+    }
+    .col-xs-12{
+      padding: 0 1rem!important;
+      border-right: none !important;
+    }
+  }
+}
+
+//modal5
+.modal5{
+  max-width: 23rem;
+  input{
+    background-color: $gray-lightest;
+  }
+}
+
+//modal6
+.modal6{
+  max-width: 23rem;
+  .card-img-overlay{
+    padding-top: 55%;
+  }
+  .up-text{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+}
+
+//modal7
+.modal7{
+  width: 23rem;
+  .col-xs-6{
+    background-color: $gray-lightest;
+  }
+}
+//modal9
+.modal9{
+  max-width: 23rem;
+}
+
+
+
+

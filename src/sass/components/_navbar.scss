@@ -1,0 +1,1788 @@
+// main-navbar
+.main-navbar{
+
+}
+
+@include media-breakpoint-down(md) {
+  .main-navbar{
+
+    margin-bottom: 1rem;
+    .navbar-brand{
+      float: none;
+
+    }
+    .navbar-nav{
+      display: inline-block;
+
+      text-align: center;
+    }
+
+
+  }
+}
+@include media-breakpoint-down(sm){
+  .navbar-nav {
+    display: block !important;
+    .nav-item{
+      float: none;
+      text-align: left;
+      border-bottom: 1px solid $gray;
+
+    }
+  }
+
+}
+
+
+
+
+// Menu_1
+
+// Главный враппер меню
+.menu_1 {
+  font-family: $font-family-sans-serif;
+  a {
+    color: $gray-lightest;
+  }
+}
+
+// Враппер главного меню содержащего бренд
+.menu_1_base {
+  line-height: $font-size-h1;
+  .nav-link {
+    padding-left: $font-size-h1;
+  }
+}
+// Враппер попап меню
+.mega_wrapper {
+  position: relative;
+}
+
+.menu_1_mega {
+  display: none;
+  position: relative;
+  margin-bottom: -211px;
+  z-index: $zindex-popover;
+  background-color: $body-bg;
+  .btn-secondary{
+    box-shadow: none;
+  }
+
+  // Всплывающая часть
+  .navbar {
+    @include box-shadow(0 2px 6px $gray);
+  }
+  .list-unstyled {
+    a {
+      display: block;
+    }
+  }
+}
+
+
+@include media-breakpoint-down(md) {
+  .menu_1_base {
+    line-height: $font-size-h1;
+    .nav-link {
+      padding-left: $font-size-xs;
+    }
+  }
+}
+// End Menu_1
+
+
+// Menu_2
+
+// Нижний блок(белый) меню
+.menu_2_white {
+  @include box-shadow(0 2px 6px $gray);
+  .nav-item {
+    border-right: 1px solid $gray;
+  }
+}
+
+
+@include media-breakpoint-down(md) {
+  .menu_2{
+    .nav-item {
+      padding-left: .3px !important ;
+      padding-right: .3px !important;
+      border: none;
+      .nav-link{
+        padding-left: .3px !important ;
+        padding-right: .3px !important;
+      }
+
+    }
+
+  }
+}
+
+// End Menu_2
+
+// Menu_3
+
+// Глаынй блок меню
+.menu_3 {
+  .navbar-brand {
+    width: 1.8rem;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .menu_3{
+    .nav-item {
+      padding-left: .3px !important ;
+      padding-right: .3px !important;
+      border: none;
+      .nav-link{
+        padding-left: .3px !important ;
+        padding-right: .3px !important;
+      }
+
+    }
+
+  }
+}
+
+
+// Menu 4
+
+// Главный блок меню
+.menu_4 {
+  position: relative;
+  // логотип
+  .logo {
+    width: 2rem;
+  }
+  // элоементы списка меню
+  .nav-item {
+    border-right: 1px solid $gray-lightest;
+    &:first-child {
+      border-left: 1px solid $gray-lightest;
+    }
+  }
+  // состояния списка при наведении, фокусе для перввого элемента...
+  .nav {
+    .nav-item {
+      &:first-child {
+        a.nav-link {
+          &:hover,
+          &:active,
+          &:focus {
+            color: $navbar-light-hover-color;
+            background: none;
+          }
+        }
+      }
+      // состяния для ссылок
+      a.nav-link {
+        display: block;
+        height: 100%;
+        color: $navbar-dark-color;
+        &:hover,
+        &:active,
+        &:focus {
+          color: $navbar-light-hover-color;
+          background-color: $body-bg;
+        }
+      }
+    }
+  }
+  // Иконки меню
+  .fa {
+    padding: 0 0.5rem;
+  }
+  // Оформление выпадающего поиска
+  .menu_4_search {
+    display: none;
+    margin-bottom: -70px;
+    z-index: $zindex-popover;
+  }
+}
+
+
+// End menu4
+
+// Menu 55
+
+// Главный враппер меню
+.menu_55 {
+  position: relative;
+  // логотип
+  .logo {
+    width: 2rem;
+  }
+  // элементы списка меню
+  .nav-item {
+    padding: $navbar-padding-vertical 0;
+    border-right: 1px solid $gray-lightest;
+    &:first-child {
+      border-left: 1px solid $gray-lightest;
+    }
+  }
+  // состояния элементов списка
+  .nav {
+    .nav-item {
+      a.nav-link {
+        position: relative;
+        color: $navbar-dark-color;
+        &:hover,
+        &:active,
+        &:focus {
+          color: $navbar-light-hover-color;
+        }
+      }
+    }
+  }
+  // Иконки
+  .fa {
+    padding: 0 0.5rem;
+  }
+  // элементы закрытия в корзине
+  .label-pill {
+    padding: 0.125rem 0.3rem;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.8rem;
+  }
+// выпадающий поиск
+  .menu_55_search {
+    display: none;
+    margin-bottom: -70px;
+    z-index: $zindex-popover;
+  }
+  // модифицированные элементы кард, в корзине
+  .card {
+    border: none;
+  }
+  .dropdown-menu.cart {
+    left: auto;
+    right: 0;
+    min-width: 25rem;
+  }
+  .items_block {
+    border-bottom: 1px solid $body-bg;
+    .label-pill {
+      position: relative;
+    }
+  }
+  .bg-info {
+    a {
+      @include border-radius();
+    }
+  }
+}
+
+
+// End menu55
+
+// Menu 6
+
+// Главный враппер меню
+.menu_6 {
+  position: relative;
+  // Логотип
+  .logo {
+    width: 2rem;
+  }
+  // Элементы меню
+  .nav-item {
+    border-right: 1px solid $gray-lightest;
+    &:last-child {
+      border-right: none;
+    }
+  }
+  // Состояния элементов меню
+  .nav {
+    .nav-item {
+      &:first-child {
+        a.nav-link {
+          &:hover,
+          &:active,
+          &:focus {
+            color: $navbar-light-hover-color;
+            background: none;
+          }
+        }
+      }
+      a.nav-link {
+        display: block;
+        height: 100%;
+        color: $navbar-dark-color;
+        &:hover,
+        &:active,
+        &:focus {
+          color: $navbar-light-hover-color;
+          background-color: $body-bg;
+        }
+      }
+    }
+  }
+  //Иконки
+  .fa {
+    padding: 0 0.5rem;
+  }
+  // Поиск
+  .menu_6_search {
+    display: none;
+    margin-bottom: -70px;
+    z-index: $zindex-popover;
+  }
+}
+
+
+// End menu6
+
+// Menu 7
+
+// Главнй враппер меню
+.menu_7 {
+  position: relative;
+  // Логотип
+  .logo {
+    width: 2rem;
+  }
+  // Элементы меню
+  .nav-item {
+    border-right: 1px solid $gray-lightest;
+    &:last-child {
+      border-right: none;
+    }
+  }
+  // Состояния элементов меню
+  .nav {
+    .nav-item {
+      &:first-child {
+        a.nav-link {
+          &:hover,
+          &:active,
+          &:focus {
+            color: $navbar-light-hover-color;
+            background: none;
+          }
+        }
+      }
+      a.nav-link {
+        display: block;
+        height: 100%;
+        color: $navbar-dark-color;
+        &:hover,
+        &:active,
+        &:focus {
+          color: $navbar-light-hover-color;
+          background-color: $body-bg;
+        }
+      }
+    }
+  }
+  // Иконки
+  .fa {
+    padding: 0 0.5rem;
+  }
+  // Поиск
+  .menu_7_search {
+    display: none;
+    margin-bottom: -70px;
+    z-index: $zindex-popover;
+  }
+}
+
+
+// End menu7
+
+
+// Menu 88
+
+// Главный враппер
+.menu_88 {
+  // Главный список
+  .menu_88_categories {
+    &:active,
+    &:focus,
+    &:visited,
+    &:hover {
+      color: $gray-lightest;
+    }
+  }
+  .white {
+    &:active,
+    &:focus,
+    &:visited,
+    &:hover {
+      color: $gray-lightest;
+      text-decoration: none;
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      display: block;
+      float: none;
+      margin-left: 0;
+      border-bottom: 1px solid $gray;
+      &:hover {
+        .menu_88_drop_drop {
+          display: block;
+        }
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+      .nav-link {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+  // элементы выпадающего списка
+  .menu_88_dropdown {
+    display: none;
+    margin-bottom: -368px;
+    position: absolute;
+    z-index: $zindex-dropdown;
+    // угловые стрелочки
+    .fa {
+      font-size: 1.3rem;
+    }
+  }
+}
+// второй уровень выпадающего списка (на белом фоне)
+.menu_88_drop_drop {
+  display: none;
+  background-color: $body-bg;
+  position: absolute;
+  border-bottom-right-radius: 4px;
+  width: 500px;
+  left: 101%;
+  height: 500px; // этот парамерт высчитывается в js от количества сткрок родителя
+  top: 0;
+  padding: 2rem;
+  color: $gray-dark;
+  li {
+    border: none;
+  }
+  a {
+    background: none;
+    color: $gray-dark;
+    padding: 5px 0;
+    &:hover {
+      color: $brand-danger;
+    }
+  }
+}
+
+
+
+//  Menu 9
+
+// Главный ваппер
+.menu_9 {
+  a {
+    &:active,
+    &:focus,
+    &:visited,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .nav {
+    padding: 0.5rem;
+  }
+  // кружочки иконки
+  .fa-circle {
+    font-size: 0.8rem;
+    color: $gray-light;
+  }
+}
+
+// End Menu 9
+
+// menu 10
+
+
+// Главный враппер
+.menu_10 {
+  // Аватар пользователя
+  .avatar {
+    img {
+      @include size(4rem);
+      margin-top: -0.3rem;
+      border-color: $brand-danger;
+    }
+  }
+  // Логотип
+  .logo {
+    display: block;
+    font-size: $font-size-h4;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  // Список меню
+  .nav-item {
+    width: 20%;
+    border-right: 1px solid $gray-lighter;
+    &:first-child {
+      border-left: 1px solid $gray-lighter;
+    }
+    .nav-link {
+      display: block;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+  // Иконки
+  .fa {
+    font-size: 1.5rem;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .menu_10{
+    .avatar{
+      padding: 0.5rem 0 !important;
+      span{
+        display: block;
+      }
+      img{
+        display: none;
+      }
+    }
+    .logo{
+      padding: 0.5rem 0 !important;
+
+      span{
+        display: none;
+      }
+    }
+    .nav-item{
+      .nav-link{
+        padding-top: 1.5rem;
+      }
+      span{
+        display: none;
+      }
+    }
+  }
+
+}
+
+// End Menu 10
+
+// menu 11
+
+// Гланый враппер
+.menu_11 {
+  // логотип
+  .logo {
+    display: block;
+    font-size: $font-size-h4;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  // сипсок меню
+  .nav-item {
+    width: 20%;
+    .nav-link {
+      display: block;
+      padding-top: 1.7rem;
+      padding-bottom: 1.7rem;
+    }
+  }
+ // Иконки
+  .fa {
+    padding: 0 0.3rem;
+  }
+  // кнопочка войти
+  a.signup {
+    padding: 0.5rem 1rem !important;
+    display: inline;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .menu_11{
+    .logo{
+      span{
+        display: none;
+      }
+      img{
+        @include size(2.3rem)
+      }
+    }
+    .nav-item{
+      .nav-link{
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        .fa{
+          display: none;
+          font-size: 1.7rem;
+        }
+      }
+    }
+
+  }
+}
+
+// End Menu 11
+
+// Menu _12
+// Главный врппер
+.menu_12 {
+  // Логотип
+  .logo {
+    display: block;
+    font-size: $font-size-h4;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  // Список меню
+  .nav-item {
+    width: 20%;
+    .nav-link {
+      display: block;
+      padding: 1.6rem 0;
+    }
+  }
+  // Поисковая форма
+  form {
+    padding: 1.15rem 0;
+  }
+  // Бутербродное меню
+  .fa-bars {
+    font-size: 1.3rem;
+    margin-left: -2rem;
+  }
+}
+
+
+@include media-breakpoint-down(md) {
+  .menu_12{
+    form{
+      padding-left: 1rem ;
+      padding-right: 1rem ;
+    }
+  }
+}
+
+// menu 13
+// Главный враппер
+.menu_13 {
+  // текст бренда
+  a.navbar-brand {
+    color: $gray-light;
+  }
+  // Логоип
+  .logo {
+    img {
+      @include size(2.5rem);
+      margin-right: 0.5rem;
+      span {
+        line-height: 2.7rem;
+      }
+    }
+    font-size: $font-size-h4;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  // Список Меню
+  .nav-item {
+    line-height: 2.9rem;
+    .nav-link {
+      display: block;
+      padding: 0 0.5rem;
+      color: $gray-light;
+      &:hover {
+        border-bottom: 2px solid $brand-info;
+      }
+    }
+  }
+  // Фома
+  form {
+    margin-top: 0.2rem;
+    input,
+    button {
+      background: $gray-lighter;
+    }
+  }
+}
+@include media-breakpoint-down(lg) {
+  .menu_13{
+    .nav-item{
+      margin-left: 0 !important;
+    }
+    form{
+      width: 100%;
+      .input-group{
+        width: 115%;
+      }
+    }
+  }
+}
+
+// menu 14
+
+// Главный враппер
+.menu_14 {
+  position: relative;
+  // логотип
+  .logo {
+    width: 2rem;
+  }
+  // Список Меню
+  .nav-item {
+    &:first-child {
+      border-right: 1px solid $navbar-light-color;
+      a.nav-link {
+        &:hover {
+          background: none !important;
+        }
+      }
+    }
+    &:last-child {
+      border-left: 1px solid $navbar-light-color;
+      .dropdown-menu {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+  .nav {
+    .nav-item {
+      a.nav-link {
+        display: block;
+        color: $navbar-light-hover-color;
+        &.search {
+          border-left: 1px solid $navbar-light-color;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          color: $brand-info;
+          background: $navbar-light-disabled-color;
+        }
+      }
+    }
+  }
+  // Иконки
+  .fa {
+    padding: 0 0.5rem;
+  }
+  // Выпадающий список
+  .dropdown-item {
+    padding: 0.5rem 1rem;
+    &:hover,
+    &:active,
+    &:focus {
+      background: $navbar-light-disabled-color;
+    }
+  }
+}
+@include media-breakpoint-down(md) {
+  .view-small-menu14{
+    .small_menu{
+      display: block;
+    }
+  }
+}
+
+// end menu 14
+
+// block follow us
+
+.block_follow {
+  width: 17rem;
+  color: $brand-primary;
+  .navbar-light .navbar-nav .nav-link {
+    color: $brand-primary;
+  }
+}
+
+
+// menu_accordion
+// Главный враппер
+.menu_accordion {
+  // Невидимый блок экранирует стрелочку на меню
+  // Так как бутстрап ее криво обрабатывает при клике
+
+  .nono_click {
+    position: relative;
+  }
+
+  .no_click {
+    @include size($font-size-h2);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+
+  width: 20rem;
+  .label-info {
+    background-color: $brand-danger;
+    @include border-radius();
+  }
+  // Иконочки
+  .fa {
+    font-size: 1.5rem;
+  }
+  // Главный писок
+  .selected_level_one {
+    background-color: $gray-lighter;
+    border-left: 2px solid $gray-light;
+  }
+  a.list-group-item:focus,
+  a.list-group-item:hover,
+  button.list-group-item:focus,
+  button.list-group-item:hover {
+    background-color: $gray-lighter;
+    border-left: 2px solid $brand-info;
+  }
+  .list-group-item {
+    position: relative;
+    cursor: pointer;
+    border-radius: 0;
+    color: $gray-dark;
+    &:hover {
+      color: $brand-info;
+    }
+  }
+  a {
+    color: $gray-dark;
+  }
+  // Выпадающий список
+  .sublinks {
+    .list-group-item {
+      border: none;
+      padding-left: $font-size-h2;
+      background-color: $gray-lighter;
+      border-left: 2px solid $brand-info;
+      border-radius: 0;
+    }
+  }
+  // Заголовок
+  .menu_accordion_header {
+    background-color: $gray-lighter;
+    font-size: $font-size-lg;
+  }
+}
+
+
+// block_menu
+.block_menu {
+  width: 23rem;
+  color: $gray-dark;
+  a {
+    color: $gray-dark;
+    &:hover {
+      color: $brand-info;
+      text-decoration: none;
+    }
+  }
+  // Маленький треугольничег у бутерброда
+  .block_menu_bar_settings {
+    i {
+      position: relative;
+      font-size: 1.5rem;
+      &.fa-bars {
+        &:after {
+          content: "";
+          position: absolute;
+          left: -15px;
+          top: 7px;
+          border: 4px solid transparent;
+          border-right: 4px solid $gray-dark;
+        }
+      }
+    }
+  }
+}
+
+
+
+// side bar
+
+// Гланый враппер
+.sb {
+  width: 20rem;
+  color: $gray-dark;
+  .list-group-item {
+    border-radius: 0;
+    border: none;
+  }
+  a {
+    color: $gray-dark;
+    &:hover {
+      color: $brand-info;
+      text-decoration: none;
+    }
+  }
+}
+// Логотип
+.sb_logo {
+  img {
+    @include size($display4-size);
+  }
+}
+// Элементы меню
+.sb_menu {
+  background-color: $gray-lighter;
+  border-top: 1px solid $gray-light !important;
+  border-bottom: 2px solid $gray-light !important;
+  font-size: $font-size-sm;
+}
+
+.sb_menu_frends {
+  .list-group-item {
+    li {
+      i {
+        font-size: 0.5rem;
+      }
+    }
+  }
+}
+// Поиск
+.sb-search {
+  background-color: $gray-lighter;
+  border-top: 1px solid $gray !important;
+  input, button {
+
+    background-color: $gray-lightest;
+    color: $gray-dark;
+    &:hover {
+      background-color: $gray-lightest;
+    }
+  }
+}
+
+//  end Side bar
+
+// media menu
+
+
+// Главный враппер
+.md_menu {
+  display: inline-block;
+  a {
+    color: $gray-dark;
+    display: block;
+    &:hover {
+      color: $brand-info;
+      text-decoration: none;
+    }
+  }
+  i {
+    font-size: 2rem;
+  }
+}
+// Элементы меню
+.md_item {
+  border-top: 1px solid $gray-lighter;
+  &:first-child {
+    border: none;
+  }
+  &:last-child {
+    i {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// end media menu
+
+
+// media user menu
+
+// Главный враппер
+.mu_menu {
+  display: inline-block;
+  .list-group-item {
+    border: none;
+  }
+  a {
+    color: $gray-dark;
+    &:hover {
+      color: $brand-info;
+      text-decoration: none;
+    }
+  }
+  i {
+    font-size: $font-size-lg;
+  }
+  .list-group-item {
+    border-top: 1px solid $hr-border-color;
+    &:last-child {
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+    &:first-child {
+      border: none;
+    }
+  }
+}
+// Элементы меню
+.mu_item {
+  display: block;
+  a {
+    display: block;
+    padding: 0.5rem 1.25rem
+  }
+  &:hover {
+    background-color: $gray-lightest;
+    border-left: 2px solid $brand-info
+  }
+}
+
+.mu_menu_user {
+  @include size($display1-size);
+}
+
+// end media user menu
+
+
+
+// media user thin menu
+
+// Главнй враппер
+.mu_thin_menu {
+  display: inline-block;
+  .list-group-item {
+    border-radius: 0;
+    border: none;
+  }
+  a {
+    color: $gray-dark;
+    &:hover {
+      color: $brand-info;
+      text-decoration: none;
+    }
+  }
+  i {
+    font-size: $font-size-h3;
+  }
+  .list-group-item {
+    &:last-child {
+      a {
+        border-top: 1px solid $gray-lighter;
+      }
+      i {
+        font-size: $font-size-h5;
+      }
+    }
+    &:first-child {
+      border: none;
+    }
+  }
+}
+// Элементы меню
+.mu_thin_item {
+  border-left: 2px solid transparent;
+  &:hover {
+    background-color: #eceff4;
+    border-left: 2px solid $brand-info;
+  }
+  &:first-child {
+    border-top: 1px solid $gray-lighter;
+  }
+}
+// Изображение пользователя
+.mu_thin_menu_user {
+  img {
+    @include size(3.5rem);
+  }
+}
+
+// end media user thin menu
+
+// media bar 6
+
+.media_bar_6 {
+  display: inline-block;
+  width: 20rem;
+  border: 1px solid $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $brand-info;
+      text-decoration: none;
+      background-color: $gray-lighter;
+      cursor: pointer;
+    }
+  }
+  .row {
+    margin: 0;
+    border-bottom: 1px solid $gray-lighter;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .col-xs-4 {
+    padding: 0;
+    border-right: 1px solid $gray-lighter;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.media_bar_6 i {
+  font-size: $font-size-h2;
+}
+
+//  end media bar 6
+
+// media bar 4
+
+.media_bar_4 {
+  border: 1px solid $gray-lighter;
+  display: inline-block;
+  width: 14rem;
+  a {
+    color: $gray;
+    &:hover {
+      color: $brand-success;
+      text-decoration: none;
+      background-color: $gray-lightest;
+      cursor: pointer;
+    }
+  }
+
+  .row {
+    margin: 0;
+    border-bottom: 1px solid $gray-light;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .col-xs-6 {
+    border-right: 1px solid $gray-light;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.media_bar_4 i {
+  font-size: $font-size-h2
+}
+
+// photo bar
+
+// Главный враппер
+// элементы pb1-pb4 (фотобар 1-4)
+// У каждого элемента задана картинка беграунда с позиционированием в элементе after
+
+.pb {
+  width: 28rem;
+  a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: $zindex-navbar;
+    &:hover {
+      text-decoration: none;
+      color: $gray-lightest;
+    }
+  }
+
+  li {
+    height: 10rem;
+  }
+  .pb1 {
+    background-color: $brand-danger;
+    position: relative;
+    &::after {
+      content: "";
+      background-image: url(/img/navbar/pb1.png);
+      background-size: 100%;
+      background-position: 50% 71%;
+      opacity: 0.6;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+  .pb2 {
+    @include gradient-horizontal($brand-primary, $brand-info, 25%, 90%);
+    &::after {
+      content: "";
+      background-image: url(/img/navbar/pb2.png);
+      background-size: 100%;
+      background-position: 0 0%;
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+  .pb3 {
+    @include gradient-horizontal($brand-primary, $brand-danger, 25%, 75%);
+    &::after {
+      content: "";
+      background-image: url(/img/navbar/pb3.png);
+      background-position: 50% 43%;
+      background-size: 100%;
+      opacity: 0.5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+  .pb4 {
+    @include gradient-horizontal($brand-danger, $brand-warning, 25%, 75%);
+    &::after {
+      content: "";
+      background-image: url(/img/navbar/pb4.png);
+      background-position: 0 39%;
+      background-size: 100%;
+      opacity: 0.6;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+  li {
+    position: relative;
+    span {
+      font-size: $font-size-h4;
+    }
+  }
+
+}
+
+// end photo bar
+
+// menu vertical
+
+// Главный Враппер
+.menu_vertical_base {
+  width: 20rem;
+  a {
+    color: $gray-dark;
+    display: block;
+    &:hover {
+      color: $gray-dark;
+      text-decoration: none;
+    }
+  }
+  li {
+    &:first-child {
+      background-color: $gray-lighter;
+      font-size: $font-size-h5;
+      position: relative;
+    }
+    // Цвета при наведении
+    &:hover {
+      @include gradient-horizontal($brand-danger, $brand-warning, 25%, 75%);
+      cursor: pointer;
+    }
+  }
+  // треугольничик у фотобара
+  i {
+    position: relative;
+    &.fa-bars {
+      &:after {
+        content: "";
+        position: absolute;
+        left: -15px;
+        top: 7px;
+        border: 4px solid transparent;
+        border-right: 4px solid $gray-dark;
+      }
+    }
+  }
+}
+
+//  end menu vertical
+
+// Big popap nav
+
+// главный враппер
+.big_popap_nav {
+  @include size(28rem, 37rem);
+  a {
+    color: $gray;
+    &:hover {
+      color: $brand-info;
+      text-decoration: none;
+    }
+  }
+}
+// Элемент закрыть
+.big_popap_nav_close_wrapper {
+  font-size: $font-size-h5;
+}
+// обертка Логотипа
+.big_popap_nav_logo_wrapper {
+  img {
+    @include size(3rem);
+  }
+}
+// Элементы меню
+.big_popap_nav_nav_wrapper {
+  li {
+    font-size: $font-size-h3;
+    line-height: 3.9rem;
+    position: relative;
+    &:after {
+      content: "____";
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $gray-light;
+      z-index: -1;
+    }
+  }
+}
+// Нижние эконки
+.big_popap_nav_icon {
+  margin-top: 7rem;
+  .nav-link {
+    background-color: $gray;
+    @include size(2em);
+    border-radius: 2em;
+    padding-top: 0.3rem;
+    color: $gray-lightest;
+    margin: 0.3rem;
+    &:hover {
+      background-color: $brand-info;
+      i {
+        color: $gray-lightest;
+      }
+    }
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Big end popap nav
+
+// menu colorized
+
+// Главный враппер
+.mk {
+  color: $gray-lightest;
+  position: relative;
+  // Нижние два элемента
+  .navi {
+    margin-top: 14rem;
+    border-top: 1px solid $brand-info;
+    .nav-link {
+      font-size: $font-size-lg;
+      color: $gray-lighter;
+      line-height: $font-size-h1;
+      width: 50%;
+      &:hover {
+        color: $gray-lightest;
+        i {
+          color: $gray-lightest;
+        }
+      }
+      &:first-child {
+        border-right: 1px solid $brand-info;
+      }
+    }
+  }
+}
+// Видимая часть меню
+.mk_visible {
+  @include gradient-vertical($brand-success, $brand-primary, 0%, 55%);
+  @include size(6rem, 37rem);
+  .nav-item {
+    border-top: 1px solid $brand-info;
+    &:last-child {
+      border-bottom: 1px solid $brand-info;
+    }
+    a {
+      color: $gray-lighter;
+      padding: 15px 25px;
+      display: block;
+      font-size: 26px;
+      line-height: 65px;
+      position: relative;
+      &:hover,
+      &:active,
+      &:focus {
+        color: $gray-lightest;
+        i {
+          color: $gray-lightest;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          right: -1px;
+          top: 50%;
+          z-index: 2;
+          transform: translateY(-50%);
+          border: 8px solid transparent;
+          border-right: 8px solid $gray-lightest;
+        }
+      }
+      i {
+        display: block;
+      }
+    }
+    &:first-child {
+      border-top: none;
+    }
+  }
+  .logo {
+    a {
+      &:hover {
+        &:after {
+          border: none;
+        }
+      }
+    }
+  }
+}
+// Всплывающая часть меню
+.mk_triger1 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 6rem;
+  @include size(16rem, 37rem);
+  background-color: $component-active-color;
+  @include border-radius();
+  border: 1px solid $gray-lighter;
+  ul {
+    border-radius: 0;
+  }
+  .list-group-item {
+    border: none;
+    padding: 0;
+    &:hover {
+      background-color: $gray-lightest;
+    }
+    a {
+      color: $brand-info;
+      display: block;
+      padding: 0.7rem 1.75rem 0.7rem 2rem;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .mk_count {
+    display: block;
+    background-color: $brand-info;
+    border: 1px solid $gray;
+    border-radius: 1rem;
+    padding: 3px 5px;
+    line-height: 1rem;
+    color: $gray-dark;
+  }
+  .mk_trigger_close_wrap {
+    font-size: $font-size-lg;
+  }
+  .mk_titles {
+    display: block;
+    padding-left: 2rem;
+    color: $gray-dark;
+    font-size: $font-size-lg;
+    margin-bottom: $font-size-h3;
+  }
+}
+
+.mk_triger2, .mk_triger3 {
+  @extend .mk_triger1
+}
+
+// end menu colorized
+
+
+
+
+// vertical tab
+
+// Главный враппер
+.vt_menu {
+  @include size(41rem, 23rem);
+  .vk_border_left {
+    border-left: 1px solid $gray-light;
+    height: 100%;
+  }
+}
+
+// Текстовые поля (справа)
+.vk_tabs {
+  .card {
+    border: none;
+    display: none;
+  }
+  .card-text {
+    line-height: $font-size-h4;
+  }
+}
+
+// Навигационные элементы списка
+.vk_tabs_link {
+  .list-group-item {
+    border: none;
+    a {
+      display: block;
+      border-right: 2px solid transparent;
+      &.actives {
+        color: $brand-info;
+        border-right: 2px solid $brand-info;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+        color: $brand-info;
+        border-right: 2px solid $brand-info;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+// end vertical tab
+
+
+// horisontal tabs
+
+// главнй враппер
+.ht_menu {
+  color: $gray-light;
+  position: relative;
+  @include size(41rem, 23rem);
+  border: 1px solid $gray-light;
+  .nav-tabs .nav-link {
+    border: none;
+    color: $gray-light;
+    &.active,
+    &:hover,
+    &:focus {
+      color: $brand-info;
+      border-bottom: 2px solid $brand-info;
+    }
+  }
+  .card-block {
+    line-height: $font-size-h2;
+  }
+  .tab-pane {
+    padding: $font-size-h2;
+    .ht_img {
+      @include size(12.5rem);
+      @include border-radius();
+      background-image: url(/img/navbar/watch.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  .card {
+    border: none;
+  }
+}
+
+// end horisontal tabs
+
+// accordion
+// Главный враппер
+.acc_nav {
+  color: $gray;
+  position: relative;
+  width: 41rem;
+  border: 1px solid $gray-light;
+  // главные элементы
+  .panel-title {
+    font-size: $font-size-base;
+    a {
+      color: $gray;
+      display: block;
+      position: relative;
+      &:before {
+        content: "+";
+        top: 0.5em;
+        left: 1rem;
+        font-size: 1.5em;
+        position: absolute;
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: none;
+        color: $brand-info;
+      }
+    }
+  }
+  // Заголовок
+  .panel-heading {
+    background-color: $gray-lighter;
+  }
+  // текстовый блок
+  .panel-body {
+    border: 1px solid $gray-light;
+    position: relative;
+    margin-bottom: 0.5em;
+    &:before {
+      content: "—";
+      top: 0.5rem;
+      left: 17px;
+      font-size: 1.5em;
+      position: absolute;
+    }
+  }
+}
+
+//  end accordion
+
+// paginator 1
+
+.paginator_1 {
+  color: $gray-dark;
+  position: relative;
+  width: 41rem;
+  a {
+    line-height: $font-size-h2;
+    margin: 0.25rem;
+    color: $gray-dark;
+    &:hover,
+    &:active,
+    &.active,
+    &:focus {
+      background-color: $brand-danger;
+      color: $gray-lightest;
+      text-decoration: none;
+    }
+  }
+}
+
+.p1_prev {
+  padding-right: 0.5rem;
+}
+
+.p1_next {
+  padding-left: 0.5rem;
+}
+
+// end paginator 1
+
+//  paginator 2
+
+.paginator_2 {
+  font-size: $font-size-xs;
+  color: $gray-light;
+  position: relative;
+  width: 41rem;
+  a {
+    color: $gray-light;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    line-height: $font-size-h1;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active {
+      text-decoration: none;
+      color: $brand-success;
+    }
+  }
+}
+
+// end paginator 2
+
+//  paginator 3
+
+.paginator_3 {
+  position: relative;
+  width: 41rem;
+  padding: 1rem;
+  a {
+    color: $gray-light;
+    border-radius: 1.25rem;
+    padding: 3px 10px;
+
+    line-height: $font-size-h1;
+    font-size: $font-size-lg;
+    &.p3_link_first,
+    &.p3_link_last {
+      padding: 3px 8px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.active {
+      text-decoration: none;
+      color: $gray-lightest;
+      background-color: $brand-warning;
+    }
+  }
+}
+
+.p3_link {
+  padding: 0 0.6rem;
+}
+
+// end paginator 3
+
+// epaginator 4
+
+.paginator_4 {
+  position: relative;
+  width: 41rem;
+  .btn-secondary {
+    border: 1px solid $gray-lighter;
+  }
+  .btn-group-lg .btn {
+    padding: 1rem 1.7rem;
+    line-height: 42px;
+    color: $gray-light;
+    &:hover {
+      background-color: $brand-danger;
+      color: $gray-lightest;
+    }
+  }
+}
+
+// end paginator 4
+
+
+.small_menu{
+  display: none;
+  position: absolute;
+  z-index: $zindex-navbar;
+  left: 0.5rem;
+  width: 100%;
+  margin-left: -0.5rem;
+
+  a{
+    color: $gray-light;
+    display: block;
+    padding: 0.5rem 1rem;
+    &:hover{
+      text-decoration: none;
+      color: $brand-info;
+      background-color: $gray-lighter;
+
+    }
+  }
+}
+.all_menu_wrpapp{
+  position: relative;
+  width: 100%;
+}
+@include media-breakpoint-down(sm) {
+  .small_menu{
+    display: block !important;
+  }
+}

@@ -1,0 +1,60 @@
+/*Стили боковой панели*/
+
+.navigation-panel{
+  width: 4rem;
+  background-color: #373a3c;
+  height: 100%;
+  position: fixed;
+  z-index: 1500;
+  color: #fff;
+  top:0;
+}
+
+.links{
+  display: none;
+  color: #fff;
+
+}
+.links:hover{
+  text-transform: none;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navigation-panel .fa-bars{
+  padding: 7px 7px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+.navigation-panel .list-unstyled .fa{
+  font-size: 1.5rem;
+
+}
+
+.navigation-panel li:hover{
+  background-color: #1C1B1B;
+}
+.superlative{
+  display: none;
+  position: absolute;
+  top: 1.8rem;
+  left: 3rem;
+
+}
+.superlative:hover{
+  text-decoration: none;
+  color: #FFF;
+}
+.footer1 .card{
+  max-width: 330px;
+  min-width: 223px;
+}
+.links-visible{
+  text-align: center;
+  .fa{
+    color: $white;
+  }
+}
+.bar{
+  color: #FFF;
+}

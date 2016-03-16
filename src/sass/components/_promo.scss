@@ -1,0 +1,295 @@
+//poromo1
+
+.promo1 {
+  .social {
+    .fa {
+      padding: .5rem;
+      background-color: $gray-light;
+      @include size(2rem);
+      border-radius: 2rem;
+    }
+  }
+}
+
+
+//promo2
+.promo2 {
+  max-width: 40rem;
+}
+
+//promo3
+
+.promo3 {
+  max-width: 16rem;
+  span {
+    font-size: $font-size-h1;
+  }
+}
+
+//promo4
+.promo4 {
+  max-width: 16rem;
+}
+
+
+//promo5
+.promo5 {
+  max-width: 40rem;
+}
+
+
+//promo6
+.promo6 {
+  max-width: 40rem;
+  .fa-camera {
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    transform: translateY(-50%);
+    font-size: $font-size-h1;
+    z-index: 5;
+  }
+  img {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+}
+
+
+//promo7
+.promo7 {
+  max-width: 18rem;
+}
+
+
+//promo8
+.promo8 {
+  max-width: 18rem;
+  .fa-lock {
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: $font-size-h1;
+  }
+}
+
+//promo9
+.promo9 {
+  .fa {
+    @include size(5rem);
+    border-radius: 5rem;
+    background-color: $brand-primary;
+    border: 0.5rem solid $white;
+    font-size: $font-size-h2;
+    padding-top: .9rem;
+  }
+  .fa-image {
+    background-color: $brand-danger;
+  }
+  .fa-music {
+    background-color: $brand-success;
+  }
+  .fa-video-camera {
+    background-color: $brand-warning;
+  }
+
+  .col-sm-3 {
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      border: 2px solid $brand-success;
+      height: 1px;
+      position: absolute;
+      top: 38%;
+      right: -50%;
+      z-index: -1;
+    }
+    &:last-child {
+      &:after {
+        border: none;
+      }
+    }
+  }
+
+}
+
+@include media-breakpoint-down(sm) {
+  .promo9 {
+    .col-sm-3 {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+//promo10
+.promo10 {
+  width: 40rem;
+  .fa-quote-left {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: $font-size-h5;
+  }
+  .fa-quote-right {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: $font-size-h5;
+  }
+}
+
+//promo11
+.promo11 {
+  max-width: 23rem;
+  .fa {
+    font-size: $font-size-xs;
+    margin: 0 .5rem;
+    padding-top: 0.3rem;
+    padding-left: 0.3rem;
+  }
+  .fa-circle.text-success {
+    @include size(1.5rem);
+    border-radius: 1.5rem;
+    border: 1px solid $brand-success;
+
+  }
+  .wrapper {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+  }
+  .img-circle {
+    max-width: 4.5rem;
+  }
+}
+
+//promo12
+.promo12 {
+  $min-height: 29rem;
+  min-height: $min-height;
+
+  .img-fluid {
+    position: absolute;
+    z-index: -1;
+    height: $min-height;
+  }
+  .text-inform {
+    max-width: 60%;
+    background-color: $white;
+    color: $gray-dark;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -1rem;
+      border: 8px solid transparent;
+      border-top: 8px solid $white;
+    }
+  }
+  .carousel-item {
+    padding-top: 10%;
+    min-height: $min-height;
+
+  }
+  .carousel-indicators li {
+    position: relative;
+    margin: 0 .5rem;
+    &.active{
+      position: relative;
+      &:after{
+        content: "";
+        @include size(1.5rem);
+        border-radius: 1.5rem;
+        top: -.4rem;
+        left: -.4rem;
+        position: absolute;
+        border: 1px solid $white;
+      }
+    }
+
+  }
+}
+
+
+//promo13
+.promo13{
+  .center-block{
+    max-width: 40%;
+  }
+  .row{
+    background-image: url(/img/promo/p9.png);
+    background-repeat: repeat-x;
+    background-position: -0.5rem 0;
+  }
+}
+
+//promo14
+.promo14{
+  max-width: 50rem;
+  .row{
+    background-image: url(/img/promo/p9.png);
+    background-repeat: repeat-x;
+    background-position: -0.5rem 0;
+  }
+}
+
+
+//promo15
+.promo15{
+  max-width: 23rem;
+  .fa-quote-right{
+    font-size: $font-size-h1;
+  }
+  .icon-next,
+  .icon-prev{
+    bottom: 2rem;
+    top: auto;
+  }
+  .img-circle{
+    width: 4rem;
+  }
+}
+
+
+//promo17
+
+.promo17{
+  max-width: 23rem;
+  .fa-envelope-o{
+    position: absolute;
+    font-size: 7rem;
+    color: $gray-lighter;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  .card-header{
+    padding: 1.5rem;
+  }
+  .card-text{
+    z-index: 1;
+  }
+}
+
+
+//promo18
+
+.promo18{
+  max-width: 23rem;
+  .fa-twitter{
+    font-size: $font-size-h1;
+  }
+  
+  .fa-angle-right,
+  .fa-angle-left{
+    font-size: $font-size-h4;
+  }
+}

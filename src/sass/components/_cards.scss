@@ -1,0 +1,390 @@
+//card 1
+.cardblock1{
+  max-width: 50rem;
+
+  .thumbelina {
+    list-style:none;
+    padding:0;
+    margin:0;
+    position:absolute;
+    white-space:nowrap;
+    font-size:0;
+    /* prevent annoying iPad cut/paste actions */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+  }
+
+  /* Style for the list items that surround the thumbnails */
+  .thumbelina li {
+    padding:5px;
+    line-height: 0;
+    margin:0;
+  }
+
+  /* Add a border to the thumbnails. */
+  .thumbelina li img {
+    border:1px solid #ccc;
+    max-width: 4rem;
+  }
+
+  /* Hover effect for the images */
+  .thumbelina li img:hover {
+    border:1px solid $gray;
+  }
+
+  .thumbelina-but {
+    position:absolute;
+    z-index: 1;
+    cursor:pointer;
+    font-size: $font-size-h2;
+    line-height: 0;
+  }
+
+  .thumbelina-but.horiz {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* Left edge button. */
+  .thumbelina-but.horiz.left {
+    left:-22px;
+
+  }
+  /* Right edge button */
+  .thumbelina-but.horiz.right {
+    right:-22px;
+
+  }
+
+  #slider2 {
+    position:relative;
+    width:100%;
+    height:4.6rem;
+  }
+
+  .stars{
+    .active{
+      .fa{
+        color: $brand-warning;
+      }
+    }
+  }
+  .new{
+    position: absolute;
+    top: 1rem;
+    display: block;
+    background-color: $brand-primary;
+    right: 0;
+    z-index: 3;
+    padding: 0 1rem;
+    color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0;
+      border: 12px solid transparent;
+      border-left: 10px solid $white;
+    }
+  }
+
+
+
+
+
+}
+
+//card 2
+.cardblock2{
+
+  .thumbelina {
+    list-style:none;
+    padding:0;
+    margin:0;
+    position:absolute;
+    white-space:nowrap;
+    font-size:0;
+    /* prevent annoying iPad cut/paste actions */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+  }
+
+  /* Style for the list items that surround the thumbnails */
+  .thumbelina li {
+    padding:5px;
+    line-height: 0;
+    margin:0;
+  }
+
+  /* Add a border to the thumbnails. */
+  .thumbelina li img {
+    border:1px solid #ccc;
+    max-width: 4rem;
+  }
+
+  /* Hover effect for the images */
+  .thumbelina li img:hover {
+    border:1px solid $gray;
+  }
+
+  .thumbelina-but {
+    position:absolute;
+    z-index: 1;
+    cursor:pointer;
+    font-size: $font-size-h2;
+    line-height: 0;
+  }
+
+  .thumbelina-but.horiz {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* Left edge button. */
+  .thumbelina-but.horiz.left {
+    left:-22px;
+
+  }
+  /* Right edge button */
+  .thumbelina-but.horiz.right {
+    right:-22px;
+
+  }
+
+  #slider22 {
+    position:relative;
+    width:100%;
+    height:4.6rem;
+  }
+
+
+  .color_btn .active{
+    background-color: $brand-warning;
+  }
+
+  .quant{
+    max-width: 4rem;
+    padding: .8rem 0;
+  }
+
+  .group-quant{
+
+  }
+
+  .stars{
+    .active{
+      .fa{
+        color: $brand-warning;
+      }
+    }
+  }
+  .new{
+    position: absolute;
+    top: 1rem;
+    display: block;
+    background-color: $brand-success;
+    right: 0;
+    z-index: 3;
+    padding: 0 1rem;
+    color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0;
+      border: 12px solid transparent;
+      border-left: 10px solid $white;
+    }
+  }
+}
+
+
+//card3
+.card3{
+  .paginator_2{
+    width: 100%;
+  }
+  .stars{
+    .active{
+      .fa{
+        color: $brand-warning;
+      }
+
+    }
+  }
+  .reva{
+    padding: .5rem;
+    margin-left: .5rem ;
+  }
+}
+
+//card4
+ .card4{
+
+   .stars{
+     .active{
+       .fa{
+         color: $brand-warning;
+       }
+
+     }
+   }
+ }
+
+
+ // card 5
+.cardblock5{
+  /*****************************/
+  .thumbelina {
+    list-style:none;
+    padding:0;
+    margin:0;
+    position:absolute;
+    white-space:nowrap;
+    font-size:0;
+  }
+
+  /* Style for the list items that surround the thumbnails */
+  .thumbelina li {
+    padding:.4rem;
+    line-height: 0;
+    margin:0;
+  }
+
+  /* Add a border to the thumbnails. */
+  .thumbelina li img {
+    border:1px solid $gray-lighter;
+    max-width: 5rem;
+  }
+
+  /* Hover effect for the images */
+  .thumbelina li img:hover {
+    border:1px solid $gray-light;
+  }
+
+  /* Common style for the buttons */
+  .thumbelina-but {
+    position:absolute;
+    z-index: 1;
+    cursor: pointer;
+    text-align:center;
+    vertical-align:middle;
+
+  }
+
+  /* Disabled style when button is not active due to extents being reached. */
+  /* You could do other things e.g. make buttons dissapear completely. */
+  .thumbelina-but.disabled,
+  .thumbelina-but.disabled:hover {
+    color: $gray-light;
+    cursor: default;
+    box-shadow:none;
+  }
+
+  /* Vertical buttons. */
+  .thumbelina-but.vert {
+    text-align: center;
+    width: 100%;
+    display: block;
+
+  }
+  /* Top edge button. */
+  .thumbelina-but.vert.top {
+    top:-25px;
+  }
+
+  /* Bottom edge button. */
+  .thumbelina-but.vert.bottom {
+    bottom:-25px;
+  }
+
+
+  #slider3 {
+    position:relative;
+    width:93px;
+    height:280px;
+
+
+  }
+
+
+
+/**************************************************/
+  .color_btn .active{
+    background-color: $brand-warning;
+  }
+
+
+
+  .stars{
+    .active{
+      .fa{
+        color: $brand-warning;
+      }
+    }
+  }
+  .share{
+    .fa{
+      font-size: $font-size-h4;
+    }
+  }
+
+  .yes,.no{
+    padding: 0 3px;
+    .btn{
+      width: 100%;
+    }
+  }
+  .nav-tabs .nav-link{
+    border: none;
+  }
+
+  
+  .price{
+    padding: .5rem .7rem;
+    position: relative;
+    border-color: $brand-primary;
+    &:after {
+      content: "";
+      position: absolute;
+      left: -2.4rem;
+      top: -2px;
+      border: 23px solid transparent;
+       @include border-radius();
+      border-right: 18px solid $brand-primary;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      left: -.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: .5rem;
+      height: .5rem;
+      border-radius: .5rem;
+      background-color: $white;
+      z-index: 25;
+     
+    }
+    
+    
+  }
+  
+  
+  .new{
+    position: absolute;
+    top: 1rem;
+    display: block;
+    background-color: $brand-warning;
+    right: 0;
+    z-index: 3;
+    padding: 0 1rem;
+    color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0;
+      border: 12px solid transparent;
+      border-left: 10px solid $white;
+    }
+  }
+}

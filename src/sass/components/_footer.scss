@@ -1,0 +1,182 @@
+// footer1
+.footer1 {
+
+  .fa {
+    font-size: $font-size-h6;
+    &:before {
+      z-index: 2;
+    }
+  }
+  .one {
+    &:before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background-color: $brand-info;
+      position: absolute;
+      border-radius: 2rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+  .two {
+    &:before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background-color: $brand-primary;
+      position: absolute;
+      border-radius: 2rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+  .three {
+    &:before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background-color: $brand-warning;
+      position: absolute;
+      border-radius: 2rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+
+}
+@include media-breakpoint-down(sm) {
+  .footer1 {
+    .navigation {
+      display: none;
+    }
+  }
+}
+// end footer1
+
+// footer1
+.footer2 {
+
+  .fa {
+    font-size: $font-size-h6;
+    &:before {
+      z-index: 2;
+    }
+  }
+
+  .two,
+  .three,
+  .four,
+  .one {
+    &:before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background-color: $gray-light;
+      position: absolute;
+      border-radius: 2rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+
+  .social {
+    .nav-item {
+      margin: 0 .8rem;
+    }
+  }
+
+  .logo {
+    @include size(2rem);
+  }
+  .input-group-addon {
+    background: $brand-primary;
+  }
+
+}
+// end footer2
+
+// footer 3
+.footer3 {
+
+}
+@include media-breakpoint-down(sm) {
+  .footer3 {
+    .navigation {
+      display: none;
+    }
+  }
+}
+// end footer 3
+
+// footer 4
+.footer4 {
+  .two,
+  .three,
+  .one {
+    &:before {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      background-color: $gray-light;
+      position: absolute;
+      border-radius: 2rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+
+}
+// end footer 3
+
+// footer 5
+.footer5 {
+  a {
+    color: $gray-light;
+  }
+  .logo {
+    @include size(2rem);
+  }
+}
+@include media-breakpoint-down(md) {
+  .footer5 {
+    .base {
+      display: none;
+    }
+  }
+
+}
+// end footer 5
+
+// footer 7
+.footer7 {
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .fa-heart {
+    color: $brand-danger;
+  }
+}
+@include media-breakpoint-down(md) {
+  .footer7 {
+    span {
+      display: none;
+    }
+    .logo {
+      @include clearfix;
+      position: relative;
+      transform: translate(-50%, 0%);
+
+    }
+  }
+
+}
+// end footer 7

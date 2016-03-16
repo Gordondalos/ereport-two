@@ -1,3 +1,4 @@
+/node_modules/*
 /web/bundles/
 /app/bootstrap.php.cache
 /app/cache/*
@@ -23,3 +24,4 @@
 /src/AppBundle/Entity/Status.php~
 /src/AppBundle/Entity/TypeReport.php~
 /src/AppBundle/Entity/User.php~
+/node_modules

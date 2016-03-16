@@ -1,0 +1,1914 @@
+//catalog1
+.catalog1 {
+  max-width: 15rem;
+  // Невидимый блок экранирует стрелочку на меню
+  // Так как бутстрап ее криво обрабатывает при клике
+  .no_click {
+    @include size($font-size-h2);
+    position: absolute;
+    right: 1rem;
+    z-index: 20;
+    top: 0.5rem;
+  }
+  .fa {
+    font-size: $font-size-h4;
+  }
+
+  // Выпадающий список
+  .sublinks {
+    padding: 1rem 0;
+    ul {
+      li {
+        color: $gray-lighter;
+        &:before {
+          content: "";
+          border: 1px solid $gray-lighter;
+          top: 0;
+          left: 1.5rem;
+          height: 100%;
+          width: 1px;
+          z-index: 1;
+          position: absolute;
+        }
+        a {
+          position: relative;
+          &:hover {
+            span {
+              color: $brand-danger;
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              left: -1.35rem;
+              top: 50%;
+              transform: translateY(-50%);
+              @include size(0.7rem);
+              @include border-radius(10rem);
+              background-color: $brand-danger;
+              z-index: 5;
+            }
+          }
+        }
+      }
+    }
+    .list-group-item {
+      border-radius: 0;
+    }
+  }
+}
+
+//catalog2
+.catalog2 {
+  max-width: 15rem;
+  // Невидимый блок экранирует стрелочку на меню
+  // Так как бутстрап ее криво обрабатывает при клике
+  .no_click {
+    @include size($font-size-h2);
+    position: absolute;
+    right: 1rem;
+    z-index: 20;
+    top: 0.5rem;
+  }
+  .fa {
+    font-size: $font-size-h6;
+  }
+  // Выпадающий список
+  .sublinks {
+    padding: 1rem 0;
+    ul {
+      li {
+        color: $gray-lighter;
+        a {
+          border-bottom: 1px solid $gray-lighter;
+          &:hover {
+            &:after {
+              width: 4px;
+              background-color: $brand-primary;
+              position: absolute;
+              left: -1.5rem;
+              z-index: 2;
+              top: 0;
+              content: "";
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    .list-group-item {
+      border-radius: 0;
+    }
+  }
+}
+
+//catalog3
+.catalog3 {
+  max-width: 15rem;
+  a {
+    &:hover,
+    &:focus,
+    &:active {
+      color: $brand-success;
+    }
+  }
+  .dropdown-menu {
+    min-width: 13rem;
+    right: -14rem;
+    left: auto;
+    top: 0;
+    background-color: $gray-lighter;
+    &:after {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 1rem;
+      border: 10px solid transparent;
+      border-right: 10px solid $gray-light;
+    }
+    a {
+      &:hover {
+        background-color: $brand-success;
+        color: $white;
+      }
+    }
+  }
+  .fa {
+    font-size: $font-size-h4;
+  }
+
+}
+
+//catalog4
+.catalog4 {
+  max-width: 15rem;
+  .content {
+    max-height: 20rem;
+  }
+  .checkbox {
+    &:hover,
+    &:focus,
+    &:active {
+      color: $brand-success;
+    }
+  }
+}
+
+// catalog5
+.catalog5 {
+  max-width: 18rem;
+
+  .ui-slider {
+    position: relative;
+  }
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    @include size(1rem);
+    border: .3rem solid $white;
+    box-shadow: 1px 1px 4px $gray-light;
+    background-color: $brand-danger;
+    @include border-radius(1rem);
+    cursor: pointer
+  }
+  .ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    overflow: hidden;
+  }
+  .ui-slider-horizontal {
+    height: .5rem;
+  }
+  .ui-slider-horizontal .ui-slider-handle {
+    top: -5px;
+    margin-left: -6px;
+  }
+  .ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 100%;
+  }
+  .ui-slider-horizontal .ui-slider-range-min {
+    left: 0;
+  }
+  .ui-slider-horizontal .ui-slider-range-max {
+    right: 0;
+  }
+  .ui-widget-content {
+    border: 1px solid $gray-lighter;
+  }
+  .ui-widget-header {
+    background: $brand-danger;
+  }
+  .ui-corner-all {
+    @include border-radius();
+  }
+
+  #amount, #amount1 {
+    max-width: 100%;
+    outline: none !important;
+    border: 1px solid $gray-lighter;
+
+  }
+  a:focus {
+    outline: none !important;
+  }
+
+  .fa-arrow-left {
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    transform: translateY(-50%);
+  }
+  .fa-arrow-right {
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    transform: translateY(-50%);
+  }
+}
+
+//catalog6
+.catalog6 {
+  max-width: 18rem;
+  input:focus {
+    outline: none !important;
+  }
+}
+
+//catalog7
+.catalog7 {
+  max-width: 15rem;
+  .fa {
+    color: $brand-warning;
+
+  }
+
+  .c7table {
+    display: table;
+    width: 100%;
+  }
+  .rows {
+    display: table-row;
+    .nav-item {
+      display: table-cell;
+    }
+  }
+  input:focus {
+    outline: none !important;
+  }
+}
+
+//catalog8
+.catalog8 {
+  max-width: 18rem;
+  input:focus {
+    outline: none !important;
+  }
+  .fa {
+    color: $brand-warning;
+
+  }
+  input {
+    margin-top: .5rem !important;
+  }
+}
+
+//catalog9
+.catalog9 {
+  max-width: 15rem;
+
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+  }
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 8px;
+    top: -20px;
+    margin-left: -20px;
+
+    // если поправить этот бордер радиус на поменьше то будут не круглые
+    border-radius: 1.5rem;
+    background-color: $white;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    @include size(1rem);
+    left: 8px;
+    top: -20px;
+    margin-left: -1rem;
+    padding-top: 5px;
+    font-size: 11px;
+  }
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: none;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+  .checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+  }
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+  }
+  .checkbox.checkbox-inline {
+    margin-top: 0;
+  }
+  .checkbox-primary input[type="checkbox"]:checked + label::before {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+  .checkbox-primary input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-danger input[type="checkbox"]:checked + label::before {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
+  .checkbox-danger input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-info input[type="checkbox"]:checked + label::before {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+  .checkbox-info input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-warning input[type="checkbox"]:checked + label::before {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+  .checkbox-warning input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-success input[type="checkbox"]:checked + label::before {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+  .checkbox-success input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  // Этих цветов нет по дефолту
+  .checkbox-primary {
+    label::before {
+      background-color: $brand-primary;
+    }
+  }
+  .checkbox-success {
+    label::before {
+      background-color: $brand-success;
+    }
+  }
+  .checkbox-info {
+    label::before {
+      background-color: $brand-info;
+    }
+  }
+
+  .checkbox-warning {
+    label::before {
+      background-color: $brand-warning;
+    }
+  }
+
+  .checkbox-danger {
+    label::before {
+      background-color: $brand-danger;
+    }
+  }
+
+  .tables {
+    display: table;
+    width: 100%;
+  }
+  .rows {
+    display: table-row;
+    .checkbox {
+      display: table-cell;
+    }
+  }
+
+}
+
+//catalog10
+.catalog10 {
+  max-width: 15rem;
+
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 8px;
+
+    // если поправить этот бордер радиус на поменьше то будут не круглые
+    border-radius: $border-radius;
+    background-color: $white;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    @include size(1rem);
+    left: 30px;
+    margin-left: -1rem;
+    padding-top: 5px;
+    font-size: 11px;
+  }
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: none;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+  .checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+  }
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+  }
+  .checkbox.checkbox-inline {
+    margin-top: 0;
+  }
+  .checkbox-primary input[type="checkbox"]:checked + label::before {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+  .checkbox-primary input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-danger input[type="checkbox"]:checked + label::before {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
+  .checkbox-danger input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-info input[type="checkbox"]:checked + label::before {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+  .checkbox-info input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-warning input[type="checkbox"]:checked + label::before {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+  .checkbox-warning input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-success input[type="checkbox"]:checked + label::before {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+  .checkbox-success input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  // Этих цветов нет по дефолту
+  .checkbox-primary {
+    label::before {
+      background-color: $brand-primary;
+    }
+  }
+  .checkbox-success {
+    label::before {
+      background-color: $brand-success;
+    }
+  }
+  .checkbox-info {
+    label::before {
+      background-color: $brand-info;
+    }
+  }
+
+  .checkbox-warning {
+    label::before {
+      background-color: $brand-warning;
+    }
+  }
+
+  .checkbox-danger {
+    label::before {
+      background-color: $brand-danger;
+    }
+  }
+}
+
+//catalog11
+.catalog11 {
+  max-width: 18rem;
+}
+
+//catalog12
+.catalog12 {
+  max-width: 18rem;
+  .fa {
+    font-size: $font-size-h3;
+  }
+  li {
+    position: relative;
+    &:after {
+      position: absolute;
+      bottom: -0.5rem;
+      content: "____";
+      left: 50%;
+      transform: translateX(-50%);
+      color: $gray-light;
+    }
+    &:last-child {
+      &:after {
+        content: "";
+      }
+    }
+  }
+  a {
+    color: $gray-dark;
+  }
+}
+
+//catalog13
+.catalog13 {
+  max-width: 18rem;
+}
+
+//catalog14
+.catalog14 {
+  max-width: 18rem;
+}
+
+//cataog15
+.cataog15 {
+  max-width: 18rem;
+
+  .l-bg-primary {
+    position: relative;
+    &:after {
+      display: block;
+      position: absolute;
+      width: .5rem;
+      height: 1rem;
+      background-color: $brand-primary;
+      content: "";
+      top: 50%;
+      left: -1rem;
+      transform: translateY(-50%);
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      left: -0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border: .5rem solid transparent;
+      border-left: .5rem solid $brand-primary;
+    }
+  }
+  .circle {
+    position: relative;
+    &:before {
+      @include size(.4rem);
+      position: absolute;
+      left: .2rem;
+      content: "";
+      top: 50%;
+      background-color: $white;
+      @include border-radius(.4rem);
+      transform: translateY(-50%);
+      z-index: 5;
+    }
+  }
+
+  .l-bg-success {
+    @extend .l-bg-primary;
+    &:after {
+      background-color: $brand-success;
+    }
+    &:before {
+      border-left: .5rem solid $brand-success;
+    }
+  }
+  .l-bg-info {
+    @extend .l-bg-primary;
+    &:after {
+      background-color: $brand-info;
+    }
+    &:before {
+      border-left: .5rem solid $brand-info;
+    }
+  }
+  .l-bg-warning {
+    @extend .l-bg-primary;
+    &:after {
+      background-color: $brand-warning;
+    }
+    &:before {
+      border-left: .5rem solid $brand-warning;
+    }
+  }
+  .l-bg-danger {
+    @extend .l-bg-primary;
+    &:after {
+      background-color: $brand-danger;
+    }
+    &:before {
+      border-left: .5rem solid $brand-danger;
+    }
+  }
+}
+
+//catalog16
+.catalog16 {
+  max-width: 16rem;
+  a {
+    position: relative;
+    padding: .2rem .5rem;
+    &:hover {
+      color: $white;
+      background-color: $brand-success;
+      &:after {
+        position: absolute;
+        content: "";
+        right: -1.87rem;
+        top: 50%;
+        transform: translateY(-50%);
+        border: .99rem solid transparent;
+        border-left: .99rem solid $brand-success;
+        z-index: 3;
+      }
+    }
+  }
+}
+
+//catalog17
+.catalog17 {
+  max-width: 15rem;
+  .content {
+    max-height: 20rem;
+  }
+  .checkbox {
+    &:hover,
+    &:focus,
+    &:active {
+      color: $brand-success;
+    }
+  }
+}
+
+// catalog18
+.catalog18 {
+  max-width: 18rem;
+
+  .ui-slider {
+    position: relative;
+  }
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    @include size(1rem);
+    border: .3rem solid $white;
+    box-shadow: 1px 1px 4px $gray-light;
+    background-color: $brand-danger;
+    @include border-radius(1rem);
+    cursor: pointer
+  }
+  .ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    overflow: hidden;
+  }
+  .ui-slider-horizontal {
+    height: .5rem;
+  }
+  .ui-slider-horizontal .ui-slider-handle {
+    top: -5px;
+    margin-left: -6px;
+  }
+  .ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 100%;
+  }
+  .ui-slider-horizontal .ui-slider-range-min {
+    left: 0;
+  }
+  .ui-slider-horizontal .ui-slider-range-max {
+    right: 0;
+  }
+  .ui-widget-content {
+    border: 1px solid $gray-lighter;
+  }
+  .ui-widget-header {
+    background: $brand-danger;
+  }
+  .ui-corner-all {
+    @include border-radius();
+  }
+
+  #amountt, #amountt1 {
+    max-width: 100%;
+    outline: none !important;
+    border: none;
+
+  }
+  .line {
+    &:after {
+      position: absolute;
+      content: "__";
+      top: 0;
+      right: -.5rem;
+      z-index: 2;
+      color: $gray-dark;
+
+    }
+  }
+
+  a:focus {
+    outline: none !important;
+  }
+
+  .fa-arrow-left {
+    position: absolute;
+    top: 50%;
+    right: -1px;
+    transform: translateY(-50%);
+  }
+  .fa-arrow-right {
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    transform: translateY(-50%);
+  }
+}
+
+//catalog19
+.catalog19 {
+  max-width: 18rem;
+  input:focus {
+    outline: none !important;
+  }
+}
+
+//catalog20
+.catalog20 {
+  max-width: 15rem;
+  .fa {
+    color: $brand-warning;
+
+  }
+
+  .c7table {
+    display: table;
+    width: 100%;
+  }
+  .rows {
+    display: table-row;
+    .nav-item {
+      display: table-cell;
+    }
+  }
+  input:focus {
+    outline: none !important;
+  }
+}
+
+//catalog21
+.catalog21 {
+  max-width: 18rem;
+  input:focus {
+    outline: none !important;
+  }
+  .fa {
+    color: $brand-warning;
+
+  }
+  input {
+    margin-top: .5rem !important;
+  }
+}
+
+//catalog22
+.catalog22 {
+  max-width: 15rem;
+
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+  }
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 8px;
+    top: -20px;
+    margin-left: -20px;
+
+    // если поправить этот бордер радиус на поменьше то будут не круглые
+    border-radius: 1.5rem;
+    background-color: $white;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    @include size(1rem);
+    left: 8px;
+    top: -20px;
+    margin-left: -1rem;
+    padding-top: 5px;
+    font-size: 11px;
+  }
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: none;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+  .checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+  }
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+  }
+  .checkbox.checkbox-inline {
+    margin-top: 0;
+  }
+  .checkbox-primary input[type="checkbox"]:checked + label::before {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+  .checkbox-primary input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-danger input[type="checkbox"]:checked + label::before {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
+  .checkbox-danger input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-info input[type="checkbox"]:checked + label::before {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+  .checkbox-info input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-warning input[type="checkbox"]:checked + label::before {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+  .checkbox-warning input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-success input[type="checkbox"]:checked + label::before {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+  .checkbox-success input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  // Этих цветов нет по дефолту
+  .checkbox-primary {
+    label::before {
+      background-color: $brand-primary;
+    }
+  }
+  .checkbox-success {
+    label::before {
+      background-color: $brand-success;
+    }
+  }
+  .checkbox-info {
+    label::before {
+      background-color: $brand-info;
+    }
+  }
+
+  .checkbox-warning {
+    label::before {
+      background-color: $brand-warning;
+    }
+  }
+
+  .checkbox-danger {
+    label::before {
+      background-color: $brand-danger;
+    }
+  }
+
+  .tables {
+    display: table;
+    width: 100%;
+  }
+  .rows {
+    display: table-row;
+    .checkbox {
+      display: table-cell;
+    }
+  }
+
+}
+
+//catalog23
+.catalog23 {
+  max-width: 15rem;
+
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 8px;
+
+    // если поправить этот бордер радиус на поменьше то будут не круглые
+    border-radius: $border-radius;
+    background-color: $white;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    @include size(1rem);
+    left: 30px;
+    margin-left: -1rem;
+    padding-top: 5px;
+    font-size: 11px;
+  }
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: none;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+  .checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+  }
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+  }
+  .checkbox.checkbox-inline {
+    margin-top: 0;
+  }
+  .checkbox-primary input[type="checkbox"]:checked + label::before {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+  .checkbox-primary input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-danger input[type="checkbox"]:checked + label::before {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
+  .checkbox-danger input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-info input[type="checkbox"]:checked + label::before {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+  .checkbox-info input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-warning input[type="checkbox"]:checked + label::before {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+  .checkbox-warning input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-success input[type="checkbox"]:checked + label::before {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+  .checkbox-success input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  // Этих цветов нет по дефолту
+  .checkbox-primary {
+    label::before {
+      background-color: $brand-primary;
+    }
+  }
+  .checkbox-success {
+    label::before {
+      background-color: $brand-success;
+    }
+  }
+  .checkbox-info {
+    label::before {
+      background-color: $brand-info;
+    }
+  }
+
+  .checkbox-warning {
+    label::before {
+      background-color: $brand-warning;
+    }
+  }
+
+  .checkbox-danger {
+    label::before {
+      background-color: $brand-danger;
+    }
+  }
+}
+
+//catalog24
+.catalog24 {
+  .buy {
+    &:after {
+      @include size(2.5rem);
+      background-color: $brand-danger;
+      content: "";
+      @include border-radius();
+      transform: translateX(-50%) rotate(45deg);
+      top: -2.5rem;
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+
+    }
+  }
+  .text-buy {
+    position: absolute;
+    top: -.85rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: $white;
+    font-size: $font-size-h6;
+  }
+  .card-title {
+    padding-top: 1rem;
+  }
+  .carousel-control.right,
+  .carousel-control.left {
+    background: none;
+  }
+
+  .fa-arrow-left,
+  .fa-arrow-right {
+    color: $gray-dark;
+    top: -4rem;
+    background-color: $gray-lighter;
+    @include border-radius();
+    @include box-shadow(0px 1px 3px $gray-dark);
+  }
+  .carousel-control {
+    top: -3rem;
+    width: auto;
+  }
+  .new {
+    position: absolute;
+    top: 1rem;
+    display: block;
+    background-color: $brand-warning;
+    right: 0;
+    z-index: 1;
+    color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 12px solid transparent;
+      border-left: 10px solid $white;
+    }
+  }
+  .lines {
+    position: absolute;
+    background-color: $gray-lightest;
+    border-radius: $border-radius;
+    border: 1px solid $gray-lighter;
+    height: .25rem;
+    width: 80%;
+    transform: translateX(-50%);
+    z-index: -1;
+    top: .7rem;
+    left: 50%;
+  }
+  .best {
+    background-color: $white;
+
+  }
+  .card {
+    .overley-hover {
+      display: none;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .tables {
+        display: table;
+        width: 100%;
+        .rows {
+          display: table-row;
+          a {
+            display: table-cell;
+            &.size {
+              width: 20%;
+            }
+          }
+          .circle {
+            @include size(1.5rem);
+            @include border-radius(100%);
+            border: 3px solid $gray-lighter;
+            @include box-shadow();
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    &:hover {
+      .overley-hover {
+        display: block;
+        background: rgba(0, 0, 0, .1);
+      }
+    }
+  }
+}
+
+// button
+.help {
+  transform: translate3d(0, 0, 0);
+  background-color: $gray-dark;
+  padding: 9pt 20px;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1), 0 0 0 1px hsla(0, 0%, 100%, .1);
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.help2 {
+  transform: translate3d(0, 0, 0);
+  background-color: $brand-success;
+  padding: 9pt 20px;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  font-size: 1pc;
+  font-weight: 700;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, .1), 0 0 0 1px hsla(0, 0%, 100%, .1);
+  &:hover {
+    color: $white;
+  }
+}
+
+.download {
+  font-weight: 600;
+  font-family: "proxima-nova", "Helvetica Neue", sans-serif;
+  background-color: #449be6;
+  text-shadow: rgba(0, 0, 0, 0.0980392) 0 1px 1px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, .25) 0, transparent 100%);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .4), inset 0 1px 0 hsla(0, 0%, 100%, .18);
+  border: none;
+  transition: background-color .2s;
+  transition-property: background-color;
+  transition-duration: 0.7s;
+  transition-timing-function: initial;
+  transition-delay: initial;
+
+  .fa2 {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: -15px;
+  }
+
+  &:hover {
+    .fa-arrow-circle-down {
+      transform: translate(0, 15px);
+      transition-duration: 0.5s;
+      opacity: 0;
+    }
+    .fa2 {
+      transition-duration: 0.7s;
+      opacity: 1;
+      transform: translate(0, 16px);
+    }
+  }
+}
+
+//  end button
+
+//catalog25
+.catalog25 {
+  strike {
+    &:hover {
+      color: $white;
+    }
+  }
+  .price {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      right: -2.38rem;
+      top: -2px;
+      @include border-radius();
+      border: 16px solid transparent;
+      border-left: 23px solid $brand-primary;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      right: -.7rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: .5rem;
+      height: .5rem;
+      border-radius: .5rem;
+      background-color: $white;
+      z-index: 25;
+    }
+  }
+  .carousel-inner .btn {
+    padding: 3px 7px !important;
+  }
+
+  .overley-hover {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    i {
+      font-size: $font-size-h4;
+    }
+
+  }
+
+  .card {
+    &:hover {
+      .overley-hover {
+        display: block;
+      }
+    }
+  }
+}
+
+//catalog26
+.catalog26 {
+  .carousel-control.right,
+  .carousel-control.left {
+    background: none;
+  }
+
+  .fa-arrow-left,
+  .fa-arrow-right {
+    color: $gray-dark;
+    top: -4rem;
+    background-color: $gray-lighter;
+    @include border-radius();
+    @include box-shadow(0px 1px 3px $gray-dark);
+  }
+  .carousel-control {
+    top: -3rem;
+    width: auto;
+  }
+  .new {
+    position: absolute;
+    top: 1rem;
+    display: block;
+    right: 0;
+    z-index: 1;
+    color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 12px solid transparent;
+      border-left: 10px solid $white;
+    }
+  }
+  .lines {
+    position: absolute;
+    background-color: $gray-lighter;
+    border-radius: $border-radius;
+    border: 1px solid $gray-light;
+    height: .25rem;
+    width: 80%;
+    transform: translateX(-50%);
+    top: .7rem;
+    left: 50%;
+  }
+  .best {
+    background-color: $gray-lightest;
+    z-index: 2;
+
+  }
+  .card {
+    .card-block {
+      z-index: 3;
+      background-color: $white;
+    }
+
+    .overley-hover {
+      display: none;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(14, 58, 224, 0.6);
+      text-align: center;
+      @include border-radius();
+      .fa-eye {
+        margin-top: 35%;
+        font-size: 4rem;
+        color: $white;
+        z-index: 4;
+      }
+
+    }
+    &:hover {
+      .overley-hover {
+        display: block;
+      }
+    }
+  }
+  .btn-secondary:hover {
+    background-color: $brand-primary;
+    color: white;
+    border: 1px solid $brand-primary;
+  }
+
+}
+
+//catalog27
+.catalog27 {
+  .carousel-control.right,
+  .carousel-control.left {
+    background: none;
+  }
+
+  .fa-arrow-left,
+  .fa-arrow-right {
+    color: $gray-dark;
+    top: -4rem;
+    @include border-radius();
+
+  }
+  .carousel-control {
+    top: -3rem;
+    width: auto;
+  }
+  .new {
+    position: absolute;
+    top: 1rem;
+    display: block;
+    right: 0;
+    z-index: 1;
+    color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 12px solid transparent;
+      border-left: 10px solid $white;
+    }
+  }
+
+  .card {
+    .card-block {
+      z-index: 3;
+      background-color: $white;
+    }
+
+    .overley-hover {
+      display: none;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      @include border-radius();
+      &:after {
+        content: "";
+        position: absolute;
+        right: -2.5rem;
+        top: -2.55rem;
+        border: 40px solid transparent;
+        border-left: 40px solid $brand-danger;
+        transform: rotate(-45deg);
+      }
+      &:before {
+        font-family: 'FontAwesome';
+        content: "\f291";
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
+        color: $white;
+        z-index: 3;
+        cursor: pointer;
+
+      }
+      .fa-eye {
+        margin-top: 35%;
+        font-size: 4rem;
+        color: $white;
+        z-index: 4;
+      }
+
+    }
+    &:hover {
+      .overley-hover {
+        display: block;
+      }
+    }
+  }
+  .btn-secondary:hover {
+    background-color: $brand-primary;
+    color: white;
+    border: 1px solid $brand-primary;
+  }
+
+  .btn-group {
+    z-index: 4;
+  }
+
+}
+
+//catalog28
+.catalog28 {
+  .carousel-control.right,
+  .carousel-control.left {
+    background: none;
+  }
+
+  .fa-arrow-left,
+  .fa-arrow-right {
+    color: $gray-dark;
+    top: -4rem;
+    background-color: $gray-lighter;
+    @include border-radius(100%);
+    @include box-shadow(0px 1px 3px $gray-dark);
+  }
+  .carousel-control {
+    top: -3rem;
+    width: auto;
+  }
+
+  .lines {
+    position: absolute;
+    background-color: $gray-lighter;
+    border-radius: $border-radius;
+    border: 1px solid $gray-light;
+    height: .25rem;
+    width: 80%;
+    transform: translateX(-50%);
+    top: .7rem;
+    left: 50%;
+  }
+  .best {
+    background-color: $gray-lightest;
+    z-index: 2;
+
+  }
+  .card {
+    .stars {
+      margin-top: -2.1rem;
+      display: inline-block;
+      top: 0;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+  }
+
+  #burst-12 {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    @include stars12($brand-danger, 3rem, $white);
+  }
+  #burst-13 {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    @include stars12($brand-success, 3rem, $white);
+  }
+  #burst-14 {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    @include stars12($brand-primary, 3rem, $white);
+  }
+  #burst-15 {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    @include stars12($brand-warning, 3rem, $white);
+  }
+
+}
+
+// catalog29
+.catalog29 {
+  .angle {
+    &:after {
+      content: '\f105';
+      position: absolute;
+      font-family: 'FontAwesome';
+      left: 0;
+      font-size: $font-size-h5;
+      line-height: 1.7rem;
+      color: $gray-light;
+    }
+
+  }
+}
+
+// catalog30
+.catalog30 {
+  .angle {
+    &:after {
+      content: '/';
+      position: absolute;
+      font-family: 'FontAwesome';
+      left: 0;
+      font-size: $font-size-h5;
+      line-height: 1.7rem;
+      color: $gray-light;
+    }
+  }
+}
+
+//catalog31
+.catalog31 {
+  .btn {
+    &:hover {
+      border-bottom: 1px solid $brand-success;
+    }
+  }
+}
+
+//catalog36
+.catalog36 {
+
+  a {
+    border-bottom: 2px solid transparent;
+    &:hover {
+      color: $brand-primary;
+      border-bottom: 2px solid $brand-primary;
+      text-decoration: none;
+    }
+  }
+}
+
+//catalog37
+.catalog37 {
+  ul {
+    a {
+      padding: .5rem .8rem;
+      &:hover {
+        color: $white;
+        background-color: $brand-success;
+        @include border-radius(100%);
+        text-decoration: none;
+      }
+    }
+  }
+  .fa {
+    @include border-radius(100%);
+    @include size(2rem);
+    padding-top: .5rem;
+    display: inline-block;
+    background-color: $white;
+  }
+  a {
+    padding: .5rem .8rem;
+    &:hover {
+      color: $text-muted;
+      .fa {
+        background-color: $brand-success;
+        color: $white;
+        border: 1px solid $brand-success;
+      }
+    }
+  }
+
+  .right, .left {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.catalog38 {
+  .l10 {
+    background-image: url(/img/catalog/10.png);
+    background-repeat: no-repeat;
+    @include size(5rem);
+    background-position: center;
+    background-size: cover;
+    padding: 1.5rem;
+    padding-top: 1.7rem;
+  }
+  .l20 {
+    @extend .l10;
+    background-image: url(/img/catalog/20.png);
+  }
+  .l30 {
+    @extend .l10;
+    background-image: url(/img/catalog/30.png);
+  }
+  .l40 {
+    @extend .l10;
+    background-image: url(/img/catalog/40.png);
+  }
+  .l50 {
+    @extend .l10;
+    background-image: url(/img/catalog/50.png);
+  }
+  .l60 {
+    @extend .l10;
+    background-image: url(/img/catalog/60.png);
+  }
+  .l70 {
+    @extend .l10;
+    background-image: url(/img/catalog/70.png);
+  }
+  .l80 {
+    @extend .l10;
+    background-image: url(/img/catalog/80.png);
+  }
+}
+
+
+
+
+//catalog39
+.catalog39{
+    a:before {
+      content: "";
+      position: absolute;
+      background-image: url(/img/catalog/angle.png);
+      right: -5px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      @include size(1rem, 2.6rem);
+      top:0;
+    }
+}
+
+//catalog42
+.catalog42{
+  ul a:hover{
+    position: relative;
+    color: $white;
+    background-color: $brand-success;
+    &:after{
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-bottom: 5px solid $brand-success;
+    }
+  }
+}
+
+
+
+//catalog43
+.catalog43{
+  ul a{
+    border-bottom: 1px solid transparent;
+
+    &:hover{
+      color: $brand-warning;
+      border-bottom: 1px solid $brand-warning;
+    }
+  }
+
+}
+
+
+
+
+//catalog46
+.catalog46{
+  .tumbler {
+    display: block;
+    &:hover {
+      &:after {
+        background-image: url(/img/catalog/c4.png);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        content: '';
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        opacity: .8;
+      }
+    }
+  }
+}
+
+//catalog47
+.catalog47{
+  max-width: 100%;
+  .thumbelina {
+    list-style:none;
+    padding:0;
+    margin:0;
+    position:absolute;
+    white-space:nowrap;
+    font-size:0;
+    /* prevent annoying iPad cut/paste actions */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+  }
+
+  /* Style for the list items that surround the thumbnails */
+  .thumbelina li {
+    padding:5px;
+    line-height: 0;
+    margin:0;
+  }
+
+  /* Add a border to the thumbnails. */
+  .thumbelina li img {
+    border:1px solid #ccc;
+    max-width: 8rem;
+  }
+
+  /* Hover effect for the images */
+  .thumbelina li img:hover {
+    border:1px solid $gray;
+  }
+
+  .thumbelina-but {
+    position:absolute;
+    z-index: 1;
+    cursor:pointer;
+    font-size: $font-size-h2;
+    line-height: 0;
+  }
+
+  .thumbelina-but.horiz {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* Left edge button. */
+  .thumbelina-but.horiz.left {
+    left:-32px;
+
+  }
+  /* Right edge button */
+  .thumbelina-but.horiz.right {
+    right:-32px;
+
+  }
+  #slider22 {
+    position:relative;
+    width:100%;
+    height:8.6rem;
+  }
+  .tumbler{
+    position: relative;
+    display: block;
+    &:hover{
+      &:after{
+        background-image: url(/img/catalog/c4.png);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        content: '';
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+
+      }
+    }
+  }
+
+  .fa{
+    &:before{
+      z-index: 2;
+      position: relative;
+    }
+    
+    &:after{
+      @include size(2rem);
+      @include border-radius(100%);
+      border: 1px solid $gray-light;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-30%);
+    }
+  }
+}
+
+
+

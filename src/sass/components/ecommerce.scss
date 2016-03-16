@@ -1,0 +1,1235 @@
+//egl = ecommerce grade light (original name, was renamed to 'ecommerce')
+
+//ecommerce card1
+.egl-card1 {
+  max-width: 23rem;
+  .card .new {
+    position: absolute;
+    top: 1rem;
+    display: block;
+    background-color: $brand-warning;
+    right: 0;
+    z-index: 3;
+    color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 12px solid transparent;
+      border-left: 10px solid $white;
+    }
+  }
+  .active {
+    color: $brand-warning;
+  }
+  .label {
+    position: absolute;
+    @include size(2rem, 4rem);
+    right: 2rem;
+    top: 0;
+    line-height: 5;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: 1rem solid transparent;
+      border-bottom: .958rem solid $white;
+    }
+  }
+}
+
+//ecommerce card2
+.egl-card2 {
+  max-width: 23rem;
+  .circle-buttons-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translate(35%, -50%);
+    .circle-button {
+      i {
+        position: absolute;
+        top: 50%;
+        transform: translate(153%, -50%);
+        color: $white;
+        @include size(1rem);
+      }
+      .img-circle {
+        border: 2px solid $white;
+      }
+    }
+  }
+}
+
+//ecommerce card3
+.egl-card3 {
+  max-width: 23rem;
+  .old-price {
+    position: absolute;
+    margin-left: -6rem;
+  }
+  .heart-red {
+    color: $brand-danger;
+  }
+}
+
+//ecommerce card4
+.egl-card4 {
+  max-width: 17rem;
+  .mrt {
+    margin-top: 0.2rem;
+  }
+}
+
+//ecommerce card5
+.egl-card5 {
+  max-width: 17rem;
+}
+
+//ecommerce card6
+.egl-card6 {
+  max-width: 17rem;
+  .sum {
+    &:before {
+      content: "___________";
+      position: absolute;
+      background-color: $white;
+      top: 45%;
+      transform: translateY(-50%);
+      right: 1rem;
+      padding: 0.2rem;
+    }
+    &:after {
+      content: "___________";
+      position: absolute;
+      left: 1rem;
+      background-color: $white;
+      padding: 0.2rem;
+      top: 45%;
+      transform: translateY(-50%);
+    }
+  }
+  .lco {
+    color: $brand-info;
+  }
+}
+
+//ecommerce card7
+.egl-card7 {
+  max-width: 17rem;
+  .active {
+    color: $brand-warning;
+  }
+  .fa-plus-circle {
+    position: absolute;
+    background-color: $white;
+    top: 0;
+    right: 0;
+    font-size: $font-size-xs;
+    border-radius: $font-size-xs;
+  }
+  .fa-shopping-bag {
+    font-size: $font-size-lg;
+  }
+  .card-block {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+}
+
+//ecommerce card8
+.egl-card8 {
+  max-width: 35rem;
+  .lcolcard {
+    background-color: $white;
+  }
+  .fa-star {
+    color: $white;
+  }
+  .card-footer {
+    padding-top: 6rem;
+    background-color: $white;
+    border-top: none;
+  }
+  .card-header {
+    border-top: 1px solid $gray-lighter;
+    font-size: $font-size-h4;
+  }
+  .pic {
+    position: absolute;
+    top: 9rem;
+    right: -2rem;
+    z-index: 1;
+  }
+  .label {
+    background-color: $brand-danger;
+    position: absolute;
+    @include size(2rem, 4rem);
+    left: 2rem;
+    top: 0;
+    line-height: 5;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: 1rem solid transparent;
+      border-bottom: .958rem solid $white;
+    }
+  }
+}
+
+//ecommerce card9
+.egl-card9 {
+  max-width: 35rem;
+  .btn-pimary {
+    background-color: $brand-primary;
+  }
+  .low {
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+  }
+  .fa-clock-o {
+    font-size: $font-size-lg;
+    margin-top: 1.7rem;
+  }
+  .old-price {
+    position: absolute;
+    margin-left: 4rem;
+  }
+  .active {
+    border: 2px solid $brand-success;
+  }
+}
+
+//ecommerce card10
+.egl-card10 {
+
+  .ui-slider {
+    position: relative;
+  }
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    @include size(1rem);
+    border: .3rem solid $white;
+    box-shadow: 1px 1px 4px $gray-light;
+    background-color: $brand-warning;
+    @include border-radius(1rem);
+    cursor: pointer
+  }
+  .ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    overflow: hidden;
+  }
+  .ui-slider-horizontal {
+    height: .5rem;
+  }
+  .ui-slider-horizontal .ui-slider-handle {
+    top: -5px;
+    margin-left: -6px;
+  }
+  .ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 100%;
+  }
+  .ui-slider-horizontal .ui-slider-range-min {
+    left: 0;
+  }
+  .ui-slider-horizontal .ui-slider-range-max {
+    right: 0;
+  }
+  .ui-widget-content {
+    border: 1px solid $gray-lighter;
+  }
+  .ui-widget-header {
+    background: $brand-warning;
+  }
+  .ui-corner-all {
+    @include border-radius();
+  }
+
+  #range-min, #range-max {
+    max-width: 100%;
+    outline: none !important;
+    border: none;
+
+  }
+  .dropdown-toggle:after {
+    float: right;
+    margin-top: .7rem;
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+}
+
+//ecommerce card11
+.egl-card11 {
+
+  .dropdown-toggle:after {
+    float: right;
+    margin-top: .7rem;
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .switcher {
+    width: 50px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+
+  }
+
+  .switcher * {
+    transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    -ms-transition: all .2s;
+  }
+
+  .switcher .sw_btn {
+    background: $white;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    display: block;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    border: 2px solid  $brand-danger;
+  }
+
+  .switcher .bg {
+    background: $brand-danger;
+
+  }
+  .switcher input.switcher-value:checked ~ .sw_btn {
+    margin-left: 30px;
+    border: 2px solid  $brand-success ;
+  }
+  .switcher input.switcher-value:checked ~ .sw_btn ~ .bg { background: $brand-success }
+  .switcher input.switcher-value { display: none; }
+  .switcher .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    @include border-radius(20px);
+
+  }
+}
+
+//ecommerce card12
+.egl-card12 {
+    .nav-link {
+      display: block;
+      padding: 0 0.5rem;
+      color: $gray-light;
+      &:hover {
+        border-bottom: 2px solid $brand-info;
+      }
+  }
+
+  form {
+    margin-top: 0.2rem;
+    input,
+    button {
+      background: $gray-lighter;
+    }
+  }
+}
+
+//ecommerce card13
+.egl-card13 {
+  max-width: 17rem;
+
+  .dropdown-toggle:after {
+    float: right;
+    margin-top: .7rem;
+  }
+  .dropdown-menu {
+    width: 100%;
+  }
+}
+
+//ecommerce card14
+.egl-card14{
+  max-width: 17rem;
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px;
+  }
+
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 8px;
+    top: -20px;
+    margin-left: -20px;
+    border-radius: 1.5rem;
+    background-color: $white;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    @include size(1rem);
+    left: 8px;
+    top: -20px;
+    margin-left: -1rem;
+    padding-top: 5px;
+    font-size: 11px;
+  }
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: none;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+  .checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+  }
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+  }
+  .checkbox.checkbox-inline {
+    margin-top: 0;
+  }
+  .checkbox-primary input[type="checkbox"]:checked + label::before {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+
+  .checkbox-primary input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-danger input[type="checkbox"]:checked + label::before {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
+  .checkbox-danger input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-info input[type="checkbox"]:checked + label::before {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+  .checkbox-info input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-warning input[type="checkbox"]:checked + label::before {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+  .checkbox-warning input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-success input[type="checkbox"]:checked + label::before {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+  .checkbox-success input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  // Этих цветов нет по дефолту
+  .checkbox-primary{
+    label::before {
+      background-color: $brand-primary;
+    }
+  }
+  .checkbox-success{
+    label::before {
+      background-color: $brand-success;
+    }
+  }
+  .checkbox-info{
+    label::before {
+      background-color: $brand-info;
+    }
+  }
+
+  .checkbox-warning{
+    label::before {
+      background-color: $brand-warning;
+    }
+  }
+
+  .checkbox-danger{
+    label::before {
+      background-color: $brand-danger;
+    }
+  }
+
+  .tab {
+    display: table;
+    width: 100%;
+  }
+
+  .rows{
+    display: table-row;
+    .checkbox{
+      display: table-cell;
+      width: 20%;
+    }
+  }
+}
+
+//ecommerce card15
+.egl-card15 {
+  max-width: 17rem;
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 8px;
+    border-radius: 1.5rem;
+    background-color: $white;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    @include size(1rem);
+    left: 30px;
+    margin-left: -1rem;
+    padding-top: 5px;
+    font-size: 11px;
+  }
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: none;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+  .checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+  }
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+  }
+  .checkbox.checkbox-inline {
+    margin-top: 0;
+  }
+  .checkbox-primary input[type="checkbox"]:checked + label::before {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+
+  .checkbox-primary input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-danger input[type="checkbox"]:checked + label::before {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
+  .checkbox-danger input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-info input[type="checkbox"]:checked + label::before {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+  .checkbox-info input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-warning input[type="checkbox"]:checked + label::before {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+  .checkbox-warning input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-success input[type="checkbox"]:checked + label::before {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+  .checkbox-success input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  // Этих цветов нет по дефолту
+  .checkbox-primary{
+    label::before {
+      background-color: $brand-primary;
+    }
+  }
+  .checkbox-success{
+    label::before {
+      background-color: $brand-success;
+    }
+  }
+  .checkbox-info{
+    label::before {
+      background-color: $brand-info;
+    }
+  }
+
+  .checkbox-warning{
+    label::before {
+      background-color: $brand-warning;
+    }
+  }
+
+  .checkbox-danger{
+    label::before {
+      background-color: $brand-danger;
+    }
+  }
+
+}
+
+//ecommerce card16
+.egl-card16{
+  max-width: 17rem;
+  .ui-slider {
+    position: relative;
+  }
+  .ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    @include size(0.5rem, 1rem);
+    background-color: $brand-danger;
+    cursor: pointer
+  }
+  .ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: .7em;
+    display: block;
+    border: 0;
+    overflow: hidden;
+  }
+  .ui-slider-horizontal {
+    height: .5rem;
+  }
+  .ui-slider-horizontal .ui-slider-handle {
+    top: -5px;
+  }
+  .ui-slider-horizontal .ui-slider-range {
+    top: 0;
+    height: 100%;
+  }
+  .ui-slider-horizontal .ui-slider-range-min {
+    left: 0;
+  }
+  .ui-slider-horizontal .ui-slider-range-max {
+    right: 0;
+  }
+  .ui-widget-content {
+    border: 1px solid $gray-lighter;
+  }
+  .ui-widget-header {
+    background: $brand-warning;
+  }
+  .ui-corner-all {
+    @include border-radius();
+  }
+
+  #amount-left, #amount-right {
+    max-width: 100%;
+    outline: none !important;
+    border: none;
+  }
+}
+
+//ecommerce card17
+.egl-card17{
+  max-width: 17rem;
+  .form-control {
+    border: none;
+    box-shadow: none;
+  }
+  .btn-secondary-outline:hover{
+    background-color: $gray-lightest;
+  }
+  .content {
+    max-height: 20rem;
+  }
+
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 8px;
+
+    // если поправить этот бордер радиус на поменьше то будут не круглые
+    border-radius: $border-radius;
+    background-color: $gray-lightest;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    @include size(1rem);
+    left: 30px;
+    margin-left: -1rem;
+    padding-top: 5px;
+    font-size: 11px;
+  }
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: none;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+  .checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+  }
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+  }
+  .checkbox.checkbox-inline {
+    margin-top: 0;
+  }
+  .checkbox-gray input[type="checkbox"]:checked + label::before {
+    background-color: $gray-lightest;
+    border-color: $gray-lightest;
+  }
+
+  .checkbox-gray input[type="checkbox"]:checked + label::after {
+    color: $gray-light;
+  }
+}
+
+//ecommerce card18
+.egl-card18{
+  max-width: 17rem;
+  .active{
+    color: $brand-warning;
+  }
+  input[type="radio"] {
+    display:none;
+  }
+  input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background: white;
+    cursor:pointer;
+    border-radius: 19px;
+    border: 1px solid $gray-light;
+
+  }
+  input[type="radio"]:checked + label span {
+    background: $gray-light;
+    border: 5px solid $gray-lighter;
+    box-shadow: 0 0 1px 1px $gray-light;
+    width:18px;
+    height:18px;
+  }
+
+}
+
+//ecommerce card19
+.egl-card19{
+  max-width: 17rem;
+}
+
+//ecommerce card20
+.egl-card20{
+  max-width: 19rem;
+  .content {
+    max-height: 20rem;
+  }
+  .active:hover{
+    background-color: $gray-lightest;
+  }
+}
+
+//ecommerce card21
+.egl-card21 {
+  max-width: 17rem;
+
+}
+
+//ecommerce card22
+.egl-card22 {
+  max-width: 17rem;
+}
+
+//ecommerce card23
+.egl-card23 {
+  max-width: 17rem;
+  .content{
+    max-height: 36rem;
+  }
+  .thumb{
+    text-align: center;
+  }
+}
+
+//ecommerce card24
+.egl-card24 {
+  max-width: 17rem;
+  hr{
+    background-color: $white;
+  }
+}
+
+//ecommerce card25
+.egl-card25 {
+
+  max-width: 54rem;
+}
+
+//ecommerce card26
+.egl-card26 {
+
+  .thumbs{
+    width: 100%;
+  }
+  .fa-heart{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  .spinner {
+    width: 60px;
+  }
+  .spinner input {
+    text-align: right;
+  }
+  .input-group-btn-vertical {
+    position: relative;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  .input-group-btn-vertical > .btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin-left: -1px;
+    position: relative;
+    border-radius: 0;
+  }
+  .input-group-btn-vertical > .btn:first-child {
+    border-top-right-radius: 4px;
+  }
+  .input-group-btn-vertical > .btn:last-child {
+    margin-top: -2px;
+    border-bottom-right-radius: 4px;
+  }
+  .input-group-btn-vertical i{
+    position: absolute;
+    top: 0;
+    left: 4px;
+  }
+  .form-control{
+    height: 34px;
+  }
+  .active{
+    color: $brand-warning;
+  }
+}
+
+//ecommerce card27
+.egl-card27 {
+
+  .nav-tabs .nav-link {
+    border: none;
+    color: $gray-light;
+    &.active,
+    &:hover,
+    &:focus {
+      color: $brand-danger;
+      border-bottom: 2px solid $brand-danger;
+    }
+  }
+  .card-img{
+    border-radius: 0;
+  }
+  .thumd{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0;
+    transform: translate(-10%,-100%);
+    top: -20rem;
+    right: 0;
+  }
+  .thumd li{
+    padding:.4rem;
+    line-height: 0;
+    margin:0;
+  }
+  .thumd li img {
+    border:2px solid $white;
+    max-width: 3rem;
+    &.bor,
+    &:hover,
+    &:focus {
+    border:2px solid $brand-danger;
+    }
+  }
+  .checkbox{
+    margin-left: 1.5rem;
+    display: inline-block;
+  }
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 13px;
+  }
+
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    left: 2px;
+    top: -20px;
+    margin-left: -20px;
+    border-radius: 1.5rem;
+    background-color: $white;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    @include size(1rem);
+    left: 8px;
+    top: -20px;
+    margin-left: -1rem;
+    padding-top: 5px;
+    font-size: 14px;
+  }
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: none;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+  .checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+  }
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+  }
+  .checkbox.checkbox-inline {
+    margin-top: 0;
+  }
+  .checkbox-primary input[type="checkbox"]:checked + label::before {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
+  .checkbox-primary input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-info input[type="checkbox"]:checked + label::before {
+    background-color: $brand-info;
+    border-color: $brand-info;
+  }
+  .checkbox-info input[type="checkbox"]:checked + label::after {
+    color: $white;
+  }
+
+  .checkbox-primary{
+    label::before {
+      background-color: $brand-primary;
+    }
+  }
+
+  .checkbox-info{
+    label::before {
+      background-color: $brand-info;
+    }
+  }
+
+  .spin {
+    width: 60px;
+  }
+  .spin input {
+    text-align: right;
+  }
+  .input-group-btn-vert {
+    position: relative;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  .input-group-btn-vert > .btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin-left: -1px;
+    position: relative;
+    border-radius: 0;
+  }
+  .input-group-btn-vert > .btn:first-child {
+    border-top-right-radius: 4px;
+  }
+  .input-group-btn-vert > .btn:last-child {
+    margin-top: -2px;
+    border-bottom-right-radius: 4px;
+  }
+  .input-group-btn-vert i{
+    position: absolute;
+    top: 2px;
+    left: 4px;
+  }
+  .form-control{
+    height: 42px;
+  }
+}
+
+//ecommerce card28
+.egl-card28 {
+  max-width: 23rem;
+  .coltex{
+    color: $brand-success;
+  }
+  .ptm{
+    padding-top: 0.7rem;
+  }
+}
+
+//ecommerce card29
+ .egl-card29 {
+   max-width: 23rem;
+
+   .radio label {
+     padding-left: 0;
+     padding-top: 0.5rem;
+   }
+
+   input[type="radio"] {
+     display:none;
+   }
+   input[type="radio"] + label span {
+     display:inline-block;
+     width:19px;
+     height:19px;
+     margin:-1px 4px 0 0;
+     vertical-align:middle;
+     background: white;
+     cursor:pointer;
+     border-radius: 19px;
+     border: 1px solid $gray-light;
+
+   }
+   input[type="radio"]:checked + label span {
+     background: $gray-light;
+     border: 5px solid $gray-lighter;
+     box-shadow: 0 0 1px 1px $gray-light;
+     width:18px;
+     height:18px;
+   }
+ }
+
+//ecommerce card30
+.egl-card30 {
+  max-width: 23rem;
+
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 2.5rem;
+  }
+  .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 8px;
+    border-radius: $border-radius;
+    background-color: $gray-lightest;
+    border: 1px solid $gray-lighter;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+  .checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    @include size(1rem);
+    left: 30px;
+    margin-left: -1rem;
+    padding-top: 5px;
+    font-size: 11px;
+  }
+  .checkbox input[type="checkbox"] {
+    opacity: 0;
+  }
+  .checkbox input[type="checkbox"]:focus + label::before {
+    outline: none;
+  }
+  .checkbox input[type="checkbox"]:checked + label::after {
+    font-family: 'FontAwesome';
+    content: "\f00c";
+  }
+  .checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+  }
+  .checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: $gray-lighter;
+    cursor: not-allowed;
+  }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%;
+  }
+  .checkbox.checkbox-inline {
+    margin-top: 0;
+  }
+  .checkbox-gray input[type="checkbox"]:checked + label::before {
+    background-color: $gray-lightest;
+    border-color: $gray-lighter;
+  }
+
+  .checkbox-gray input[type="checkbox"]:checked + label::after {
+    color: $gray-light;
+  }
+}
+
+
+//ecommerce card31
+.egl-card31 {
+  max-width: 23rem;
+   .fa-check {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: $brand-success;
+    border: .1rem solid #fff;
+    font-size: 1.5rem;
+    padding-top: .7rem;
+  }
+}
+
+
+
+//ecommerce card36
+.egl-card36 {
+  max-width: 17rem;
+  .colt {
+    color: $white;
+  }
+}
+
+//ecommerce card37
+.egl-card37 {
+  max-width: 17rem;
+  .fa-check{
+  color: $brand-success;
+}
+  .fa-times{
+    color: $brand-danger;
+  }
+  .popular{
+    position: absolute;
+    top: 1rem;
+    display: block;
+    background-color: $brand-warning;
+    right: 0;
+    z-index: 3;
+    color: $white;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 12px solid transparent;
+      border-left: 10px solid $white;
+    }
+  }
+}
+
+//ecommerce card38
+.egl-card38 {
+  max-width: 17rem;
+}
+
+//ecommerce card39
+.egl-card39 {
+  max-width: 17rem;
+}

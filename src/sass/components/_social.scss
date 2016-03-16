@@ -1,0 +1,1003 @@
+// Social1
+.k1 {
+  max-width: 23rem;
+  .img-wrapper {
+    @include gradient-horizontal($brand-danger, $brand-warning);
+  }
+  img {
+    opacity: 0.5;
+    &.img-avatar {
+      @include size($display1-size);
+      opacity: 1;
+      margin-top: -5rem;
+      z-index: 2;
+    }
+  }
+  .k1-btn {
+    @include border-radius(10rem);
+  }
+  span {
+    font-size: $font-size-h3;
+  }
+}
+// end Social1
+
+
+// Social2
+.k2 {
+  max-width: 23rem;
+}
+// end Social2
+
+
+// Social3
+.k3 {
+  max-width: 23rem;
+  .img-wrapper {
+    @include gradient-horizontal($brand-danger, $brand-warning);
+  }
+  img {
+    width: 100%;
+    opacity: 0.5;
+    &.img-avatar {
+      @include size($display1-size);
+      opacity: 1;
+      margin-top: -4rem;
+      z-index: 2;
+    }
+  }
+  span {
+    font-size: $font-size-h5;
+  }
+  .fa-plus-circle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: $font-size-h1;
+    opacity: 1;
+    z-index: 2;
+
+  }
+}
+// end Social3
+
+// Social4
+.k4 {
+  .fa-circle {
+    padding-top: 1rem;
+    font-size: 0.5rem;
+  }
+}
+// end Social4
+
+// Social5
+.k5 {
+  max-width: 18rem;
+  .img-avatar {
+    @include size($display1-size);
+  }
+  .k1-btn {
+    @include border-radius(10rem);
+  }
+}
+// end Social5
+
+// Social6
+.k6 {
+  max-width: 35rem;
+  .follow {
+    font-size: $font-size-h6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(251, 1, 17, .7);
+    height: 100%;
+    .fa {
+      font-size: $font-size-h4;
+      line-height: $font-size-h2;
+    }
+  }
+}
+// end Social6
+
+// Social7
+.k7 {
+  max-width: 18rem;
+  .fa-plus-circle {
+    position: absolute;
+    top: -2rem;
+    right: 0;
+    color: $brand-danger;
+    font-size: $font-size-h1;
+    &:before {
+      background: $gray-lightest;
+      border-radius: 10rem;
+    }
+  }
+}
+// End Social7
+
+// Social9
+.k8 {
+  .question {
+    width: 86%;
+    background: $gray-lighter;
+  }
+  .answer {
+    width: 75%;
+    margin-top: -1rem;
+  }
+  .fa-arrow-up {
+    color: $brand-success;
+  }
+  .fa-arrow-down {
+    color: $brand-danger;
+  }
+  .img-circle {
+    width: 5rem;
+  }
+  .users {
+    background: $gray-light;
+    color: $gray-lightest;
+    @include border-radius(5rem);
+    font-size: $font-size-h1;
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+// end Social9
+
+// Social10
+.k9 {
+  .fa-circle {
+    color: $brand-success;
+
+  }
+  .img-circle{
+    max-width: 4rem;
+  }
+
+  .gradient {
+    height: 2rem;
+    $grad: rgba(255, 255, 255, .0125);
+    @include gradient-vertical($gray-lightest, $grad);
+    position: absolute;
+    bottom: -2.1rem;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+  }
+  .card-header {
+    position: relative;
+
+  }
+  .content {
+    padding-top: 1rem;
+    overflow-y: scroll;
+    max-height: 30rem;
+    overflow-x: hidden;
+  }
+  .card-footer {
+    padding-right: 2.3rem;
+  }
+  .fa-paperclip {
+    font-size: $font-size-h4;
+    padding: 1.3rem 1.5rem 1.3rem 0.8rem;
+  }
+  .card-block {
+    padding: .5rem
+  }
+  max-width: 23rem;
+  .right {
+    .card-text {
+      padding: .4rem;
+      background: $gray-lighter;
+      &:after {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 10px;
+        border: 6px solid transparent;
+        border-right: 6px solid $gray-lighter !important;
+      }
+    }
+
+  }
+
+  .left {
+    .card-text {
+      padding: .4rem;
+      background: $gray-lighter;
+      &:after {
+        content: "";
+        position: absolute;
+        right: -12px;
+        top: 10px;
+        border: 6px solid transparent;
+        border-left: 6px solid $gray-lighter !important;
+      }
+    }
+  }
+}
+
+// end Social10
+
+// Social11
+
+.k10 {
+  .tigth-line {
+    position: absolute;
+    right: 0px;
+    border: 1px solid $gray-light;
+    height: 100%;
+    width: 1px;
+  }
+  .left-triangle {
+    &:after {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 2rem;
+      border: 10px solid transparent;
+      border-right: 10px solid $gray-light !important;
+    }
+    &:before {
+      content: "";
+      top: 2.3rem;
+      width: .7rem;
+      height: .7rem;
+      @include border-radius(.7rem);
+      background: $gray-light;
+      position: absolute;
+      z-index: 200;
+      left: -31px;
+    }
+  }
+
+  .right-triangle {
+    &:after {
+      content: "";
+      position: absolute;
+      right: -22px;
+      top: 2rem;
+      border: 10px solid transparent;
+      border-left: 10px solid $gray-light !important;
+    }
+    &:before {
+      content: "";
+      top: 2.3rem;
+      width: .7rem;
+      height: .7rem;
+      @include border-radius(.7rem);
+      background: $gray-light;
+      position: absolute;
+      z-index: 200;
+      right: -31px;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .left-triangle,
+  .right-triangle {
+    &:after,
+    &:before {
+      display: none;
+    }
+  }
+  .tigth-line {
+    display: none;
+  }
+  .k10{
+    .col-sm-12 {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+  }
+
+}
+
+// Social11
+
+// Social15
+
+.k12 {
+  max-width: 18rem;
+  .img-circle {
+    max-width: 3rem;
+  }
+  .nav-link-invite {
+    &:after {
+      content: "";
+      top: 0.2rem;
+      width: .7rem;
+      height: .7rem;
+      @include border-radius(.7rem);
+      background: $brand-warning;
+      position: absolute;
+      z-index: 200;
+      right: -2px;
+      border: 2px solid $gray-lightest;
+    }
+  }
+  .more_user {
+    &:before {
+      content: "";
+      top: -.7rem;
+      width: 3rem;
+      height: 3rem;
+      @include border-radius(3rem);
+      background: $gray-light;
+      position: absolute;
+      right: -.6rem;
+    }
+    span {
+      z-index: 2;
+      padding-left: 0.4rem;
+      color: $gray-dark;
+    }
+  }
+
+}
+
+// end Social15
+
+
+//Social16
+.k13 {
+  max-width: 18rem;
+}
+//end Social16
+
+
+// Social17
+.k14 {
+  max-width: 18rem;
+  .fa {
+    padding-right: 0.2rem;
+    font-size: $font-size-h5;
+  }
+  .nav-link {
+    &:hover {
+      color: $gray-lightest;
+    }
+  }
+  .label-pill {
+    background: rgba(0, 0, 0, .4);
+  }
+}
+
+// end Social17
+
+// Social18
+.k15 {
+  max-width: 18rem;
+  a {
+    color: $gray-light
+  }
+  .fa {
+    font-size: $font-size-h4;
+  }
+}
+// end Social18
+
+//Social19
+.k16 {
+  max-width: 18rem;
+  .img-circle {
+    width: 4rem;
+  }
+  .nav-link {
+    &:hover {
+      background-color: $gray-lighter;
+
+    }
+  }
+  .nav-item {
+    &:hover {
+      .fa-plus-circle {
+        display: block;
+      }
+    }
+  }
+  .fa-plus-circle {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    transform: translate(-50%, -50%);
+    font-size: $font-size-h4;
+    color: $gray;
+    display: none;
+
+  }
+}
+// end Social19
+
+// Social20
+.k17 {
+  max-width: 18rem;
+  .img-circle {
+    width: 4rem;
+  }
+  .nav-link {
+    &:hover {
+      background-color: $gray-lighter;
+
+    }
+  }
+  .nav-link-invite {
+    &:after {
+      content: "";
+      top: 0.2rem;
+      width: .7rem;
+      height: .7rem;
+      @include border-radius(.7rem);
+      background: $brand-warning;
+      position: absolute;
+      z-index: 200;
+      right: -2px;
+      border: 2px solid $gray-lightest;
+    }
+
+  }
+}
+
+// end Social20
+
+// Social21
+
+.k18 {
+  width: 5rem;
+  .fa {
+    font-size: $font-size-h4;
+  }
+  .fa-twitter {
+    color: $brand-primary
+  }
+  .fa-facebook {
+    color: $brand-success;
+  }
+  .fa-google-plus {
+    color: $brand-warning;
+  }
+  .fa-pinterest-p {
+    color: $brand-danger;
+  }
+}
+
+// end Social21
+
+
+// Social22
+.k19 {
+  width: 5rem;
+  .fa {
+    font-size: $font-size-h4;
+  }
+  .one {
+    background-color: $brand-primary;
+    @include border-radius($card-border-radius-inner $card-border-radius-inner 0 0);
+  }
+  .two {
+    background-color: $brand-success;
+  }
+  .three {
+    background-color: $brand-info;
+  }
+  .four {
+    background-color: $brand-danger;
+    @include border-radius(0 0 $card-border-radius-inner $card-border-radius-inner);
+  }
+}
+
+// end Social22
+
+// Social23
+.k20 {
+  width: 5rem;
+  .fa {
+    font-size: $font-size-h4;
+    &:before {
+      z-index: 2;
+    }
+  }
+  .one {
+    &:before {
+      content: "";
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: $brand-info;
+      position: absolute;
+      border-radius: 2.5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+  .two {
+    &:before {
+      content: "";
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: $brand-primary;
+      position: absolute;
+      border-radius: 2.5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+  .three {
+    &:before {
+      content: "";
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: $brand-warning;
+      position: absolute;
+      border-radius: 2.5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+  .four {
+    @include border-radius(0 0 $card-border-radius-inner $card-border-radius-inner);
+    &:before {
+      content: "";
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: $brand-danger;
+      position: absolute;
+      border-radius: 2.5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+}
+//  end Social23
+
+// Social24
+
+.k21 {
+  width: 5rem;
+  .fa {
+    font-size: $font-size-h4;
+    &:before {
+      z-index: 2;
+    }
+  }
+
+  .nav-link {
+    &:before {
+      content: "";
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: $gray-light;
+      position: absolute;
+      border-radius: 2.5rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-53%, -55%);
+    }
+  }
+
+}
+
+//end Social24
+
+// Social25
+
+.k22 {
+  max-width: 27rem;
+  .img-circle {
+    width: 4rem;
+  }
+  .gradient {
+    height: 2rem;
+    $grad: rgba(255, 255, 255, .0125);
+    @include gradient-vertical($gray-lightest, $grad);
+    position: absolute;
+    bottom: -2.1rem;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+  }
+  // блок отображающий контент
+  .navigat {
+    overflow-y: scroll;
+    max-height: 30rem; // высота блока контента
+    overflow-x: hidden;
+  }
+  // линия между аватарами
+  .line {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 4.5rem;
+  }
+  .fa-star {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $brand-warning;
+  }
+
+  .fa-heart {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $brand-danger;
+  }
+  .fa-comment {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $brand-info;
+  }
+  .fa-plus {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $brand-success;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+    background-color: $gray-lighter;
+    padding: .5rem;
+  }
+  .fa-play-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: $font-size-h4;
+    border-radius: 10rem;
+    color: $brand-success;
+  }
+  .content {
+    .quantity {
+      min-width: 4rem;
+      color: $gray-lightest;
+      &:after {
+        content: '';
+        display: block;
+        width: 4rem;
+        height: 4rem;
+        background-color: $gray-light;
+        position: absolute;
+        top: -1rem;
+        right: 0;
+        @include border-radius();
+      }
+      span {
+        z-index: 1;
+        padding-top: 3px;
+        display: block;
+      }
+    }
+
+  }
+  .tumbs {
+    width: 4rem;
+    height: 4rem;
+  }
+  .nav-item {
+    &:hover {
+      background-color: $gray-lighter;
+    }
+  }
+  .nav-link-invite {
+    &:after {
+      content: "";
+      top: 0.2rem;
+      width: .7rem;
+      height: .7rem;
+      @include border-radius(.7rem);
+      background: $brand-warning;
+      position: absolute;
+      z-index: 200;
+      right: -2px;
+      border: 2px solid $gray-lightest;
+    }
+
+  }
+}
+
+//end Social25
+
+// Social26
+.vt_menu2 {
+  @include size(41rem, 25rem);
+  .vk_border_left {
+    border-left: 1px solid $gray-lighter;
+    height: 100%;
+  }
+  // Текстовые поля (справа)
+  .vk_tabs {
+    .card {
+      border: none;
+      display: none;
+    }
+    .card-text {
+      line-height: $font-size-h4;
+    }
+  }
+  .vk_tabs_link2 {
+    .list-group-item {
+      background-color: transparent;
+      a {
+        display: block;
+        border-right: 2px solid transparent;
+        color: $gray-lighter;
+
+        &.actives {
+          color: $gray-lighter;
+
+        }
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: none;
+          color: $gray-lighter;
+        }
+      }
+    }
+  }
+  .fa {
+    font-size: $font-size-h5;
+  }
+  .card4 {
+    .fa {
+      font-size: $font-size-h6;
+    }
+  }
+
+  .col-xs-1 {
+    @include gradient-vertical($brand-danger, $brand-warning);
+    height: 100%;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+  .nav {
+    background-color: $gray-lightest;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+  textarea {
+    background-color: $gray-lightest;
+    box-shadow: none;
+    height: 10rem;
+  }
+
+  .dropdown-menu{
+    right: 0;
+    left: auto;
+  }
+
+  #card1,
+  #card2,
+  #card3,
+  #card4{
+    &.actives {
+      color: $gray-lighter;
+      &:after{
+        content: '';
+        position: absolute;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: $component-active-color;
+        right: -0.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+    }
+  }
+
+}
+
+// end Social26
+
+
+// Social27
+.k25{
+  max-width: 18rem;
+  .fa-circle{
+    font-size: 0.25rem;
+  }
+  .card-header{
+    @include gradient-horizontal($brand-danger, $brand-warning);
+  }
+  .video{
+    .fa{
+      background-color: $gray-lighter;
+      font-size: $font-size-h4;
+    }
+  }
+}
+// end Social27
+
+// Social29
+.k27{
+  line-height: 3rem;
+  img{
+    width: 3rem;
+  }
+}
+
+// end Social29
+
+// Social8
+.communication{
+
+  .gradient {
+    height: 2rem;
+    $grad: rgba(255, 255, 255, .0125);
+    @include gradient-vertical($gray-lightest, $grad);
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+  }
+   // левая часть
+  .k166 {
+    .form-control{
+      box-shadow: none;
+      background-color: $gray-lighter;
+    }
+    .fa-times{
+      position: absolute;
+      top: .3rem;
+      left: 1rem;
+      color: $gray-light;
+      display: none;
+    }
+    .input-group{
+      margin-top: 42px;
+    }
+
+    .img-circle {
+      width: 4rem;
+    }
+    .nav-link {
+      i{
+        background-color: $brand-danger;
+        @include border-radius(10rem);
+        color: $gray-lightest;
+        padding: 0.1rem 0.5rem;
+        font-style: normal;
+      }
+      &:hover {
+        background-color: $gray-lighter;
+
+      }
+    }
+
+    .nav-link-invite {
+      &:before {
+        content: "";
+        top: 1.2rem;
+        width: .7rem;
+        height: .7rem;
+        @include border-radius(.7rem);
+        background: $brand-warning;
+        position: absolute;
+        z-index: 200;
+        left: 4rem;
+        border: 2px solid $gray-lightest;
+      }
+    }
+
+    .nav-item {
+      &:hover{
+        .fa-times{
+          display: block !important;
+          &:hover{
+            color: $brand-success;
+          }
+        }
+      }
+      span{
+        padding: 0 1rem;
+        display: block;
+      }
+    }
+
+    .nav{
+      padding-top: 1rem;
+      overflow-y: scroll;
+      max-height: 30rem;
+      overflow-x: hidden;
+
+    }
+  }
+
+  // правая часть
+  .k99 {
+    .img-circle{
+      width: 4rem;
+      float: right;
+      margin-right: 1rem;
+    }
+    .fa-circle {
+      color: $brand-success
+    }
+
+    .card-header {
+      position: relative;
+
+    }
+    .content {
+      padding-top: 1rem;
+      overflow-y: scroll;
+      max-height: 30rem;
+      overflow-x: hidden;
+    }
+    .card-footer {
+      padding-right: 2.3rem;
+    }
+    .fa-paperclip {
+      font-size: $font-size-h4;
+      padding: 1.3rem 1.5rem 1.3rem 0.8rem;
+    }
+    .card-block {
+      padding: .5rem
+    }
+
+    .right {
+      small{
+        float: right;
+      }
+      .card-text {
+        padding: .4rem;
+        background: $gray-lighter;
+        &:after {
+          content: "";
+          position: absolute;
+          left: -12px;
+          top: 10px;
+          border: 6px solid transparent;
+          border-right: 6px solid $gray-lighter !important;
+        }
+      }
+
+    }
+
+    .left {
+      small{
+        float: left;
+      }
+      .card-text {
+        padding: .4rem;
+        background: $gray-lighter;
+        &:after {
+          content: "";
+          position: absolute;
+          right: -12px;
+          top: 10px;
+          border: 6px solid transparent;
+          border-left: 6px solid $gray-lighter !important;
+        }
+      }
+    }
+    .form-inline{
+      width: 100%;
+    }
+    .form-groups{
+      width: 100%;
+    }
+    .send{
+      width: 100%;
+    }
+  }
+
+
+}
+
+// end Social8
