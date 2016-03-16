@@ -1,3 +1,7 @@
+app_user:
+    resource: "@AppBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
 app_organization:
     resource: "@AppBundle/Resources/config/routing/organization.yml"
     prefix:   /organization

@@ -26,4 +26,20 @@ class UserType extends AbstractType
     {
         return 'appbundle_user';
     }
+
+
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+
+
+        $builder
+            ->add('username')
+             ->add('password')
+            ->add('roles')
+            ->add('email')
+
+        ;
+
+
+    }
 }
