@@ -8,19 +8,13 @@
         <title>{% block title %}E-report{% endblock %}</title>
 
         {% block stylesheets %}
-
             {% stylesheets
             'css/font-awesome.css'
             'css/main.css'
             filter='cssrewrite' output='css/compiled/app.css' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
-
         {% endblock %}
-
-
-
-
 
     </head>
     <body>

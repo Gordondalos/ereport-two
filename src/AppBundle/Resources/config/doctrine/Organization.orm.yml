@@ -13,13 +13,25 @@ AppBundle\Entity\Organization:
         organizationName:
             type: string
             nullable: false
+            length: 255
+            fixed: false
             column: organization_name
         organizationPhone:
             type: string
             nullable: true
+            length: 255
+            fixed: false
             column: organization_phone
-        description:
+        organizationDescription:
             type: text
             nullable: true
+            length: null
+            fixed: false
             column: organization_description
+        organizationShortName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            column: organization_short_name
     lifecycleCallbacks: {  }

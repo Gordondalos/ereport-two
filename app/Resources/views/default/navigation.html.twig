@@ -5,29 +5,41 @@
 
     <ul class="list-unstyled p-t-2">
         <li class="text-nowrap p-a-05 b-b b-t">
-            <a class="links-visible" href="#"><i class="fa white p-x-05 fa-home"></i></a>
+            <a class="links-visible" href="/"><i class="fa white p-x-05 fa-home"></i></a>
+            <a class="links text-nowrap pull-xs-right" href="/">Домой</a>
+        </li>
+        <li class="text-nowrap p-a-05 b-b b-t">
+            <a class="links-visible" href="{{ path('area') }}"><i class="fa white p-x-05 fa-home"></i></a>
+            <a class="links text-nowrap pull-xs-right" href="{{ path('area') }}">Район</a>
+        </li>
 
-            <a class="links text-nowrap pull-xs-right" href="#">Ссылка один</a>
+        <li class="text-nowrap p-a-05 b-b">
+            <a class="links-visible" href="/"><i class="fa white p-x-05 fa-share-alt"></i></a>
+            <a class="links text-nowrap pull-xs-right" href="/">Формы для скачивания</a>
         </li>
         <li class="text-nowrap p-a-05 b-b">
-            <a class="links-visible" href="#"><i class="fa white p-x-05 fa-share-alt"></i></a>
-            <a class="links text-nowrap pull-xs-right" href="#">Ссылка два</a>
+            <a class="links-visible" href="{{ path('formreport') }}"><i class="fa white p-x-05 fa-anchor"></i></a>
+            <a class="links text-nowrap pull-xs-right" href="{{ path('formreport') }}">Форма отчета</a>
         </li>
         <li class="text-nowrap p-a-05 b-b">
-            <a class="links-visible" href="#"><i class="fa white p-x-05 fa-anchor"></i></a>
-            <a class="links text-nowrap pull-xs-right" href="#">Ссылка три</a>
+            <a class="links-visible" href="{{ path('organization') }}"><i class="fa white p-x-05 fa-envelope"></i></a>
+            <a class="links text-nowrap pull-xs-right" href="{{ path('organization') }}">Организация сдачи отчета</a>
         </li>
         <li class="text-nowrap p-a-05 b-b">
-            <a class="links-visible" href="#"><i class="fa white p-x-05 fa-envelope"></i></a>
-            <a class="links text-nowrap pull-xs-right" href="#">Ссылка четыре</a>
-        </li>
-        <li class="text-nowrap p-a-05 b-b">
-            <a class="links-visible" href="#"><i class="fa white p-x-05 fa-history"></i></a>
-            <a class="links text-nowrap pull-xs-right" href="#">Ссылка пять</a>
+            <a class="links-visible" href="{{ path('report') }}"><i class="fa white p-x-05 fa-history"></i></a>
+            <a class="links text-nowrap pull-xs-right" href="{{ path('report') }}">Загруженные отчеты</a>
         </li>
         <li class="text-nowrap white p-a-05 b-b">
-            <a class="links-visible" href="#"><i class="fa white p-x-05 fa-cogs"></i></a>
-            <a class="links text-nowrap pull-xs-right" href="#">Ссылка пять</a>
+            <a class="links-visible" href="{{ path('status') }}"><i class="fa white p-x-05 fa-cogs"></i></a>
+            <a class="links text-nowrap pull-xs-right" href="{{ path('status') }}">Статусы отчетов</a>
+        </li>
+        <li class="text-nowrap white p-a-05 b-b">
+            <a class="links-visible" href="{{ path('typereport') }}"><i class="fa white p-x-05 fa-cogs"></i></a>
+            <a class="links text-nowrap pull-xs-right" href="{{ path('typereport') }}">Типы отчетов</a>
+        </li>
+        <li class="text-nowrap white p-a-05 b-b">
+            <a class="links-visible" href="{{ path('user') }}"><i class="fa white p-x-05 fa-cogs"></i></a>
+            <a class="links text-nowrap pull-xs-right" href="{{ path('user') }}">Пользователи</a>
         </li>
     </ul>
 </div>

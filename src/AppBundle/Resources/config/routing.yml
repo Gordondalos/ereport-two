@@ -1,3 +1,7 @@
+app_organization:
+    resource: "@AppBundle/Resources/config/routing/organization.yml"
+    prefix:   /organization
+
 app_baseforms:
     resource: "@AppBundle/Resources/config/routing/baseforms.yml"
     prefix:   /baseforms

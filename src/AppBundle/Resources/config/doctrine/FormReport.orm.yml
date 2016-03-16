@@ -13,5 +13,7 @@ AppBundle\Entity\FormReport:
         formName:
             type: string
             nullable: false
+            length: 255
+            fixed: false
             column: form_name
     lifecycleCallbacks: {  }

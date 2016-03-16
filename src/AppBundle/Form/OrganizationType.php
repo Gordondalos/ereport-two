@@ -16,6 +16,7 @@ class OrganizationType extends AbstractType
     {
         $builder
             ->add('organizationName')
+            ->add('organizationShortName')
             ->add('organizationPhone')
             ->add('description')
         ;

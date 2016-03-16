@@ -13,5 +13,7 @@ AppBundle\Entity\TypeReport:
         typeName:
             type: string
             nullable: false
+            length: 255
+            fixed: false
             column: type_name
     lifecycleCallbacks: {  }

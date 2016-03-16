@@ -12,5 +12,8 @@ AppBundle\Entity\Area:
     fields:
         nameArea:
             type: string
+            nullable: false
+            length: 255
+            fixed: false
             column: name_area
     lifecycleCallbacks: {  }

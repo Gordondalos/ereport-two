@@ -108,4 +108,60 @@ class Organization
     {
         return $this->description;
     }
+    /**
+     * @var string
+     */
+    private $organizationShortName;
+
+
+    /**
+     * Set organizationShortName
+     *
+     * @param string $organizationShortName
+     * @return Organization
+     */
+    public function setOrganizationShortName($organizationShortName)
+    {
+        $this->organizationShortName = $organizationShortName;
+
+        return $this;
+    }
+
+    /**
+     * Get organizationShortName
+     *
+     * @return string 
+     */
+    public function getOrganizationShortName()
+    {
+        return $this->organizationShortName;
+    }
+    /**
+     * @var string
+     */
+    private $organizationDescription;
+
+
+    /**
+     * Set organizationDescription
+     *
+     * @param string $organizationDescription
+     * @return Organization
+     */
+    public function setOrganizationDescription($organizationDescription)
+    {
+        $this->organizationDescription = $organizationDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get organizationDescription
+     *
+     * @return string 
+     */
+    public function getOrganizationDescription()
+    {
+        return $this->organizationDescription;
+    }
 }

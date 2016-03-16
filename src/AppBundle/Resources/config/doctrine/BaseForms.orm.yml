@@ -12,23 +12,28 @@ AppBundle\Entity\BaseForms:
     fields:
         formReport:
             type: integer
+            nullable: false
+            unsigned: false
             column: form_report
         typeReport:
             type: integer
             nullable: false
+            unsigned: false
             column: type_report
         description:
             type: text
             nullable: true
-            column: description
+            length: null
+            fixed: false
         organization:
             type: integer
             nullable: false
             unsigned: false
-            column: organization
         fileAdress:
             type: string
+            nullable: false
             length: 255
+            fixed: false
             column: file_adress
         dateAccepted:
             type: datetime
