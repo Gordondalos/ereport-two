@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -9,6 +10,15 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class BaseForms
 {
+
+    protected $typeReport;
+
+    public function __construct(){
+
+        $this->typeReport = new ArrayCollection();
+    }
+
+
     /**
      * @var integer
      */
@@ -19,12 +29,7 @@ class BaseForms
      */
     private $formReport;
 
-    /**
-     * @var integer
-     */
-    private $typeReport;
-
-    /**
+     /**
      * @var string
      */
     private $description;

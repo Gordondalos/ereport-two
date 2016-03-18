@@ -9,6 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TypeReport
 {
+
+   protected $baseForm;
+
+
     /**
      * @var integer
      */
