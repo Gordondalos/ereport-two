@@ -1,3 +1,11 @@
+app_typereport:
+    resource: "@AppBundle/Resources/config/routing/typereport.yml"
+    prefix:   /typereport
+
+app_baseforms:
+    resource: "@AppBundle/Resources/config/routing/baseforms.yml"
+    prefix:   /baseforms
+
 app_user:
     resource: "@AppBundle/Resources/config/routing/user.yml"
     prefix:   /user

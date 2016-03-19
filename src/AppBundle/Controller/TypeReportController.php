@@ -29,6 +29,10 @@ class TypeReportController extends Controller
             'entities' => $entities,
         ));
     }
+
+
+
+
     /**
      * Creates a new TypeReport entity.
      *

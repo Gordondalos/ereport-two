@@ -1,7 +1,7 @@
 ﻿--
 -- Скрипт сгенерирован Devart dbForge Studio for MySQL, Версия 6.3.358.0
 -- Домашняя страница продукта: http://www.devart.com/ru/dbforge/mysql/studio
--- Дата скрипта: 15.03.2016 0:30:26
+-- Дата скрипта: 19.03.2016 10:38:29
 -- Версия сервера: 5.6.21
 -- Версия клиента: 4.1
 --
@@ -37,7 +37,8 @@ CREATE TABLE area (
   PRIMARY KEY (id)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 1
+AUTO_INCREMENT = 4
+AVG_ROW_LENGTH = 8192
 CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
@@ -56,7 +57,7 @@ CREATE TABLE base_forms (
   PRIMARY KEY (id)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 1
+AUTO_INCREMENT = 2
 CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
@@ -101,7 +102,7 @@ CREATE TABLE fos_user (
   UNIQUE INDEX UNIQ_957A6479A0D96FBF (email_canonical)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 2
+AUTO_INCREMENT = 3
 AVG_ROW_LENGTH = 16384
 CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
@@ -115,10 +116,12 @@ CREATE TABLE organization (
   organization_name VARCHAR(255) NOT NULL,
   organization_phone VARCHAR(255) DEFAULT NULL,
   organization_description LONGTEXT DEFAULT NULL,
+  organization_short_name VARCHAR(255) NOT NULL,
   PRIMARY KEY (id)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 1
+AUTO_INCREMENT = 4
+AVG_ROW_LENGTH = 8192
 CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
@@ -154,7 +157,8 @@ CREATE TABLE status (
   PRIMARY KEY (id)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 1
+AUTO_INCREMENT = 5
+AVG_ROW_LENGTH = 4096
 CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
@@ -168,21 +172,24 @@ CREATE TABLE type_report (
   PRIMARY KEY (id)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 1
+AUTO_INCREMENT = 5
+AVG_ROW_LENGTH = 4096
 CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
 -- 
 -- Вывод данных для таблицы area
 --
-
--- Таблица ereport.area не содержит данных
+INSERT INTO area VALUES
+(1, 'Первомайский'),
+(2, 'Сверловский'),
+(3, 'Октябрьский');
 
 -- 
 -- Вывод данных для таблицы base_forms
 --
-
--- Таблица ereport.base_forms не содержит данных
+INSERT INTO base_forms VALUES
+(1, 1, 1, 'bla bla bla', 1, 'qwe', '2011-01-01 00:00:00');
 
 -- 
 -- Вывод данных для таблицы form_report
@@ -194,13 +201,16 @@ COLLATE utf8_unicode_ci;
 -- Вывод данных для таблицы fos_user
 --
 INSERT INTO fos_user VALUES
-(1, 'gordondalos', 'gordondalos', 'gordonalos@gmail.vom', 'gordonalos@gmail.vom', 1, '88ohmyni7a80csg0oc8kkk4oc0w4wg', '$2y$13$88ohmyni7a80csg0oc8kkembZUjoU6Sk3lklhBYeCSa5cQMr2L.au', '2016-03-15 00:13:01', 0, 0, NULL, NULL, NULL, 'a:0:{}', 0, NULL);
+(1, 'gordondalos', 'gordondalos', 'gordonalos@gmail.vom', 'gordonalos@gmail.vom', 1, '88ohmyni7a80csg0oc8kkk4oc0w4wg', '$2y$13$88ohmyni7a80csg0oc8kkembZUjoU6Sk3lklhBYeCSa5cQMr2L.au', '2016-03-16 13:27:25', 0, 0, NULL, NULL, NULL, 'a:0:{}', 0, NULL),
+(2, 'Вася Пупкин', 'вася пупкин', 'vasa@mail.ru', 'vasa@mail.ru', 1, 'h7wsdpahp5w0w8wk44k8sswgoow80k4', '212354568789', NULL, 0, 0, NULL, NULL, NULL, 'a:0:{}', 0, NULL);
 
 -- 
 -- Вывод данных для таблицы organization
 --
-
--- Таблица ereport.organization не содержит данных
+INSERT INTO organization VALUES
+(1, 'Государственная Налоговая Инспекция', '+996777777', 'Описание организации', 'ГНС'),
+(2, 'Социальный Фонд', NULL, NULL, 'СФ'),
+(3, 'Государственный Статистический Коммитет', '1223456', 'Принимают отчеты', 'СтатКом');
 
 -- 
 -- Вывод данных для таблицы report
@@ -211,14 +221,20 @@ INSERT INTO fos_user VALUES
 -- 
 -- Вывод данных для таблицы status
 --
-
--- Таблица ereport.status не содержит данных
+INSERT INTO status VALUES
+(1, 'Новый'),
+(2, 'Принят'),
+(3, 'На рассмотрении'),
+(4, 'Утвержден');
 
 -- 
 -- Вывод данных для таблицы type_report
 --
-
--- Таблица ereport.type_report не содержит данных
+INSERT INTO type_report VALUES
+(1, 'Первоначальный'),
+(2, 'Уточненный'),
+(3, 'Промежуточный'),
+(4, 'Ликвидационный');
 
 -- 
 -- Восстановить предыдущий режим SQL (SQL mode)

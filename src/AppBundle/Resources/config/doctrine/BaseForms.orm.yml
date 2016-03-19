@@ -15,11 +15,11 @@ AppBundle\Entity\BaseForms:
             nullable: false
             unsigned: false
             column: form_report
-        typeReport:
+        typeReportId:
             type: integer
             nullable: false
             unsigned: false
-            column: type_report
+            column: type_report_id
         description:
             type: text
             nullable: true
@@ -39,4 +39,13 @@ AppBundle\Entity\BaseForms:
             type: datetime
             nullable: false
             column: date_accepted
+    manyToOne:
+        typeReport:
+            targetEntity: TypeReport
+            inversedBy: baseForms
+            joinColumn:
+                name: type_report_id
+                referencedColumnName: id
+
     lifecycleCallbacks: {  }
+

@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,12 +12,6 @@ class BaseForms
 {
 
     protected $typeReport;
-
-    public function __construct(){
-
-        $this->typeReport = new ArrayCollection();
-    }
-
 
     /**
      * @var integer
@@ -91,6 +85,7 @@ class BaseForms
      */
     public function setTypeReport($typeReport)
     {
+
         $this->typeReport = $typeReport;
 
         return $this;
@@ -196,5 +191,64 @@ class BaseForms
     public function getDateAccepted()
     {
         return $this->dateAccepted;
+    }
+
+
+
+    /**
+     * @var \AppBundle\Entity\TypeReport
+     */
+    private $reportType;
+
+
+    /**
+     * Set reportType
+     *
+     * @param \AppBundle\Entity\TypeReport $reportType
+     * @return BaseForms
+     */
+    public function setReportType(\AppBundle\Entity\TypeReport $reportType = null)
+    {
+        $this->reportType = $reportType;
+
+        return $this;
+    }
+
+    /**
+     * Get reportType
+     *
+     * @return \AppBundle\Entity\TypeReport 
+     */
+    public function getReportType()
+    {
+        return $this->reportType;
+    }
+    /**
+     * @var integer
+     */
+    private $typeReportId;
+
+
+    /**
+     * Set typeReportId
+     *
+     * @param integer $typeReportId
+     * @return BaseForms
+     */
+    public function setTypeReportId($typeReportId)
+    {
+        $this->typeReportId = $typeReportId;
+
+        return $this;
+    }
+
+    /**
+     * Get typeReportId
+     *
+     * @return integer 
+     */
+    public function getTypeReportId()
+    {
+        return $this->typeReportId;
     }
 }

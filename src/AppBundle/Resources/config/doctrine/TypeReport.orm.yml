@@ -16,4 +16,9 @@ AppBundle\Entity\TypeReport:
             length: 255
             fixed: false
             column: type_name
+    oneToMany:
+        baseForms:
+            targetEntity: BaseForms
+            mappedBy: typeReport
+
     lifecycleCallbacks: {  }

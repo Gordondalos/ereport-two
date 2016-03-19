@@ -67,6 +67,24 @@ class BaseFormsController extends Controller
             'method' => 'POST',
         ));
 
+
+        // Получил  типы отчета
+        $em = $this->getDoctrine()->getManager();
+        $typereporobjs = $em->getRepository('AppBundle:TypeReport')->findAll();
+
+        $newarr= array();
+        foreach($typereporobjs as $vall){
+            $newarr[$vall->getId()] = $vall->getTypeName();
+        }
+
+        $form->add('typeReport','choice',array(
+            'choices'=> $newarr
+        ));
+
+
+
+
+
         $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;

@@ -29,6 +29,19 @@ class FormReportController extends Controller
             'entities' => $entities,
         ));
     }
+
+
+    public function AllAction($em = null)
+    {
+        if($em == null){
+            $em = $this->getDoctrine()->getManager();
+        }
+        $entities = $em->getRepository('AppBundle:FormReport')->findAll();
+
+        return $entities;
+    }
+
+
     /**
      * Creates a new FormReport entity.
      *

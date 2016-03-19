@@ -1,11 +1,14 @@
+{% extends '::base.html.twig' %}
 
-    <h1 class="p-t-3">Формы для скачивания</h1>
-    <table class="table records_list">
-        <thead class="table-success">
+{% block body -%}
+    <h1>BaseForms list</h1>
+
+    <table class="records_list">
+        <thead>
             <tr>
                 <th>Id</th>
                 <th>Formreport</th>
-                <th>Typereport</th>
+                <th>Typereportid</th>
                 <th>Description</th>
                 <th>Organization</th>
                 <th>Fileadress</th>
@@ -18,7 +21,7 @@
             <tr>
                 <td><a href="{{ path('baseforms_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.formReport }}</td>
-                <td>{{ entity.typeReport }}</td>
+                <td>{{ entity.typeReportId }}</td>
                 <td>{{ entity.description }}</td>
                 <td>{{ entity.organization }}</td>
                 <td>{{ entity.fileAdress }}</td>
@@ -45,4 +48,4 @@
             </a>
         </li>
     </ul>
-
+    {% endblock %}
