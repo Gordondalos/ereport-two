@@ -81,6 +81,31 @@ class BaseFormsController extends Controller
             'choices'=> $newarr
         ));
 
+        //  Получил формы отчета
+        $formRetoprt = $em->getRepository('AppBundle:FormReport')->findAll();
+
+        $newarrform= array();
+        foreach($formRetoprt as $vall){
+            $newarrform[$vall->getId()] = $vall->getFormName();
+        }
+
+        $form->add('formReport','choice',array(
+            'choices'=> $newarrform
+        ));
+
+        //  Получил организации
+        $org = $em->getRepository('AppBundle:Organization')->findAll();
+
+        $orgarr= array();
+        foreach($org as $vall){
+            $orgarr[$vall->getId()] = $vall->getOrganizationName();
+        }
+
+        $form->add('organization','choice',array(
+            'choices'=> $orgarr
+        ));
+
+
 
 
 
