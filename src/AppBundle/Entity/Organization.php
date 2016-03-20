@@ -27,8 +27,25 @@ class Organization
     /**
      * @var string
      */
-    private $description;
+    private $organizationDescription;
 
+    /**
+     * @var string
+     */
+    private $organizationShortName;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $baseForms;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->baseForms = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -87,32 +104,27 @@ class Organization
     }
 
     /**
-     * Set description
+     * Set organizationDescription
      *
-     * @param string $description
+     * @param string $organizationDescription
      * @return Organization
      */
-    public function setDescription($description)
+    public function setOrganizationDescription($organizationDescription)
     {
-        $this->description = $description;
+        $this->organizationDescription = $organizationDescription;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get organizationDescription
      *
      * @return string 
      */
-    public function getDescription()
+    public function getOrganizationDescription()
     {
-        return $this->description;
+        return $this->organizationDescription;
     }
-    /**
-     * @var string
-     */
-    private $organizationShortName;
-
 
     /**
      * Set organizationShortName
@@ -135,46 +147,6 @@ class Organization
     public function getOrganizationShortName()
     {
         return $this->organizationShortName;
-    }
-    /**
-     * @var string
-     */
-    private $organizationDescription;
-
-
-    /**
-     * Set organizationDescription
-     *
-     * @param string $organizationDescription
-     * @return Organization
-     */
-    public function setOrganizationDescription($organizationDescription)
-    {
-        $this->organizationDescription = $organizationDescription;
-
-        return $this;
-    }
-
-    /**
-     * Get organizationDescription
-     *
-     * @return string 
-     */
-    public function getOrganizationDescription()
-    {
-        return $this->organizationDescription;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $baseForms;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->baseForms = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

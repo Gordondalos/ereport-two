@@ -39,6 +39,7 @@ class BaseFormsController extends Controller
         $entity = new BaseForms();
 
         $form = $this->createCreateForm($entity);
+       // var_dump($request);
         $form->handleRequest($request);
 
 
@@ -71,47 +72,23 @@ class BaseFormsController extends Controller
             'method' => 'POST',
         ));
 
-        $em = $this->getDoctrine()->getManager();
 
-        //  Получил формы отчета
-        $formRetoprt = $em->getRepository('AppBundle:FormReport')->findAll();
-
-        $newarrform= array();
-        foreach($formRetoprt as $vall){
-            $newarrform[$vall->getId()] = $vall->getFormName();
-        }
-
-        $form->add('formReport','choice',array(
-            'choices'=> $newarrform
+        $form->add('formReport','entity',array(
+            'class' => 'AppBundle:FormReport',
+            'choice_label'=> 'formName',
         ));
 
 
-        // Получил  типы отчета
-        $typereporobjs = $em->getRepository('AppBundle:TypeReport')->findAll();
-
-        $newarr= array();
-        foreach($typereporobjs as $vall){
-            $newarr[$vall->getId()] = $vall->getTypeName();
-        }
-
-        $form->add('typeReport','choice',array(
-            'choices'=> $newarr
+        $form->add('typeReport','entity',array(
+            'class' => 'AppBundle:TypeReport',
+            'choice_label'=> 'typeName',
         ));
 
 
-        //  Получил организации
-        $org = $em->getRepository('AppBundle:Organization')->findAll();
-        $orgarr= array();
-        foreach($org as $vall){
-            $orgarr[$vall->getId()] = $vall->getOrganizationName();
-        }
-
-        $form->add('organization','choice',array(
-            'choices'=> $orgarr
+        $form->add('organization','entity',array(
+            'class' => 'AppBundle:Organization',
+            'choice_label'=> 'organizationName',
         ));
-
-
-
 
         $form->add('submit', 'submit', array('label' => 'Create'));
 

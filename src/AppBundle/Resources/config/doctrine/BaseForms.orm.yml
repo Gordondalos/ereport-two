@@ -44,7 +44,6 @@ AppBundle\Entity\BaseForms:
             length: 255
             fixed: false
             column: image_name
-
     manyToOne:
         typeReport:
             targetEntity: TypeReport
