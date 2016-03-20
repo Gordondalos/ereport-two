@@ -20,5 +20,4 @@ AppBundle\Entity\TypeReport:
         baseForms:
             targetEntity: BaseForms
             mappedBy: typeReport
-
     lifecycleCallbacks: {  }

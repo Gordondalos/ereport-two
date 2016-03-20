@@ -16,15 +16,14 @@ class BaseForms
 
     private $typeReport;
 
+    private $formReport;
+
     /**
      * @var integer
      */
     private $id;
 
-    /**
-     * @var integer
-     */
-    private $formReport;
+
 
      /**
      * @var string
@@ -57,28 +56,6 @@ class BaseForms
         return $this->id;
     }
 
-    /**
-     * Set formReport
-     *
-     * @param integer $formReport
-     * @return BaseForms
-     */
-    public function setFormReport($formReport)
-    {
-        $this->formReport = $formReport;
-
-        return $this;
-    }
-
-    /**
-     * Get formReport
-     *
-     * @return integer 
-     */
-    public function getFormReport()
-    {
-        return $this->formReport;
-    }
 
     /**
      * Set typeReport
@@ -94,6 +71,21 @@ class BaseForms
         return $this;
     }
 
+
+    /**
+     * Set formReport
+     *
+     * @param integer $formReport
+     * @return BaseForms
+     */
+    public function setFormReport($formReport)
+    {
+
+        $this->formReport = $formReport;
+
+        return $this;
+    }
+
     /**
      * Get typeReport
      *
@@ -103,6 +95,19 @@ class BaseForms
     {
         return $this->typeReport;
     }
+
+
+    /**
+     * Get formReport
+     *
+     * @return integer
+     */
+    public function getFormReport()
+    {
+        return $this->formReport;
+    }
+
+
 
     /**
      * Set description
@@ -197,6 +202,8 @@ class BaseForms
     }
 
 
+
+
     /**
      * @var integer
      */
@@ -226,6 +233,35 @@ class BaseForms
     }
 
 
+
+    /**
+     * @var integer
+     */
+    private $formReportId;
+
+
+    /**
+     * Set formReportId
+     *
+     * @param integer $formReportId
+     * @return BaseForms
+     */
+    public function setFormReportId($formReportId)
+    {
+        $this->formReportId = $formReportId;
+
+        return $this;
+    }
+
+    /**
+     * Get formReportId
+     *
+     * @return integer
+     */
+    public function getFormReportId()
+    {
+        return $this->formReportId;
+    }
 
 
 
@@ -309,4 +345,7 @@ class BaseForms
     {
         return $this->imageName;
     }
+
+
+
 }

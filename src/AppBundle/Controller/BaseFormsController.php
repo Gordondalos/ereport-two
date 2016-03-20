@@ -81,12 +81,13 @@ class BaseFormsController extends Controller
         //  Получил формы отчета
         $formRetoprt = $em->getRepository('AppBundle:FormReport')->findAll();
 
+
         $newarrform= array();
         foreach($formRetoprt as $vall){
             $newarrform[$vall->getId()] = $vall->getFormName();
         }
 
-        $form->add('formReport','choice',array(
+        $form->add('formReportId','choice',array(
             'choices'=> $newarrform
         ));
 
@@ -99,7 +100,7 @@ class BaseFormsController extends Controller
             $newarr[$vall->getId()] = $vall->getTypeName();
         }
 
-        $form->add('typeReport','choice',array(
+        $form->add('typeReportId','choice',array(
             'choices'=> $newarr
         ));
 

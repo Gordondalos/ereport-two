@@ -15,8 +15,8 @@ class BaseFormsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('formReport')
-            ->add('typeReport')
+            ->add('formReportId')
+            ->add('typeReportId')
             ->add('description')
             ->add('organization')
             ->add('fileAdress')

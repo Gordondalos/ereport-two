@@ -10,16 +10,16 @@ AppBundle\Entity\BaseForms:
             generator:
                 strategy: IDENTITY
     fields:
-        formReport:
-            type: integer
-            nullable: false
-            unsigned: false
-            column: form_report
         typeReportId:
             type: integer
             nullable: false
             unsigned: false
             column: type_report_id
+        formReportId:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: form_report_id
         description:
             type: text
             nullable: true
@@ -51,6 +51,13 @@ AppBundle\Entity\BaseForms:
             inversedBy: baseForms
             joinColumn:
                 name: type_report_id
+                referencedColumnName: id
+
+        formReport:
+            targetEntity: FormReport
+            inversedBy: baseForms
+            joinColumn:
+                name: form_report_id
                 referencedColumnName: id
 
     lifecycleCallbacks: {  }

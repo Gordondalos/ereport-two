@@ -16,4 +16,8 @@ AppBundle\Entity\FormReport:
             length: 255
             fixed: false
             column: form_name
+    oneToMany:
+        baseForms:
+            targetEntity: BaseForms
+            mappedBy: formReport
     lifecycleCallbacks: {  }

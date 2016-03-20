@@ -1,6 +1,6 @@
 {% extends '::base.html.twig' %}
 
-{% block content%}
+{% block content %}
     <h1>BaseForms list</h1>
 
     <table class="records_list table table-striped">
@@ -20,7 +20,7 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('baseforms_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.formReport }}</td>
+                <td>{{ entity.formReport.getFormName}}</td>
                 <td>{{ entity.typeReport.getTypeName }}</td>
                 <td>{{ entity.description }}</td>
                 <td>{{ entity.organization }}</td>
