@@ -25,6 +25,7 @@ class BaseFormsController extends Controller
 
         $entities = $em->getRepository('AppBundle:BaseForms')->findAll();
 
+
         return $this->render('AppBundle:BaseForms:index.html.twig', array(
             'entities' => $entities,
         ));

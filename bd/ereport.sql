@@ -1,7 +1,7 @@
 ﻿--
 -- Скрипт сгенерирован Devart dbForge Studio for MySQL, Версия 6.3.358.0
 -- Домашняя страница продукта: http://www.devart.com/ru/dbforge/mysql/studio
--- Дата скрипта: 19.03.2016 10:38:29
+-- Дата скрипта: 20.03.2016 14:32:02
 -- Версия сервера: 5.6.21
 -- Версия клиента: 4.1
 --
@@ -43,25 +43,6 @@ CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
 --
--- Описание для таблицы base_forms
---
-DROP TABLE IF EXISTS base_forms;
-CREATE TABLE base_forms (
-  id INT(11) NOT NULL AUTO_INCREMENT,
-  form_report INT(11) NOT NULL,
-  type_report INT(11) NOT NULL,
-  description LONGTEXT DEFAULT NULL,
-  organization INT(11) NOT NULL,
-  file_adress VARCHAR(255) NOT NULL,
-  date_accepted DATETIME NOT NULL,
-  PRIMARY KEY (id)
-)
-ENGINE = INNODB
-AUTO_INCREMENT = 2
-CHARACTER SET utf8
-COLLATE utf8_unicode_ci;
-
---
 -- Описание для таблицы form_report
 --
 DROP TABLE IF EXISTS form_report;
@@ -71,7 +52,8 @@ CREATE TABLE form_report (
   PRIMARY KEY (id)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 1
+AUTO_INCREMENT = 4
+AVG_ROW_LENGTH = 5461
 CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
@@ -172,8 +154,32 @@ CREATE TABLE type_report (
   PRIMARY KEY (id)
 )
 ENGINE = INNODB
-AUTO_INCREMENT = 5
-AVG_ROW_LENGTH = 4096
+AUTO_INCREMENT = 3
+AVG_ROW_LENGTH = 8192
+CHARACTER SET utf8
+COLLATE utf8_unicode_ci;
+
+--
+-- Описание для таблицы base_forms
+--
+DROP TABLE IF EXISTS base_forms;
+CREATE TABLE base_forms (
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  form_report INT(11) NOT NULL,
+  type_report_id INT(11) NOT NULL,
+  description LONGTEXT DEFAULT NULL,
+  organization INT(11) NOT NULL,
+  file_adress VARCHAR(255) NOT NULL,
+  date_accepted DATETIME NOT NULL,
+  image_name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id),
+  INDEX IDX_40148A25FF14E5D0 (type_report_id),
+  CONSTRAINT FK_40148A25FF14E5D0 FOREIGN KEY (type_report_id)
+    REFERENCES type_report(id) ON DELETE RESTRICT ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 6
+AVG_ROW_LENGTH = 5461
 CHARACTER SET utf8
 COLLATE utf8_unicode_ci;
 
@@ -186,16 +192,12 @@ INSERT INTO area VALUES
 (3, 'Октябрьский');
 
 -- 
--- Вывод данных для таблицы base_forms
---
-INSERT INTO base_forms VALUES
-(1, 1, 1, 'bla bla bla', 1, 'qwe', '2011-01-01 00:00:00');
-
--- 
 -- Вывод данных для таблицы form_report
 --
-
--- Таблица ereport.form_report не содержит данных
+INSERT INTO form_report VALUES
+(1, 'Форма №1'),
+(2, 'Форма №2'),
+(3, 'Форма №3');
 
 -- 
 -- Вывод данных для таблицы fos_user
@@ -232,9 +234,15 @@ INSERT INTO status VALUES
 --
 INSERT INTO type_report VALUES
 (1, 'Первоначальный'),
-(2, 'Уточненный'),
-(3, 'Промежуточный'),
-(4, 'Ликвидационный');
+(2, 'Уточненный');
+
+-- 
+-- Вывод данных для таблицы base_forms
+--
+INSERT INTO base_forms VALUES
+(1, 1, 1, 'bla bla bla', 1, 'qweqwe', '2011-01-01 00:00:00', ''),
+(2, 1, 1, NULL, 1, '654654654', '2011-01-01 00:00:00', ''),
+(3, 1, 1, NULL, 1, 'qweqweqweqwe', '2011-01-01 00:00:00', 'csslive.PNG');
 
 -- 
 -- Восстановить предыдущий режим SQL (SQL mode)

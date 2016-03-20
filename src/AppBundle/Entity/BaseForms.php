@@ -197,40 +197,10 @@ class BaseForms
     }
 
 
-
-    /**
-     * @var \AppBundle\Entity\TypeReport
-     */
-    private $reportType;
-
-
-    /**
-     * Set reportType
-     *
-     * @param \AppBundle\Entity\TypeReport $reportType
-     * @return BaseForms
-     */
-    public function setReportType(\AppBundle\Entity\TypeReport $reportType = null)
-    {
-        $this->reportType = $reportType;
-
-        return $this;
-    }
-
-    /**
-     * Get reportType
-     *
-     * @return \AppBundle\Entity\TypeReport 
-     */
-    public function getReportType()
-    {
-        return $this->reportType;
-    }
     /**
      * @var integer
      */
     private $typeReportId;
-
 
     /**
      * Set typeReportId
