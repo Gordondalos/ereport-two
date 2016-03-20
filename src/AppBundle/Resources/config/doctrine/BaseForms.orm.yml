@@ -39,6 +39,12 @@ AppBundle\Entity\BaseForms:
             type: datetime
             nullable: false
             column: date_accepted
+        imageName:
+            type: string
+            length: 255
+            fixed: false
+            column: image_name
+
     manyToOne:
         typeReport:
             targetEntity: TypeReport

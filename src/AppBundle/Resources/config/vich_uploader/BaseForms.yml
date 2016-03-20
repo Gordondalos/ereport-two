@@ -1,0 +1,4 @@
+AppBundle\Entity\BaseForms:
+    image:
+        mapping: product_image
+        filename_property: image_name

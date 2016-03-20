@@ -36,12 +36,16 @@ class BaseFormsController extends Controller
     public function createAction(Request $request)
     {
         $entity = new BaseForms();
+
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            var_dump($entity);
             $em->persist($entity);
+
             $em->flush();
 
             return $this->redirect($this->generateUrl('baseforms_show', array('id' => $entity->getId())));
@@ -68,18 +72,10 @@ class BaseFormsController extends Controller
         ));
 
 
-        // Получил  типы отчета
+
         $em = $this->getDoctrine()->getManager();
-        $typereporobjs = $em->getRepository('AppBundle:TypeReport')->findAll();
 
-        $newarr= array();
-        foreach($typereporobjs as $vall){
-            $newarr[$vall->getId()] = $vall->getTypeName();
-        }
 
-        $form->add('typeReport','choice',array(
-            'choices'=> $newarr
-        ));
 
         //  Получил формы отчета
         $formRetoprt = $em->getRepository('AppBundle:FormReport')->findAll();
@@ -92,6 +88,20 @@ class BaseFormsController extends Controller
         $form->add('formReport','choice',array(
             'choices'=> $newarrform
         ));
+
+
+        // Получил  типы отчета
+        $typereporobjs = $em->getRepository('AppBundle:TypeReport')->findAll();
+
+        $newarr= array();
+        foreach($typereporobjs as $vall){
+            $newarr[$vall->getId()] = $vall->getTypeName();
+        }
+
+        $form->add('typeReport','choice',array(
+            'choices'=> $newarr
+        ));
+
 
         //  Получил организации
         $org = $em->getRepository('AppBundle:Organization')->findAll();
@@ -122,6 +132,7 @@ class BaseFormsController extends Controller
     public function newAction()
     {
         $entity = new BaseForms();
+
         $form   = $this->createCreateForm($entity);
 
         return $this->render('AppBundle:BaseForms:new.html.twig', array(

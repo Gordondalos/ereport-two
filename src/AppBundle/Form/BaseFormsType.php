@@ -21,6 +21,12 @@ class BaseFormsType extends AbstractType
             ->add('organization')
             ->add('fileAdress')
             ->add('dateAccepted')
+            ->add('imageFile', 'vich_file', array(
+                'required'      => false,
+                'allow_delete'  => true, // not mandatory, default is true
+                'download_link' => true, // not mandatory, default is true
+
+            ));
         ;
     }
     
