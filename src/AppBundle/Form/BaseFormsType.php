@@ -15,10 +15,7 @@ class BaseFormsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('formReport')
-            ->add('typeReport')
             ->add('description')
-            ->add('organization')
             ->add('createUser')
             ->add('dateAccepted')
             ->add('imageFile', 'vich_file', array(

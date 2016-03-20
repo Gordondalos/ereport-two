@@ -90,6 +90,36 @@ class BaseFormsController extends Controller
             'choice_label'=> 'organizationName',
         ));
 
+        $form->add('dateAccepted','datetime', array(
+            'data' => new \DateTime(),
+            'read_only'=>true,
+
+        ));
+
+        $form->add('createUser','entity', array(
+            'class'=>'AppBundle:User',
+            'data' => $this->getUser(),
+            'read_only'=>true
+
+        ));
+
+
+
+
+
+
+//        $us  = $this->getUser();
+//
+//        $form->add('createUser','hidden',array(
+//
+//            'data'=> $us,
+//        ));
+
+
+
+//        var_dump($us);
+
+
         $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
@@ -146,6 +176,8 @@ class BaseFormsController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find BaseForms entity.');
         }
+
+
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
