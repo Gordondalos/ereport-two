@@ -34,4 +34,8 @@ AppBundle\Entity\Organization:
             length: 255
             fixed: false
             column: organization_short_name
+    oneToMany:
+        baseForms:
+            targetEntity: BaseForms
+            mappedBy: organization
     lifecycleCallbacks: {  }

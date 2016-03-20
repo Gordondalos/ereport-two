@@ -30,10 +30,7 @@ class BaseForms
      */
     private $description;
 
-    /**
-     * @var integer
-     */
-    private $organization;
+
 
     /**
      * @var string
@@ -132,28 +129,9 @@ class BaseForms
         return $this->description;
     }
 
-    /**
-     * Set organization
-     *
-     * @param integer $organization
-     * @return BaseForms
-     */
-    public function setOrganization($organization)
-    {
-        $this->organization = $organization;
 
-        return $this;
-    }
 
-    /**
-     * Get organization
-     *
-     * @return integer 
-     */
-    public function getOrganization()
-    {
-        return $this->organization;
-    }
+
 
     /**
      * Set fileAdress
@@ -348,4 +326,60 @@ class BaseForms
 
 
 
+    /**
+     * @var integer
+     */
+    private $organizationId;
+
+    /**
+     * @var \AppBundle\Entity\Organization
+     */
+    private $organization;
+
+
+    /**
+     * Set organizationId
+     *
+     * @param integer $organizationId
+     * @return BaseForms
+     */
+    public function setOrganizationId($organizationId)
+    {
+        $this->organizationId = $organizationId;
+
+        return $this;
+    }
+
+    /**
+     * Get organizationId
+     *
+     * @return integer 
+     */
+    public function getOrganizationId()
+    {
+        return $this->organizationId;
+    }
+
+    /**
+     * Set organization
+     *
+     * @param \AppBundle\Entity\Organization $organization
+     * @return BaseForms
+     */
+    public function setOrganization(\AppBundle\Entity\Organization $organization = null)
+    {
+        $this->organization = $organization;
+
+        return $this;
+    }
+
+    /**
+     * Get organization
+     *
+     * @return \AppBundle\Entity\Organization 
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
 }

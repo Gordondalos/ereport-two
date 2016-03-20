@@ -1,6 +1,6 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
+{% block content %}
     <h1>BaseForms</h1>
 
     <table class="record_properties">
@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <th>Organization</th>
-                <td>{{ entity.organization }}</td>
+                <td>{{ entity.organization.getOrganizationShortName }}</td>
             </tr>
             <tr>
                 <th>Fileadress</th>

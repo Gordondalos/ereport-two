@@ -164,4 +164,49 @@ class Organization
     {
         return $this->organizationDescription;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $baseForms;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->baseForms = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add baseForms
+     *
+     * @param \AppBundle\Entity\BaseForms $baseForms
+     * @return Organization
+     */
+    public function addBaseForm(\AppBundle\Entity\BaseForms $baseForms)
+    {
+        $this->baseForms[] = $baseForms;
+
+        return $this;
+    }
+
+    /**
+     * Remove baseForms
+     *
+     * @param \AppBundle\Entity\BaseForms $baseForms
+     */
+    public function removeBaseForm(\AppBundle\Entity\BaseForms $baseForms)
+    {
+        $this->baseForms->removeElement($baseForms);
+    }
+
+    /**
+     * Get baseForms
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getBaseForms()
+    {
+        return $this->baseForms;
+    }
 }

@@ -25,10 +25,11 @@ AppBundle\Entity\BaseForms:
             nullable: true
             length: null
             fixed: false
-        organization:
+        organizationId:
             type: integer
             nullable: false
             unsigned: false
+            column: organization_id
         fileAdress:
             type: string
             nullable: false
@@ -59,6 +60,12 @@ AppBundle\Entity\BaseForms:
             joinColumn:
                 name: form_report_id
                 referencedColumnName: id
+        organization:
+                targetEntity: Organization
+                inversedBy: baseForms
+                joinColumn:
+                    name: organization_id
+                    referencedColumnName: id
 
     lifecycleCallbacks: {  }
 
