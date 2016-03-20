@@ -30,12 +30,11 @@ AppBundle\Entity\BaseForms:
             nullable: false
             unsigned: false
             column: organization_id
-        fileAdress:
-            type: string
+        createUserId:
+            type: integer
             nullable: false
-            length: 255
-            fixed: false
-            column: file_adress
+            unsigned: false
+            column: create_user_id
         dateAccepted:
             type: datetime
             nullable: false
@@ -61,11 +60,17 @@ AppBundle\Entity\BaseForms:
                 name: form_report_id
                 referencedColumnName: id
         organization:
-                targetEntity: Organization
-                inversedBy: baseForms
-                joinColumn:
-                    name: organization_id
-                    referencedColumnName: id
+            targetEntity: Organization
+            inversedBy: baseForms
+            joinColumn:
+                name: organization_id
+                referencedColumnName: id
+        createUser:
+            targetEntity: User
+            inversedBy: baseForms
+            joinColumn:
+                name: create_user_id
+                referencedColumnName: id
 
     lifecycleCallbacks: {  }
 

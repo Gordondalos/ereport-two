@@ -382,4 +382,60 @@ class BaseForms
     {
         return $this->organization;
     }
+    /**
+     * @var integer
+     */
+    private $createUserId;
+
+    /**
+     * @var \AppBundle\Entity\User
+     */
+    private $createUser;
+
+
+    /**
+     * Set createUserId
+     *
+     * @param integer $createUserId
+     * @return BaseForms
+     */
+    public function setCreateUserId($createUserId)
+    {
+        $this->createUserId = $createUserId;
+
+        return $this;
+    }
+
+    /**
+     * Get createUserId
+     *
+     * @return integer 
+     */
+    public function getCreateUserId()
+    {
+        return $this->createUserId;
+    }
+
+    /**
+     * Set createUser
+     *
+     * @param \AppBundle\Entity\User $createUser
+     * @return BaseForms
+     */
+    public function setCreateUser(\AppBundle\Entity\User $createUser = null)
+    {
+        $this->createUser = $createUser;
+
+        return $this;
+    }
+
+    /**
+     * Get createUser
+     *
+     * @return \AppBundle\Entity\User 
+     */
+    public function getCreateUser()
+    {
+        return $this->createUser;
+    }
 }
