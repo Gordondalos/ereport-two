@@ -41,12 +41,11 @@ class BaseFormsController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+
+       if ($form->isValid()) {
+
             $em = $this->getDoctrine()->getManager();
-
-            var_dump($entity);
             $em->persist($entity);
-
             $em->flush();
 
             return $this->redirect($this->generateUrl('baseforms_show', array('id' => $entity->getId())));
@@ -72,27 +71,22 @@ class BaseFormsController extends Controller
             'method' => 'POST',
         ));
 
-
-
         $em = $this->getDoctrine()->getManager();
 
-
-
-        //  Ïîëó÷èë ôîðìû îò÷åòà
+        //  ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ð» Ñ„Ð¾Ñ€Ð¼Ñ‹ Ð¾Ñ‚Ñ‡ÐµÑ‚Ð°
         $formRetoprt = $em->getRepository('AppBundle:FormReport')->findAll();
-
 
         $newarrform= array();
         foreach($formRetoprt as $vall){
             $newarrform[$vall->getId()] = $vall->getFormName();
         }
 
-        $form->add('formReportId','choice',array(
+        $form->add('formReport','choice',array(
             'choices'=> $newarrform
         ));
 
 
-        // Ïîëó÷èë  òèïû îò÷åòà
+        // ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ð»  Ñ‚Ð¸Ð¿Ñ‹ Ð¾Ñ‚Ñ‡ÐµÑ‚Ð°
         $typereporobjs = $em->getRepository('AppBundle:TypeReport')->findAll();
 
         $newarr= array();
@@ -100,14 +94,13 @@ class BaseFormsController extends Controller
             $newarr[$vall->getId()] = $vall->getTypeName();
         }
 
-        $form->add('typeReportId','choice',array(
+        $form->add('typeReport','choice',array(
             'choices'=> $newarr
         ));
 
 
-        //  Ïîëó÷èë îðãàíèçàöèè
+        //  ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ð» Ð¾Ñ€Ð³Ð°Ð½Ð¸Ð·Ð°Ñ†Ð¸Ð¸
         $org = $em->getRepository('AppBundle:Organization')->findAll();
-
         $orgarr= array();
         foreach($org as $vall){
             $orgarr[$vall->getId()] = $vall->getOrganizationName();
@@ -116,8 +109,6 @@ class BaseFormsController extends Controller
         $form->add('organization','choice',array(
             'choices'=> $orgarr
         ));
-
-
 
 
 
@@ -135,7 +126,7 @@ class BaseFormsController extends Controller
     {
         $entity = new BaseForms();
 
-        $form   = $this->createCreateForm($entity);
+        $form  = $this->createCreateForm($entity);
 
         return $this->render('AppBundle:BaseForms:new.html.twig', array(
             'entity' => $entity,

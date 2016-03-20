@@ -15,11 +15,11 @@ class BaseFormsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('formReportId')
-            ->add('typeReportId')
+            ->add('formReport')
+            ->add('typeReport')
             ->add('description')
             ->add('organization')
-            ->add('fileAdress')
+            ->add('createUser')
             ->add('dateAccepted')
             ->add('imageFile', 'vich_file', array(
                 'required'      => false,

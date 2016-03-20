@@ -32,10 +32,8 @@ class BaseForms
 
 
 
-    /**
-     * @var string
-     */
-    private $fileAdress;
+
+
 
     /**
      * @var \DateTime
@@ -129,32 +127,6 @@ class BaseForms
         return $this->description;
     }
 
-
-
-
-
-    /**
-     * Set fileAdress
-     *
-     * @param string $fileAdress
-     * @return BaseForms
-     */
-    public function setFileAdress($fileAdress)
-    {
-        $this->fileAdress = $fileAdress;
-
-        return $this;
-    }
-
-    /**
-     * Get fileAdress
-     *
-     * @return string 
-     */
-    public function getFileAdress()
-    {
-        return $this->fileAdress;
-    }
 
     /**
      * Set dateAccepted

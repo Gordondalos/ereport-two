@@ -52,7 +52,6 @@ AppBundle\Entity\BaseForms:
             joinColumn:
                 name: type_report_id
                 referencedColumnName: id
-
         formReport:
             targetEntity: FormReport
             inversedBy: baseForms
