@@ -26,6 +26,7 @@ class BaseFormsController extends Controller
         $entities = $em->getRepository('AppBundle:BaseForms')->findAll();
 
 
+
         return $this->render('AppBundle:BaseForms:index.html.twig', array(
             'entities' => $entities,
         ));
@@ -116,8 +117,6 @@ class BaseFormsController extends Controller
 //        ));
 
 
-
-//        var_dump($us);
 
 
         $form->add('submit', 'submit', array('label' => 'Create'));
