@@ -6,25 +6,9 @@ app_baseforms:
     resource: "@AppBundle/Resources/config/routing/baseforms.yml"
     prefix:   /baseforms
 
-app_user:
-    resource: "@AppBundle/Resources/config/routing/user.yml"
-    prefix:   /user
-
 app_organization:
     resource: "@AppBundle/Resources/config/routing/organization.yml"
     prefix:   /organization
-
-app_baseforms:
-    resource: "@AppBundle/Resources/config/routing/baseforms.yml"
-    prefix:   /baseforms
-
-app_user:
-    resource: "@AppBundle/Resources/config/routing/user.yml"
-    prefix:   /user
-
-app_typereport:
-    resource: "@AppBundle/Resources/config/routing/typereport.yml"
-    prefix:   /typereport
 
 app_status:
     resource: "@AppBundle/Resources/config/routing/status.yml"
@@ -33,10 +17,6 @@ app_status:
 app_report:
     resource: "@AppBundle/Resources/config/routing/report.yml"
     prefix:   /report
-
-app_organization:
-    resource: "@AppBundle/Resources/config/routing/organization.yml"
-    prefix:   /organization
 
 app_formreport:
     resource: "@AppBundle/Resources/config/routing/formreport.yml"

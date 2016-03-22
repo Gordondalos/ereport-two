@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Form;
+namespace UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -8,14 +8,25 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UserType extends AbstractType
 {
-
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('description')
+            ->add('phone')
+        ;
+    }
+    
     /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\User'
+            'data_class' => 'UserBundle\Entity\User'
         ));
     }
 
@@ -24,20 +35,6 @@ class UserType extends AbstractType
      */
     public function getName()
     {
-        return 'appbundle_user';
-    }
-
-
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder
-            ->add('username')
-            ->add('username_canonical')
-            ->add('password')
-            ->add('roles')
-            ->add('email')
-            ->add('enabled')
-            ->add('locked')
-        ;
+        return 'Userbundle_user';
     }
 }

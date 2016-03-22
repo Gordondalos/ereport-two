@@ -3,9 +3,12 @@
 namespace AppBundle\Entity;
 
 
+
+
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * BaseForms
@@ -23,17 +26,10 @@ class BaseForms
      */
     private $id;
 
-
-
      /**
      * @var string
      */
     private $description;
-
-
-
-
-
 
     /**
      * @var \DateTime
@@ -360,7 +356,7 @@ class BaseForms
     private $createUserId;
 
     /**
-     * @var \AppBundle\Entity\User
+     * @var \UserBundle\Entity\User
      */
     private $createUser;
 
@@ -391,10 +387,10 @@ class BaseForms
     /**
      * Set createUser
      *
-     * @param \AppBundle\Entity\User $createUser
+     * @param \UserBundle\Entity\User $createUser
      * @return BaseForms
      */
-    public function setCreateUser(\AppBundle\Entity\User $createUser = null)
+    public function setCreateUser(\UserBundle\Entity\User $createUser = null)
     {
         $this->createUser = $createUser;
 
@@ -404,7 +400,7 @@ class BaseForms
     /**
      * Get createUser
      *
-     * @return \AppBundle\Entity\User 
+     * @return \UserBundle\Entity\User
      */
     public function getCreateUser()
     {

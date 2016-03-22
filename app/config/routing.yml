@@ -2,8 +2,8 @@ _welcome:
     pattern: /
     defaults: {_controller: AppBundle:Default:index}
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+userbundle:
+  resource: "@UserBundle/Resources/config/routing.yml"
 
 appbundle:
      resource:  "@AppBundle/Resources/config/routing.yml"
