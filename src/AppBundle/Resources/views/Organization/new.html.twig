@@ -1,15 +1,14 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-    <h1>Organization creation</h1>
+    <h1>{{ 'Organization creation'|trans }}</h1>
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('organization') }}">
-            Back to the list
+
+        <a class="btn btn-success m-y-1" href="{{ path('organization') }}">
+            {{ 'Back to the list'|trans }}
         </a>
-    </li>
-</ul>
+
+
 {% endblock %}

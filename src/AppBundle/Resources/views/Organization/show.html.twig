@@ -1,44 +1,50 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-    <h1>Organization</h1>
+    <h1>{{ 'Organization'|trans }}</h1>
 
-    <table class="record_properties">
-        <tbody>
+    <table class="record_properties table">
+        <tbody class="thead-default">
             <tr>
-                <th>Id</th>
+                <th>{{ 'Id'|trans }}</th>
+                <th>{{ 'Organizationname'|trans }}</th>
+                <th>{{ 'Organizationshortname'|trans }}</th>
+                <th>{{ 'Organizationphone'|trans }}</th>
+                <th>{{ 'Description'|trans }}</th>
+
+            </tr>
+            <tr>
                 <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Organizationname</th>
                 <td>{{ entity.organizationName }}</td>
-            </tr>
-            <tr>
-                <th>Organizationshortname</th>
                 <td>{{ entity.organizationShortName }}</td>
-            </tr>
-            <tr>
-                <th>Organizationphone</th>
                 <td>{{ entity.organizationPhone }}</td>
+                <td>{{ entity.organizationDescription }}</td>
             </tr>
             <tr>
-                <th>Description</th>
-                <td>{{ entity.description }}</td>
+
+
+            </tr>
+            <tr>
+
+
+            </tr>
+            <tr>
+
+
             </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('organization') }}">
-            Back to the list
+
+
+        <a class="btn btn-primary m-y-1" href="{{ path('organization') }}">
+           {{ 'Back to the list'|trans }}
         </a>
-    </li>
-    <li>
-        <a href="{{ path('organization_edit', { 'id': entity.id }) }}">
-            Edit
+
+        <a class="btn btn-primary m-y-1" href="{{ path('organization_edit', { 'id': entity.id }) }}">
+            {{ 'Edit'|trans }}
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+
+{{ form(delete_form) }}
+
 {% endblock %}

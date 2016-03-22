@@ -1,15 +1,13 @@
 {% extends '::base.html.twig' %}
 
 {% block content%}
-    <h1>Area creation</h1>
+    <h1>{{ 'Area creation'|trans }}</h1>
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('area') }}">
-            Back to the list
+        <a class="btn btn-primary m-y-1" href="{{ path('area') }}">
+           {{ 'Back to the list'|trans }}
         </a>
-    </li>
-</ul>
+
+
 {% endblock %}

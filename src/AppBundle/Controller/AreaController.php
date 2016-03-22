@@ -67,7 +67,12 @@ class AreaController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array(
+            'label' => 'Create',
+            'attr'=> array(
+                'class'=>'btn btn-success'
+            )
+        ));
 
         return $form;
     }

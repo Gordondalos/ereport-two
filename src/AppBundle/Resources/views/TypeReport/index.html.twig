@@ -1,14 +1,18 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>TypeReport list</h1>
+{% block content %}
+    <h1 class="display-inline-block">{{ 'TypeReport list'|trans }}</h1>
 
-    <table class="records_list">
-        <thead>
+
+    <a class="btn btn-success pull-xs-right" href="{{ path('typereport_new') }}">
+        {{ 'Create a new entry'|trans }}
+    </a>
+    <table class="records_list table">
+        <thead class="thead-default">
             <tr>
-                <th>Id</th>
-                <th>Typename</th>
-                <th>Actions</th>
+                <th>{{ 'Id'|trans }}</th>
+                <th>{{ 'Typename'|trans }}</th>
+                <th>{{ 'Actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -17,12 +21,12 @@
                 <td><a href="{{ path('typereport_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.typeName }}</td>
                 <td>
-                <ul>
+                <ul class="list-unstyled">
                     <li>
-                        <a href="{{ path('typereport_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('typereport_show', { 'id': entity.id }) }}">{{ 'show'|trans }}</a>
                     </li>
                     <li>
-                        <a href="{{ path('typereport_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('typereport_edit', { 'id': entity.id }) }}">{{ 'edit'|trans }}</a>
                     </li>
                 </ul>
                 </td>
@@ -31,11 +35,6 @@
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('typereport_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+
+
     {% endblock %}

@@ -1,14 +1,17 @@
 {% extends '::base.html.twig' %}
 
 {% block content%}
-    <h1>FormReport list</h1>
+    <h1 class="display-inline-block">{{ 'FormReport list'|trans }}</h1>
 
-    <table class="records_list">
-        <thead>
+    <a class="btn btn-success pull-xs-right" href="{{ path('formreport_new') }}">
+        {{ 'Create a new entry'|trans }}
+    </a>
+    <table class="records_list table">
+        <thead class="thead-default">
             <tr>
-                <th>Id</th>
-                <th>Formname</th>
-                <th>Actions</th>
+                <th>{{ 'Id'|trans }}</th>
+                <th>{{ 'Formname'|trans }}</th>
+                <th>{{ 'Actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -17,12 +20,13 @@
                 <td><a href="{{ path('formreport_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.formName }}</td>
                 <td>
-                <ul>
+
+                    <ul class="list-unstyled">
                     <li>
-                        <a href="{{ path('formreport_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('formreport_show', { 'id': entity.id }) }}">{{ 'show'|trans }}</a>
                     </li>
                     <li>
-                        <a href="{{ path('formreport_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('formreport_edit', { 'id': entity.id }) }}">{{ 'edit'|trans }}</a>
                     </li>
                 </ul>
                 </td>
@@ -31,11 +35,6 @@
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('formreport_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+
+
     {% endblock %}

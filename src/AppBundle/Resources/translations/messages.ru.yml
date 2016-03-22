@@ -1,2 +1,50 @@
 User list: Список пользователей
 username: Имя пользователя
+id: №
+Id: №
+Namearea: Наименование района
+Actions: Доступные действия
+Area list: Список районов
+show: Просмотр
+edit: Правка
+Edit: Правка
+Create a new entry: Создать
+Area creation: Создать район
+Back to the list: Вернуться к списку
+nameArea: Название Района
+Area: Район
+Area edit: Исправление района
+Formreport: Форма отчета
+Typereportid: Тип отчета
+Typereport: Тип отчета
+Organization: Оганизация
+Create User: Создатель отчета
+Dateaccepted: Дата загрузки
+linc: Сылка для скачивания
+download: Скачать
+BaseForms list: Список форм
+BaseForms edit: Правка Формы
+BaseForms creation: Создание формы для скачивания
+BaseForms: Форма для скачивания
+Description: Описание
+FormReport list: Формы отчета
+Formname: Название Формы
+FormReport edit: Правка Формы отчета
+FormReport creation: Создание формы отчета
+FormReport: Форма отчета
+Organization list: Список Организаций
+Organizationname: Название организации
+Organizationshortname: Сокращенное название организации
+Organizationphone: Телефон организации
+Organization edit: Исправление организации
+Organization creation: Создание организации
+Status list: Статусы отчетов
+Statusname: Название статуса
+Status: Статус
+Status creation: Создание нового статуса
+Status edit: Исправление статуса
+TypeReport list: Тип отчета
+Typename: Название типа отчета
+TypeReport: Тип отчета
+TypeReport creation: Создание типа отчета
+TypeReport edit: Правка типа отчета

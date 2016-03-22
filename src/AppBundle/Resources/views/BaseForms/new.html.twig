@@ -1,17 +1,12 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-    <h1>BaseForms creation</h1>
+    <h1>{{ 'BaseForms creation'|trans }}</h1>
 
     {{ form(form) }}
 
-
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('baseforms') }}">
-            Back to the list
+        <a class="btn btn-primary m-y-1" href="{{ path('baseforms') }}">
+          {{ 'Back to the list'|trans }}
         </a>
-    </li>
-</ul>
+
 {% endblock %}

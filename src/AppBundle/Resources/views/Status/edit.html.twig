@@ -1,16 +1,15 @@
 {% extends '::base.html.twig' %}
 
 {% block content%}
-    <h1>Status edit</h1>
+    <h1>{{ 'Status edit'|trans }}</h1>
 
     {{ form(edit_form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('status') }}">
-            Back to the list
+
+        <a class="btn-primary btn m-y-1" href="{{ path('status') }}">
+            {{ 'Back to the list'|trans }}
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+
+    {{ form(delete_form) }}
+
 {% endblock %}
