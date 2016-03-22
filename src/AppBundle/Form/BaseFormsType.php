@@ -17,7 +17,7 @@ class BaseFormsType extends AbstractType
     {
         $builder
             ->add('description')
-           ->add('createUser')
+            ->add('createUser')
             ->add('dateAccepted')
             ->add('imageFile', 'vich_file', array(
                 'required'      => false,

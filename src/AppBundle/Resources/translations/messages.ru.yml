@@ -48,3 +48,13 @@ Typename: Название типа отчета
 TypeReport: Тип отчета
 TypeReport creation: Создание типа отчета
 TypeReport edit: Правка типа отчета
+hello: Добро пожаловать!
+exit: Выход
+User list: Список Пользователей
+User name: Имя Пользователя
+Email: Email
+Enabled: Активен
+Phone: Телефон
+User: Пользователь
+User edit: Правка пользователя
+User creation: Создание нового пользователя

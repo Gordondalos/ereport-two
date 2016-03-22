@@ -34,10 +34,6 @@ class BaseFormsController extends Controller
 
 
 
-
-
-
-
     /**
      * Creates a new BaseForms entity.
      *
@@ -47,12 +43,15 @@ class BaseFormsController extends Controller
         $entity = new BaseForms();
 
         $form = $this->createCreateForm($entity);
-       // var_dump($request);
+        var_dump($request);
         $form->handleRequest($request);
+
+        echo "<br>";
+
 
 
        if ($form->isValid()) {
-
+ echo "Да";
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -105,13 +104,11 @@ class BaseFormsController extends Controller
         ));
 
         $form->add('createUser','entity', array(
-            'class'=>'AppBundle:User',
+            'class'=>'UserBundle:User',
             'data' => $this->getUser(),
             'read_only'=>true
 
         ));
-
-
 
 
 

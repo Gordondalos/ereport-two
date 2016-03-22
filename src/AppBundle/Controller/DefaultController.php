@@ -25,4 +25,13 @@ class DefaultController extends Controller
     {
         return $this->render('default/report.html.twig');
     }
+
+    public function hooImAction(){
+        $us  = $this -> getUser();
+        //var_dump($us); //die;
+
+        return $this->render('AppBundle:Default:info_user.htnl.twig', array(
+            'us' => $us,
+        ));
+    }
 }
