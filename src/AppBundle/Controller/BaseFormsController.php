@@ -43,15 +43,16 @@ class BaseFormsController extends Controller
         $entity = new BaseForms();
 
         $form = $this->createCreateForm($entity);
-        var_dump($request);
-        $form->handleRequest($request);
 
-        echo "<br>";
+        $form->handleRequest($request);
 
 
 
        if ($form->isValid()) {
- echo "Да";
+
+           $entity->setCreateUser($this->getUser());
+           $entity->setDateAccepted(new \DateTime());
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -95,19 +96,6 @@ class BaseFormsController extends Controller
         $form->add('organization','entity',array(
             'class' => 'AppBundle:Organization',
             'choice_label'=> 'organizationName',
-        ));
-
-        $form->add('dateAccepted','datetime', array(
-            'data' => new \DateTime(),
-            'read_only'=>true,
-
-        ));
-
-        $form->add('createUser','entity', array(
-            'class'=>'UserBundle:User',
-            'data' => $this->getUser(),
-            'read_only'=>true
-
         ));
 
 

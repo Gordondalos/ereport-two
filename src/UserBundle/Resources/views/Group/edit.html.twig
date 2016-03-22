@@ -1,16 +1,13 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Group edit</h1>
+{% block content %}
+    <h1>{{ 'Group edit'|trans }}</h1>
 
     {{ form(edit_form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('group') }}">
-            Back to the list
+        <a class="btn btn-primary m-y-1" href="{{ path('group') }}">
+            {{ 'Back to the list'|trans }}
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    {{ form(delete_form) }}
+
 {% endblock %}

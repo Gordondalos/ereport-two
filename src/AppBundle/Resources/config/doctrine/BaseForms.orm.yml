@@ -63,12 +63,12 @@ AppBundle\Entity\BaseForms:
             joinColumn:
                 name: organization_id
                 referencedColumnName: id
-#        createUser:
-#            targetEntity: User
-#            inversedBy: baseForms
-#            joinColumn:
-#                name: create_user_id
-#                referencedColumnName: id
+        createUser:
+            targetEntity: UserBundle\Entity\User
+            inversedBy: baseForms
+            joinColumn:
+                name: create_user_id
+                referencedColumnName: id
 
     lifecycleCallbacks: {  }
 

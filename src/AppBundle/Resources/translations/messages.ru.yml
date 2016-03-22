@@ -1,5 +1,6 @@
 User list: Список пользователей
 username: Имя пользователя
+Username: Имя пользователя
 id: №
 Id: №
 Namearea: Наименование района
@@ -58,3 +59,8 @@ Phone: Телефон
 User: Пользователь
 User edit: Правка пользователя
 User creation: Создание нового пользователя
+Group list: Список груп пользователей
+Groupname: Название группы
+Group edit: Правка Группы
+Group creation: Создание группы
+Group: Группа

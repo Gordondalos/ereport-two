@@ -3,16 +3,17 @@
 namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\Group as BaseGroup;
 
 /**
  * Group
  */
-class Group
+class Group extends BaseGroup
 {
     /**
      * @var integer
      */
-    private $id;
+    protected $id;
 
 
     /**
@@ -23,34 +24,6 @@ class Group
     public function getId()
     {
         return $this->id;
-    }
-    /**
-     * @var string
-     */
-    private $groupName;
-
-
-    /**
-     * Set groupName
-     *
-     * @param string $groupName
-     * @return Group
-     */
-    public function setGroupName($groupName)
-    {
-        $this->groupName = $groupName;
-
-        return $this;
-    }
-
-    /**
-     * Get groupName
-     *
-     * @return string 
-     */
-    public function getGroupName()
-    {
-        return $this->groupName;
     }
 
 

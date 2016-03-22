@@ -35,7 +35,7 @@ class GroupController extends Controller
      */
     public function createAction(Request $request)
     {
-        $entity = new Group();
+        $entity = new Group(null);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -78,7 +78,7 @@ class GroupController extends Controller
      */
     public function newAction()
     {
-        $entity = new Group();
+        $entity = new Group(null);
         $form   = $this->createCreateForm($entity);
 
         return $this->render('UserBundle:Group:new.html.twig', array(

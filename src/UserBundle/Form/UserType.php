@@ -20,12 +20,12 @@ class UserType extends AbstractType
             ->add('enabled')
             ->add('locked')
             ->add('roles')
-            ->add('password')
+            ->add('password','password')
             ->add('description')
             ->add('phone')
             ->add('groups','entity',array(
                 'class' => 'UserBundle:Group',
-                'choice_label' => 'groupName',
+                'choice_label' => 'name',
                 'multiple' => true
 
             ))

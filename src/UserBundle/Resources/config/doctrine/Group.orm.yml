@@ -6,9 +6,3 @@ UserBundle\Entity\Group:
             type: integer
             generator:
                 strategy: AUTO
-    fields:
-        groupName:
-            type: string
-            nullable: false
-            length: 255
-            fixed: false
