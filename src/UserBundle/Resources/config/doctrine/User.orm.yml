@@ -17,5 +17,16 @@ UserBundle\Entity\User:
             nullable: true
             length: 255
             fixed: false
+    manyToMany:
+        groups:
+            targetEntity: Group
+            joinTable:
+                name: fos_user_group
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    group_id:
+                        referencedColumnName: id
     lifecycleCallbacks: {  }
 

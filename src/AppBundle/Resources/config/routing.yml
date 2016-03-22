@@ -14,9 +14,6 @@ app_status:
     resource: "@AppBundle/Resources/config/routing/status.yml"
     prefix:   /status
 
-app_report:
-    resource: "@AppBundle/Resources/config/routing/report.yml"
-    prefix:   /report
 
 app_formreport:
     resource: "@AppBundle/Resources/config/routing/formreport.yml"

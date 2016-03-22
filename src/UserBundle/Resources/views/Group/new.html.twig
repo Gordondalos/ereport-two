@@ -1,13 +1,13 @@
 {% extends '::base.html.twig' %}
 
-{% block content %}
-    <h1>User creation</h1>
+{% block body -%}
+    <h1>Group creation</h1>
 
     {{ form(form) }}
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('user') }}">
+        <a href="{{ path('group') }}">
             Back to the list
         </a>
     </li>

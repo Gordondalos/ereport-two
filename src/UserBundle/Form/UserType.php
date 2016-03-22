@@ -15,8 +15,20 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('username')
+            ->add('email','email')
+            ->add('enabled')
+            ->add('locked')
+            ->add('roles')
+            ->add('password')
             ->add('description')
             ->add('phone')
+            ->add('groups','entity',array(
+                'class' => 'UserBundle:Group',
+                'choice_label' => 'groupName',
+                'multiple' => true
+
+            ))
         ;
     }
     

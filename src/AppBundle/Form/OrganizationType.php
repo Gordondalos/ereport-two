@@ -18,7 +18,7 @@ class OrganizationType extends AbstractType
             ->add('organizationName')
             ->add('organizationShortName')
             ->add('organizationPhone')
-            ->add('description')
+            ->add('organizationDescription')
         ;
     }
     

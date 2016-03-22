@@ -15,4 +15,14 @@ class DefaultController extends Controller
     {
         return $this->render('default/index.html.twig');
     }
+
+    public function settingsAction(Request $request)
+    {
+        return $this->render('default/settings.html.twig');
+    }
+
+    public function reportsAction(Request $request)
+    {
+        return $this->render('default/report.html.twig');
+    }
 }
