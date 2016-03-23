@@ -2,8 +2,10 @@
 
 namespace AppBundle\Controller;
 
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 
 use AppBundle\Entity\BaseForms;
 use AppBundle\Form\BaseFormsType;
@@ -25,9 +27,22 @@ class BaseFormsController extends Controller
 
         $entities = $em->getRepository('AppBundle:BaseForms')->findAll();
 
-
-
         return $this->render('AppBundle:BaseForms:index.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
+
+    public function organizationAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
+            array(
+                'organizationId' => $id
+            )
+        );
+
+        return $this->render('AppBundle:BaseForms:form_list.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -97,19 +112,6 @@ class BaseFormsController extends Controller
             'class' => 'AppBundle:Organization',
             'choice_label'=> 'organizationName',
         ));
-
-
-
-
-//        $us  = $this->getUser();
-//
-//        $form->add('createUser','hidden',array(
-//
-//            'data'=> $us,
-//        ));
-
-
-
 
         $form->add('submit', 'submit', array('label' => 'Create'));
 
