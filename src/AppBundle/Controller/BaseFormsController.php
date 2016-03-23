@@ -32,6 +32,21 @@ class BaseFormsController extends Controller
         ));
     }
 
+    public function reportAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
+            array('isreport' => '1'),
+            array('dateAccepted' => 'Desc')
+
+        );
+
+        return $this->render('AppBundle:BaseForms:indexReport.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
 
     public function organizationAction($id)
     {
@@ -43,6 +58,19 @@ class BaseFormsController extends Controller
         );
 
         return $this->render('AppBundle:BaseForms:form_list.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
+    public function organizationReportAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
+            array('organizationId' => $id),
+            array('dateAccepted' => 'Desc')
+        );
+
+        return $this->render('AppBundle:BaseForms:form_report_list.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -72,7 +100,15 @@ class BaseFormsController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('baseforms_show', array('id' => $entity->getId())));
+           if($entity->getIsreport()){
+
+               return $this->redirect($this->generateUrl('baseforms_show_report', array('id' => $entity->getId())));
+           }else{
+               return $this->redirect($this->generateUrl('baseforms_show', array('id' => $entity->getId())));
+           }
+
+
+
         }
 
         return $this->render('AppBundle:BaseForms:new.html.twig', array(
@@ -118,10 +154,66 @@ class BaseFormsController extends Controller
             'choice_label'=> 'nameArea',
         ));
 
+
+        $form->add('isreport', 'hidden', array(
+            'data' => false,
+        ));
+
         $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
+
+
+
+
+
+    /**
+     * Creates a form to create a BaseForms entity.
+     *
+     * @param BaseForms $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createCreateReportForm(BaseForms $entity)
+    {
+        $form = $this->createForm(new BaseFormsType(), $entity, array(
+            'action' => $this->generateUrl('baseforms_create'),
+            'method' => 'POST',
+        ));
+
+        $form->add('formReport','entity',array(
+            'class' => 'AppBundle:FormReport',
+            'choice_label'=> 'formName',
+        ));
+
+
+        $form->add('typeReport','entity',array(
+            'class' => 'AppBundle:TypeReport',
+            'choice_label'=> 'typeName',
+        ));
+
+
+        $form->add('organization','entity',array(
+            'class' => 'AppBundle:Organization',
+            'choice_label'=> 'organizationName',
+        ));
+
+        $form->add('area','entity',array(
+            'class' => 'AppBundle:Area',
+            'choice_label'=> 'nameArea',
+        ));
+
+        $form->add('isreport', 'hidden', array(
+            'data' => true,
+        ));
+
+        $form->add('submit', 'submit', array('label' => 'Send'));
+
+        return $form;
+    }
+
+
 
     /**
      * Displays a form to create a new BaseForms entity.
@@ -138,6 +230,19 @@ class BaseFormsController extends Controller
             'form'   => $form->createView(),
         ));
     }
+
+    public function createReportAction()
+    {
+        $entity = new BaseForms();
+
+        $form  = $this->createCreateReportForm($entity);
+
+        return $this->render('AppBundle:BaseForms:createReport.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+        ));
+    }
+
 
     /**
      * Finds and displays a BaseForms entity.
@@ -160,6 +265,31 @@ class BaseFormsController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
+    /**
+     * Finds and displays a BaseForms entity.
+     *
+     */
+    public function showReportAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AppBundle:BaseForms')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find BaseForms entity.');
+        }
+
+        $deleteForm = $this->createDeleteForm($id);
+
+        return $this->render('AppBundle:BaseForms:showreport.html.twig', array(
+            'entity'      => $entity,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+
+
 
     /**
      * Displays a form to edit an existing BaseForms entity.
@@ -186,6 +316,36 @@ class BaseFormsController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
+
+
+    /**
+     * Displays a form to edit an existing BaseForms entity.
+     *
+     */
+    public function editReportAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AppBundle:BaseForms')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find BaseForms entity.');
+        }
+
+
+        $editForm = $this->createEditReportForm($entity);
+
+        $deleteForm = $this->createDeleteForm($id);
+
+        return $this->render('AppBundle:BaseForms:editReport.html.twig', array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+
 
     /**
     * Creates a form to edit a BaseForms entity.
@@ -225,10 +385,63 @@ class BaseFormsController extends Controller
             'choice_label'=> 'nameArea',
         ));
 
+        $form->add('isreport', 'hidden', array(
+            'data' => false,
+        ));
+
         $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
+
+
+
+    /**
+     * Creates a form to edit a BaseForms entity.
+     *
+     * @param BaseForms $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditReportForm(BaseForms $entity)
+    {
+        $form = $this->createForm(new BaseFormsType(), $entity, array(
+            'action' => $this->generateUrl('baseforms_update', array('id' => $entity->getId())),
+            'method' => 'PUT',
+        ));
+
+        $form->add('formReport','entity',array(
+            'class' => 'AppBundle:FormReport',
+            'choice_label'=> 'formName',
+        ));
+
+
+        $form->add('typeReport','entity',array(
+            'class' => 'AppBundle:TypeReport',
+            'choice_label'=> 'typeName',
+        ));
+
+
+        $form->add('organization','entity',array(
+            'class' => 'AppBundle:Organization',
+            'choice_label'=> 'organizationName',
+        ));
+
+        $form->add('area','entity',array(
+            'class' => 'AppBundle:Area',
+            'choice_label'=> 'nameArea',
+        ));
+
+        $form->add('isreport', 'hidden', array(
+            'data' => true,
+        ));
+
+        $form->add('submit', 'submit', array('label' => 'Update'));
+
+        return $form;
+    }
+
+
     /**
      * Edits an existing BaseForms entity.
      *
@@ -250,7 +463,14 @@ class BaseFormsController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('baseforms_edit', array('id' => $id)));
+
+            if($entity->getIsreport()){
+                return $this->redirect($this->generateUrl('baseforms_edit_report', array('id' => $id)));
+            }else{
+                return $this->redirect($this->generateUrl('baseforms_edit', array('id' => $id)));
+            }
+
+
         }
 
         return $this->render('AppBundle:BaseForms:edit.html.twig', array(

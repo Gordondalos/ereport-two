@@ -2,13 +2,25 @@ baseforms:
     path:     /
     defaults: { _controller: "AppBundle:BaseForms:index" }
 
+baseforms_report:
+    path:     /report
+    defaults: { _controller: "AppBundle:BaseForms:report" }
+
 baseforms_show:
     path:     /{id}/show
     defaults: { _controller: "AppBundle:BaseForms:show" }
 
+baseforms_show_report:
+    path:     /{id}/show_report
+    defaults: { _controller: "AppBundle:BaseForms:showReport" }
+
 baseforms_new:
     path:     /new
     defaults: { _controller: "AppBundle:BaseForms:new" }
+
+baseforms_create_report:
+    path:     /create_report
+    defaults: { _controller: "AppBundle:BaseForms:createReport" }
 
 baseforms_create:
     path:     /create
@@ -18,6 +30,10 @@ baseforms_create:
 baseforms_edit:
     path:     /{id}/edit
     defaults: { _controller: "AppBundle:BaseForms:edit" }
+
+baseforms_edit_report:
+    path:     /{id}/edit_report
+    defaults: { _controller: "AppBundle:BaseForms:editReport" }
 
 baseforms_update:
     path:     /{id}/update

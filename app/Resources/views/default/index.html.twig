@@ -3,6 +3,9 @@
 {% block content %}
     <h1>Добро пожаловать в систему отчетности E-report</h1>
     {#{{ render(controller('AppBundle:BaseForms:index')) }}#}
+
+   <a class="btn btn-success btn-lg" href="{{ path('baseforms_create_report') }}">{{ 'send report'|trans }}</a>
+
 {% endblock %}
 
 

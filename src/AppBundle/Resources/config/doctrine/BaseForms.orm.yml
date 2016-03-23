@@ -49,6 +49,11 @@ AppBundle\Entity\BaseForms:
             length: 255
             fixed: false
             column: image_name
+        isreport:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: is_report
     manyToOne:
         typeReport:
             targetEntity: TypeReport

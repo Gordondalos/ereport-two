@@ -462,4 +462,32 @@ class BaseForms
     {
         return $this->area;
     }
+    /**
+     * @var integer
+     */
+    private $isreport;
+
+
+    /**
+     * Set isreport
+     *
+     * @param integer $isreport
+     * @return BaseForms
+     */
+    public function setIsreport($isreport)
+    {
+        $this->isreport = $isreport;
+
+        return $this;
+    }
+
+    /**
+     * Get isreport
+     *
+     * @return integer 
+     */
+    public function getIsreport()
+    {
+        return $this->isreport;
+    }
 }

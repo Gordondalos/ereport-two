@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <h3>{{ 'Inform for user'|trans }}</h3>
+
+    {{ form(form) }}
+
+    <a class="btn btn-primary m-y-1" href="{{ path('baseforms') }}">
+        {{ 'Back to the list'|trans }}
+    </a>
+
+{% endblock %}
