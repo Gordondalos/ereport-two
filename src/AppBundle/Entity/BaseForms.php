@@ -490,4 +490,60 @@ class BaseForms
     {
         return $this->isreport;
     }
+    /**
+     * @var integer
+     */
+    private $statusId;
+
+    /**
+     * @var \AppBundle\Entity\Status
+     */
+    private $status;
+
+
+    /**
+     * Set statusId
+     *
+     * @param integer $statusId
+     * @return BaseForms
+     */
+    public function setStatusId($statusId)
+    {
+        $this->statusId = $statusId;
+
+        return $this;
+    }
+
+    /**
+     * Get statusId
+     *
+     * @return integer 
+     */
+    public function getStatusId()
+    {
+        return $this->statusId;
+    }
+
+    /**
+     * Set status
+     *
+     * @param \AppBundle\Entity\Status $status
+     * @return BaseForms
+     */
+    public function setStatus(\AppBundle\Entity\Status $status = null)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return \AppBundle\Entity\Status 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 }

@@ -7,38 +7,43 @@
     <thead class="thead-default">
     <tr>
         {#<th>{{ 'id'|trans }}</th>#}
+        <th>{{ 'Dateaccepted'|trans }}</th>
         <th>{{ 'Formreport'|trans }}</th>
         <th>{{ 'Typereportid'|trans }}</th>
-        <th>{{ 'Organization'|trans }}</th>
+        {#<th>{{ 'Organization'|trans }}</th>#}
         {#<th>Create User</th>#}
-        <th>{{ 'Dateaccepted'|trans }}</th>
-        <th>{{ 'Actions'|trans }}</th>
-        <th>{{ 'linc'|trans }}</th>
+        <th >{{ 'Status'|trans }}</th>
+
+        {#<th>{{ 'Actions'|trans }}</th>#}
+        <th class="text-xs-right">{{ 'linc'|trans }}</th>
     </tr>
     </thead>
     <tbody>
     {% for entity in entities %}
         <tr>
+            <td>{% if entity.dateAccepted %}{{ entity.dateAccepted|date('Y-m-d H:i:s') }}{% endif %}</td>
             {#<td><a href="{{ path('baseforms_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>#}
             <td>{{ entity.formReport.getFormName}}</td>
             <td>{{ entity.typeReport.getTypeName }}</td>
 
-            <td>{{ entity.organization.getOrganizationShortName }}</td>
+            {#<td>{{ entity.organization.getOrganizationShortName }}</td>#}
             {#<td>{{ entity.createUser.username }}</td>#}
 
-            <td>{% if entity.dateAccepted %}{{ entity.dateAccepted|date('Y-m-d H:i:s') }}{% endif %}</td>
 
-            <td>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="{{ path('baseforms_show_report', { 'id': entity.id }) }}">{{ 'show'|trans }}</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('baseforms_edit_report', { 'id': entity.id }) }}">{{ 'edit'|trans }}</a>
-                    </li>
-                </ul>
-            </td>
-            <td><a  href="/download.php?file=report/{{ entity.imageName }}" >{{ 'download'|trans }}</a></td>
+
+            {#<td>#}
+                {#<ul class="list-unstyled">#}
+                    {#<li>#}
+                        {#<a href="{{ path('baseforms_show_report', { 'id': entity.id }) }}">{{ 'show'|trans }}</a>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<a href="{{ path('baseforms_edit_report', { 'id': entity.id }) }}">{{ 'edit'|trans }}</a>#}
+                    {#</li>#}
+                {#</ul>#}
+            {#</td>#}
+
+            <td>{{ entity.status.statusName }}</td>
+            <td class="text-xs-right"><a  href="/download.php?file=report/{{ entity.imageName }}" >{{ 'download'|trans }}</a></td>
         </tr>
 
     {% endfor %}

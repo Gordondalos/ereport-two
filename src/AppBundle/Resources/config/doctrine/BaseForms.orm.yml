@@ -25,6 +25,11 @@ AppBundle\Entity\BaseForms:
             nullable: false
             unsigned: false
             column: area_id
+        statusId:
+            type: integer
+            nullable: true
+            unsigned: false
+            column: status_id
         description:
             type: text
             nullable: true
@@ -84,6 +89,12 @@ AppBundle\Entity\BaseForms:
             inversedBy: baseForms
             joinColumn:
                 name: area_id
+                referencedColumnName: id
+        status:
+            targetEntity: Status
+            inversedBy: baseForms
+            joinColumn:
+                name: status_id
                 referencedColumnName: id
     lifecycleCallbacks: {  }
 

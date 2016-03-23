@@ -16,4 +16,8 @@ AppBundle\Entity\Status:
             length: 255
             fixed: false
             column: status_name
+    oneToMany:
+        baseForms:
+            targetEntity: BaseForms
+            mappedBy: status
     lifecycleCallbacks: {  }
