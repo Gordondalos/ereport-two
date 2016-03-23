@@ -196,6 +196,25 @@ class BaseFormsController extends Controller
             'method' => 'PUT',
         ));
 
+
+
+        $form->add('formReport','entity',array(
+            'class' => 'AppBundle:FormReport',
+            'choice_label'=> 'formName',
+        ));
+
+
+        $form->add('typeReport','entity',array(
+            'class' => 'AppBundle:TypeReport',
+            'choice_label'=> 'typeName',
+        ));
+
+
+        $form->add('organization','entity',array(
+            'class' => 'AppBundle:Organization',
+            'choice_label'=> 'organizationName',
+        ));
+
         $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;

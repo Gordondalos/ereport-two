@@ -3,45 +3,37 @@
 {% block content %}
     <h1>{{ 'BaseForms'|trans }}</h1>
 
-    <table class="record_properties">
-        <tbody>
+    <table class="record_properties table">
+        <tbody class="thead-default">
             <tr>
                 <th>{{ 'id'|trans }}</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
                 <th>{{ 'Formreport'|trans }}</th>
-                <td>{{ entity.formReport.getFormName }}</td>
-            </tr>
-            <tr>
                 <th>{{ 'Typereport'|trans }}</th>
-                <td>{{ entity.typeReport.getTypeName }}</td>
-            </tr>
-            <tr>
                 <th>{{ 'Description'|trans }}</th>
-                <td>{{ entity.description }}</td>
-            </tr>
-            <tr>
                 <th>{{ 'Organization'|trans }}</th>
-                <td>{{ entity.organization.getOrganizationShortName }}</td>
-            </tr>
-            <tr>
                 <th>{{ 'Create User'|trans }}</th>
-                <td>{{ entity.createUser.username }}</td>
+                <th>{{ 'Dateaccepted'|trans }}</th>
+
             </tr>
             <tr>
-                <th>{{ 'Dateaccepted'|trans }}</th>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.formReport.getFormName }}</td>
+                <td>{{ entity.typeReport.getTypeName }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.organization.getOrganizationShortName }}</td>
+                <td>{{ entity.createUser.username }}</td>
                 <td>{{ entity.dateAccepted|date('Y-m-d H:i:s') }}</td>
             </tr>
+
         </tbody>
     </table>
 
 
-        <a class="btn btn-primary" href="{{ path('baseforms') }}">
+        <a class="btn btn-primary m-y-1" href="{{ path('baseforms') }}">
             {{ 'Back to the list'|trans }}
         </a>
 
-        <a class="btn btn-primary" href="{{ path('baseforms_edit', { 'id': entity.id }) }}">
+        <a class="btn btn-primary m-y-1" href="{{ path('baseforms_edit', { 'id': entity.id }) }}">
             {{ 'Edit'|trans }}
         </a>
 
