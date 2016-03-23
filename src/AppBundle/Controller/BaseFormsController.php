@@ -65,8 +65,10 @@ class BaseFormsController extends Controller
     public function organizationReportAction($id)
     {
         $em = $this->getDoctrine()->getManager();
+
+        $userId = $this->getUser()->getId();
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
-            array('organizationId' => $id),
+            array('organizationId' => $id, 'createUserId' => $userId),
             array('dateAccepted' => 'Desc')
         );
 
