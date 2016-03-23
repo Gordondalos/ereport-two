@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+
+
+    <div class="ht_menu b-none">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs p-l-2" role="tablist">
+            <li class="nav-item m-b-0">
+                <a class="nav-link p-x-2 p-y-1  active text-uppercase" data-toggle="tab" href="#home"
+                   role="tab">{{ 'GNS'|trans }}</a>
+            </li>
+            <li class="nav-item m-b-0">
+                <a class="nav-link p-x-2 p-y-1  text-uppercase" data-toggle="tab" href="#profile" role="tab">{{ 'SF'|trans }}</a>
+            </li>
+            <li class="nav-item m-b-0">
+                <a class="nav-link p-x-2 p-y-1  text-uppercase" data-toggle="tab" href="#messages"
+                   role="tab">{{ 'ST'|trans }}</a>
+            </li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane active" id="home" role="tabpanel">
+
+                {{ render(controller('AppBundle:BaseForms:organizationAdmin',
+                {'id': 1}
+                )) }}
+
+
+
+            </div>
+            <div class="tab-pane" id="profile" role="tabpanel">
+
+                {{ render(controller('AppBundle:BaseForms:organizationAdmin',
+                {'id': 2}
+                )) }}
+
+
+            </div>
+            <div class="tab-pane" id="messages" role="tabpanel">
+
+                {{ render(controller('AppBundle:BaseForms:organizationAdmin',
+                {'id': 3}
+                )) }}
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}

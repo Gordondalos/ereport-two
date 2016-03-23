@@ -1,0 +1,53 @@
+<h3 class="display-inline-block m-t-1">{{ 'Report list'|trans }}</h3>
+
+{#<a class="btn btn-success pull-xs-right m-b-1" href="{{ path('baseforms_create_report') }}">#}
+    {#{{ 'Upload Report'|trans }}#}
+{#</a>#}
+
+<table class="records_list table">
+    <thead class="thead-default">
+    <tr>
+        <th>{{ 'Dateaccepted'|trans }}</th>
+        {#<th>{{ 'id'|trans }}</th>#}
+        {#<th>{{ 'Formreport'|trans }}</th>#}
+        {#<th>{{ 'Typereportid'|trans }}</th>#}
+        <th>{{ 'Create User'|trans }}</th>
+        <th>{{ 'Status'|trans }}</th>
+        {#<th>{{ 'Organization'|trans }}</th>#}
+
+
+
+        <th>{{ 'Actions'|trans }}</th>
+        <th>{{ 'linc'|trans }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td>{% if entity.dateAccepted %}{{ entity.dateAccepted|date('Y-m-d H:i:s') }}{% endif %}</td>
+            {#<td><a href="{{ path('baseforms_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>#}
+            {#<td>{{ entity.formReport.getFormName}}</td>#}
+            {#<td>{{ entity.typeReport.getTypeName }}</td>#}
+
+            {#<td>{{ entity.organization.getOrganizationShortName }}</td>#}
+            <td>{{ entity.createUser.username }}</td>
+            <td>{{ entity.status.statusName }}</td>
+
+
+
+            <td>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="{{ path('baseforms_show_admin', { 'id': entity.id }) }}">{{ 'show'|trans }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('baseforms_edit_admin', { 'id': entity.id }) }}">{{ 'edit'|trans }}</a>
+                    </li>
+                </ul>
+            </td>
+            <td><a  href="/download.php?file=report/{{ entity.imageName }}" >{{ 'download'|trans }}</a></td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>

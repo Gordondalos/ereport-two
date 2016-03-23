@@ -29,6 +29,7 @@ AppBundle\Entity\BaseForms:
             type: integer
             nullable: true
             unsigned: false
+            default: 1
             column: status_id
         description:
             type: text

@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <h1>{{ 'BaseForms'|trans }}</h1>
+
+    <table class="record_properties table">
+        <tbody class="thead-default">
+            <tr>
+                <th>{{ 'id'|trans }}</th>
+                <th>{{ 'Formreport'|trans }}</th>
+                <th>{{ 'Typereport'|trans }}</th>
+                <th>{{ 'Description'|trans }}</th>
+                <th>{{ 'Organization'|trans }}</th>
+                <th>{{ 'Create User'|trans }}</th>
+                <th>{{ 'Dateaccepted'|trans }}</th>
+
+            </tr>
+            <tr>
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.formReport.getFormName }}</td>
+                <td>{{ entity.typeReport.getTypeName }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.organization.getOrganizationShortName }}</td>
+                <td>{{ entity.createUser.username }}</td>
+                <td>{{ entity.dateAccepted|date('Y-m-d H:i:s') }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+        <a class="btn btn-primary m-y-1" href="{{ path('baseforms') }}">
+            {{ 'Back to the list'|trans }}
+        </a>
+
+        <a class="btn btn-primary m-y-1" href="{{ path('baseforms_edit', { 'id': entity.id }) }}">
+            {{ 'Edit'|trans }}
+        </a>
+
+   {{ form(delete_form) }}
+
+{% endblock %}

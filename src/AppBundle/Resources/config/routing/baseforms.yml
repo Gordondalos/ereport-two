@@ -6,9 +6,17 @@ baseforms_report:
     path:     /report
     defaults: { _controller: "AppBundle:BaseForms:report" }
 
+baseforms_report_admin:
+    path:     /report_admin
+    defaults: { _controller: "AppBundle:BaseForms:reportAdmin" }
+
 baseforms_show:
     path:     /{id}/show
     defaults: { _controller: "AppBundle:BaseForms:show" }
+
+baseforms_show_admin:
+    path:     /{id}/show_admin
+    defaults: { _controller: "AppBundle:BaseForms:showAdmin" }
 
 baseforms_show_report:
     path:     /{id}/show_report
@@ -30,6 +38,10 @@ baseforms_create:
 baseforms_edit:
     path:     /{id}/edit
     defaults: { _controller: "AppBundle:BaseForms:edit" }
+baseforms_edit_admin:
+
+    path:     /{id}/edit_admin
+    defaults: { _controller: "AppBundle:BaseForms:editAdmin" }
 
 baseforms_edit_report:
     path:     /{id}/edit_report

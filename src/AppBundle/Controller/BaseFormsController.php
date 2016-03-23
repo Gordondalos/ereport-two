@@ -62,6 +62,21 @@ class BaseFormsController extends Controller
         ));
     }
 
+    public function organizationAdminAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
+            array('organizationId' => $id),
+            array('dateAccepted' => 'DESC','status'=>'ASC')
+        );
+
+        return $this->render('AppBundle:BaseForms:form_report_admin_list.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
+
+
     public function organizationReportAction($id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -73,6 +88,21 @@ class BaseFormsController extends Controller
         );
 
         return $this->render('AppBundle:BaseForms:form_report_list.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
+    public function reportAdminAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
+            array('isreport' => '1'),
+            array('dateAccepted' => 'Desc')
+
+        );
+
+        return $this->render('AppBundle:BaseForms:indexAdmin.html.twig', array(
             'entities' => $entities,
         ));
     }
@@ -92,11 +122,13 @@ class BaseFormsController extends Controller
         $form->handleRequest($request);
 
 
-
        if ($form->isValid()) {
 
            $entity->setCreateUser($this->getUser());
            $entity->setDateAccepted(new \DateTime());
+
+
+
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -157,9 +189,12 @@ class BaseFormsController extends Controller
         ));
 
 
+
         $form->add('isreport', 'hidden', array(
             'data' => false,
         ));
+
+
 
         $form->add('submit', 'submit', array('label' => 'Create'));
 
@@ -209,6 +244,8 @@ class BaseFormsController extends Controller
         $form->add('isreport', 'hidden', array(
             'data' => true,
         ));
+
+
 
         $form->add('submit', 'submit', array('label' => 'Send'));
 
@@ -268,6 +305,24 @@ class BaseFormsController extends Controller
         ));
     }
 
+    public function showAdminAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AppBundle:BaseForms')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find BaseForms entity.');
+        }
+
+        $deleteForm = $this->createDeleteForm($id);
+
+        return $this->render('AppBundle:BaseForms:showAdmin.html.twig', array(
+            'entity'      => $entity,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
     /**
      * Finds and displays a BaseForms entity.
      *
@@ -313,6 +368,28 @@ class BaseFormsController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('AppBundle:BaseForms:edit.html.twig', array(
+            'entity'      => $entity,
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    public function editAdminAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AppBundle:BaseForms')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find BaseForms entity.');
+        }
+
+
+        $editForm = $this->createEditReportForm($entity);
+
+        $deleteForm = $this->createDeleteForm($id);
+
+        return $this->render('AppBundle:BaseForms:editAdmin.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -391,6 +468,11 @@ class BaseFormsController extends Controller
             'data' => false,
         ));
 
+        $form->add('status','entity',array(
+            'class' => 'AppBundle:Status',
+            'choice_label'=> 'statusName',
+        ));
+
         $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
@@ -434,6 +516,13 @@ class BaseFormsController extends Controller
             'choice_label'=> 'nameArea',
         ));
 
+        $form->add('status','entity',array(
+            'class' => 'AppBundle:Status',
+            'choice_label'=> 'statusName',
+        ));
+
+
+
         $form->add('isreport', 'hidden', array(
             'data' => true,
         ));
@@ -467,7 +556,7 @@ class BaseFormsController extends Controller
 
 
             if($entity->getIsreport()){
-                return $this->redirect($this->generateUrl('baseforms_edit_report', array('id' => $id)));
+                return $this->redirect($this->generateUrl('baseforms_edit_admin', array('id' => $id)));
             }else{
                 return $this->redirect($this->generateUrl('baseforms_edit', array('id' => $id)));
             }
