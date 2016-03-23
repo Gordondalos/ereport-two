@@ -20,6 +20,11 @@ AppBundle\Entity\BaseForms:
             nullable: false
             unsigned: false
             column: form_report_id
+        areaId:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: area_id
         description:
             type: text
             nullable: true
@@ -69,6 +74,11 @@ AppBundle\Entity\BaseForms:
             joinColumn:
                 name: create_user_id
                 referencedColumnName: id
-
+        area:
+            targetEntity: Area
+            inversedBy: baseForms
+            joinColumn:
+                name: area_id
+                referencedColumnName: id
     lifecycleCallbacks: {  }
 

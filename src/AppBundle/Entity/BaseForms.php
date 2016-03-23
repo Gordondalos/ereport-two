@@ -406,4 +406,60 @@ class BaseForms
     {
         return $this->createUser;
     }
+    /**
+     * @var integer
+     */
+    private $areaId;
+
+    /**
+     * @var \AppBundle\Entity\area
+     */
+    private $area;
+
+
+    /**
+     * Set areaId
+     *
+     * @param integer $areaId
+     * @return BaseForms
+     */
+    public function setAreaId($areaId)
+    {
+        $this->areaId = $areaId;
+
+        return $this;
+    }
+
+    /**
+     * Get areaId
+     *
+     * @return integer 
+     */
+    public function getAreaId()
+    {
+        return $this->areaId;
+    }
+
+    /**
+     * Set area
+     *
+     * @param \AppBundle\Entity\area $area
+     * @return BaseForms
+     */
+    public function setArea(\AppBundle\Entity\area $area = null)
+    {
+        $this->area = $area;
+
+        return $this;
+    }
+
+    /**
+     * Get area
+     *
+     * @return \AppBundle\Entity\area 
+     */
+    public function getArea()
+    {
+        return $this->area;
+    }
 }

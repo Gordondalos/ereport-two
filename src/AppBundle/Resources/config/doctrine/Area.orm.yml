@@ -16,4 +16,8 @@ AppBundle\Entity\Area:
             length: 255
             fixed: false
             column: name_area
+    oneToMany:
+        baseForms:
+            targetEntity: BaseForms
+            mappedBy: area
     lifecycleCallbacks: {  }

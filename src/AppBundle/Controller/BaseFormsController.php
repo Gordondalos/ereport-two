@@ -113,6 +113,11 @@ class BaseFormsController extends Controller
             'choice_label'=> 'organizationName',
         ));
 
+        $form->add('area','entity',array(
+            'class' => 'AppBundle:Area',
+            'choice_label'=> 'nameArea',
+        ));
+
         $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
@@ -213,6 +218,11 @@ class BaseFormsController extends Controller
         $form->add('organization','entity',array(
             'class' => 'AppBundle:Organization',
             'choice_label'=> 'organizationName',
+        ));
+
+        $form->add('area','entity',array(
+            'class' => 'AppBundle:Area',
+            'choice_label'=> 'nameArea',
         ));
 
         $form->add('submit', 'submit', array('label' => 'Update'));
