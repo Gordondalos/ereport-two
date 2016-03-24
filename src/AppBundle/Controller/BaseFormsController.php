@@ -28,8 +28,10 @@ class BaseFormsController extends Controller
 
         $entities = $em->getRepository('AppBundle:BaseForms')->findAll();
 
+
         return $this->render('AppBundle:BaseForms:index.html.twig', array(
             'entities' => $entities,
+
         ));
     }
 
@@ -58,8 +60,15 @@ class BaseFormsController extends Controller
             )
         );
 
+        $u = $this->getUser();
+        $ent = $em->getRepository('UserBundle:User')->find($u->getId());
+        $role = $ent->getRoles();
+        $isadmin = in_array('ROLE_ADMIN',$role);
+
+
         return $this->render('AppBundle:BaseForms:form_list.html.twig', array(
             'entities' => $entities,
+            'isadmin'=>$isadmin
         ));
     }
 

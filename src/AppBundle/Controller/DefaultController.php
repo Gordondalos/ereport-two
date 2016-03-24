@@ -13,7 +13,16 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('default/index.html.twig');
+
+        $u = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $ent = $em->getRepository('UserBundle:User')->find($u->getId());
+        $role = $ent->getRoles();
+        $isadmin = in_array('ROLE_ADMIN',$role);
+
+        return $this->render('default/index.html.twig', array(
+            'isadmin' => $isadmin,
+        ));
     }
 
     public function settingsAction(Request $request)
@@ -30,8 +39,29 @@ class DefaultController extends Controller
         $us  = $this -> getUser();
         //var_dump($us); //die;
 
+
         return $this->render('AppBundle:Default:info_user.htnl.twig', array(
             'us' => $us,
         ));
     }
+
+
+    public function isadminAction(){
+        $us  = $this -> getUser();
+        //var_dump($us); //die;
+
+        $u = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $ent = $em->getRepository('UserBundle:User')->find($u->getId());
+        $role = $ent->getRoles();
+        $isadmin = in_array('ROLE_ADMIN',$role);
+
+
+        return $this->render('AppBundle:Default:navigation.html.twig', array(
+           'isadmin'=> $isadmin
+        ));
+    }
+
+
+
 }

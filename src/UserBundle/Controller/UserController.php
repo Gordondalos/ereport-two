@@ -16,6 +16,19 @@ class UserController extends Controller
 {
 
 
+//    public function isAdminAction(){
+//        $u = $this->getUser();
+//        $em = $this->getDoctrine()->getManager();
+//        $entities = $em->getRepository('UserBundle:User')->find($u->getId());
+//
+//        $role = $entities->getRoles();
+//        var_dump($role);
+//
+//
+//
+//    }
+
+
 
     /**
      * Lists all User entities.
