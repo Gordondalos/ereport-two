@@ -17,6 +17,96 @@ UserBundle\Entity\User:
             nullable: true
             length: 255
             fixed: false
+        inn:
+            type: string
+            nullable: true
+            length: 25
+            fixed: false
+        numberSocialnFond:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        bank:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        bankAccount:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        bankBik:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        director:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        directorPhone:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        buhgalter:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        buhgalterphone:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        phisicalAdress:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        urAdress:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        mailAdress:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        site:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        fullNameOrganization:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        shortNameOrganization:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        timeJob:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        gns:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        okpo:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
     manyToMany:
         groups:
             targetEntity: Group
