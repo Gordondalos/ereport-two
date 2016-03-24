@@ -9,6 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Status
 {
+
+
+
+
     /**
      * @var integer
      */

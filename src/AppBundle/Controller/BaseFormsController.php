@@ -110,6 +110,15 @@ class BaseFormsController extends Controller
 
 
 
+    public function getStatusNew(){
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('AppBundle:Status')->findBy(array(
+            'statusName'=>'Новый'
+        ));
+        return $entities;
+    }
+
+
     /**
      * Creates a new BaseForms entity.
      *
@@ -128,6 +137,8 @@ class BaseFormsController extends Controller
            $entity->setCreateUser($this->getUser());
            $entity->setDateAccepted(new \DateTime());
 
+           $newStatus = $this->getStatusNew();
+           $entity->setStatus($newStatus[0]);
 
 
             $em = $this->getDoctrine()->getManager();

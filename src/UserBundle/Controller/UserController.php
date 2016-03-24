@@ -15,6 +15,8 @@ use UserBundle\Form\UserType;
 class UserController extends Controller
 {
 
+
+
     /**
      * Lists all User entities.
      *
