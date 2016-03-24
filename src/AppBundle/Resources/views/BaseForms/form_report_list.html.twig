@@ -42,7 +42,8 @@
                 {#</ul>#}
             {#</td>#}
 
-            <td>{{ entity.status.statusName }}</td>
+
+            <td>{% if entity.status %}{{ entity.status.statusName }}{% endif %}</td>
             <td class="text-xs-right"><a  href="/download.php?file=report/{{ entity.imageName }}" >{{ 'download'|trans }}</a></td>
         </tr>
 

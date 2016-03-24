@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Status;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -129,7 +130,6 @@ class BaseFormsController extends Controller
 
 
 
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -189,7 +189,6 @@ class BaseFormsController extends Controller
         ));
 
 
-
         $form->add('isreport', 'hidden', array(
             'data' => false,
         ));
@@ -244,7 +243,6 @@ class BaseFormsController extends Controller
         $form->add('isreport', 'hidden', array(
             'data' => true,
         ));
-
 
 
         $form->add('submit', 'submit', array('label' => 'Send'));

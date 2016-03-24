@@ -31,7 +31,7 @@
 
             {#<td>{{ entity.organization.getOrganizationShortName }}</td>#}
             <td>{{ entity.createUser.username }}</td>
-            <td>{{ entity.status.statusName }}</td>
+            <td>{% if entity.status %}{{ entity.status.statusName }}{% endif %}</td>
 
 
 
