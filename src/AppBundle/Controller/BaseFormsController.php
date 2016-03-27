@@ -596,8 +596,6 @@ class BaseFormsController extends Controller
             $role = $ent->getRoles();
             $isadmin = in_array('ROLE_ADMIN',$role);
 
-
-
             if($entity->getIsreport()){
                 if($isadmin){
                     return $this->redirect($this->generateUrl('baseforms_edit_admin', array('id' => $id)));

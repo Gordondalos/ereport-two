@@ -30,11 +30,11 @@
             {#<td>{{ entity.typeReport.getTypeName }}</td>#}
 
             {#<td>{{ entity.organization.getOrganizationShortName }}</td>#}
-            <td>{{ entity.createUser.username }}</td>
+            <td>
+                <a href="{{ path('user_show', { 'id': entity.createUser.id }) }}"> {{ entity.createUser.username }}</a>
+
+            </td>
             <td>{% if entity.status %}{{ entity.status.statusName }}{% endif %}</td>
-
-
-
             <td>
                 <ul class="list-unstyled">
                     <li>
