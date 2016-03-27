@@ -1,58 +1,86 @@
 baseforms:
-    path:     /
-    defaults: { _controller: "AppBundle:BaseForms:index" }
+    path:     /{_locale}/
+    defaults: { _controller: "AppBundle:BaseForms:index", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 baseforms_report:
-    path:     /report
-    defaults: { _controller: "AppBundle:BaseForms:report" }
+    path:     /{_locale}/report
+    defaults: { _controller: "AppBundle:BaseForms:report", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 baseforms_report_admin:
-    path:     /report_admin
-    defaults: { _controller: "AppBundle:BaseForms:reportAdmin" }
+    path:     /{_locale}/report_admin
+    defaults: { _controller: "AppBundle:BaseForms:reportAdmin", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 baseforms_show:
-    path:     /{id}/show
-    defaults: { _controller: "AppBundle:BaseForms:show" }
+    path:     /{_locale}/{id}/show
+    defaults: { _controller: "AppBundle:BaseForms:show", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 baseforms_show_admin:
-    path:     /{id}/show_admin
-    defaults: { _controller: "AppBundle:BaseForms:showAdmin" }
+    path:     /{_locale}/{id}/show_admin
+    defaults: { _controller: "AppBundle:BaseForms:showAdmin", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 baseforms_show_report:
-    path:     /{id}/show_report
-    defaults: { _controller: "AppBundle:BaseForms:showReport" }
+    path:     /{_locale}/{id}/show_report
+    defaults: { _controller: "AppBundle:BaseForms:showReport", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 baseforms_new:
-    path:     /new
-    defaults: { _controller: "AppBundle:BaseForms:new" }
+    path:     /{_locale}/new
+    defaults: { _controller: "AppBundle:BaseForms:new" , _locale:ru}
+    requirements:
+        _locale: ru|en
 
 baseforms_create_report:
-    path:     /create_report
-    defaults: { _controller: "AppBundle:BaseForms:createReport" }
+    path:     /{_locale}/create_report
+    defaults: { _controller: "AppBundle:BaseForms:createReport", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 baseforms_create:
-    path:     /create
-    defaults: { _controller: "AppBundle:BaseForms:create" }
+    path:     /{_locale}/create
+    defaults: { _controller: "AppBundle:BaseForms:create", _locale:ru }
+    requirements:
+        _locale: ru|en
     methods:  POST
 
 baseforms_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "AppBundle:BaseForms:edit" }
-baseforms_edit_admin:
+    path:     /{_locale}/{id}/edit
+    defaults: { _controller: "AppBundle:BaseForms:edit" , _locale:ru}
+    requirements:
+        _locale: ru|en
 
-    path:     /{id}/edit_admin
-    defaults: { _controller: "AppBundle:BaseForms:editAdmin" }
+baseforms_edit_admin:
+    path:     /{_locale}/{id}/edit_admin
+    defaults: { _controller: "AppBundle:BaseForms:editAdmin" , _locale:ru}
+    requirements:
+        _locale: ru|en
 
 baseforms_edit_report:
-    path:     /{id}/edit_report
-    defaults: { _controller: "AppBundle:BaseForms:editReport" }
+    path:     /{_locale}/{id}/edit_report
+    defaults: { _controller: "AppBundle:BaseForms:editReport", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 baseforms_update:
-    path:     /{id}/update
-    defaults: { _controller: "AppBundle:BaseForms:update" }
+    path:     /{_locale}/{id}/update
+    defaults: { _controller: "AppBundle:BaseForms:update", _locale:ru }
+    requirements:
+        _locale: ru|en
     methods:  [POST, PUT]
 
 baseforms_delete:
-    path:     /{id}/delete
-    defaults: { _controller: "AppBundle:BaseForms:delete" }
+    path:     /{_locale}/{id}/delete
+    defaults: { _controller: "AppBundle:BaseForms:delete" , _locale:ru}
+    requirements:
+        _locale: ru|en
     methods:  [POST, DELETE]

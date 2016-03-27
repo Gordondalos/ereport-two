@@ -30,20 +30,29 @@ class DefaultController extends Controller
         return $this->render('default/settings.html.twig');
     }
 
-    public function reportsAction(Request $request)
-    {
-        return $this->render('default/report.html.twig');
-    }
+
 
     public function hooImAction(){
         $us  = $this -> getUser();
         //var_dump($us); //die;
+        $locale = $this->get('request')->getLocale();
 
-
-        return $this->render('AppBundle:Default:info_user.htnl.twig', array(
+        return $this->render('AppBundle:Default:info_user.html.twig', array(
             'us' => $us,
+            'locale'=>$locale,
         ));
     }
+
+
+
+//    public function setRussianAction(){
+//        $this->get('request')->setLocale('ru_Ru');
+//        return $this->render('AppBundle:Default:info_user.html.twig', array(
+//
+//
+//        ));
+//    }
+
 
 
     public function isadminAction(){
@@ -55,8 +64,6 @@ class DefaultController extends Controller
         $ent = $em->getRepository('UserBundle:User')->find($u->getId());
         $role = $ent->getRoles();
         $isadmin = in_array('ROLE_ADMIN',$role);
-
-
         return $this->render('AppBundle:Default:navigation.html.twig', array(
            'isadmin'=> $isadmin
         ));

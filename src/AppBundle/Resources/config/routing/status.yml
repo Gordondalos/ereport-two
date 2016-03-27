@@ -1,30 +1,44 @@
 status:
-    path:     /
-    defaults: { _controller: "AppBundle:Status:index" }
+    path:     /{_locale}/
+    defaults: { _controller: "AppBundle:Status:index", _locale:ru  }
+    requirements:
+        _locale: ru|en
 
 status_show:
-    path:     /{id}/show
-    defaults: { _controller: "AppBundle:Status:show" }
+    path:     /{_locale}/{id}/show
+    defaults: { _controller: "AppBundle:Status:show", _locale:ru  }
+    requirements:
+        _locale: ru|en
 
 status_new:
-    path:     /new
-    defaults: { _controller: "AppBundle:Status:new" }
+    path:     /{_locale}/new
+    defaults: { _controller: "AppBundle:Status:new", _locale:ru  }
+    requirements:
+        _locale: ru|en
 
 status_create:
-    path:     /create
-    defaults: { _controller: "AppBundle:Status:create" }
+    path:     /{_locale}/create
+    defaults: { _controller: "AppBundle:Status:create", _locale:ru  }
+    requirements:
+        _locale: ru|en
     methods:  POST
 
 status_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "AppBundle:Status:edit" }
+    path:     /{_locale}/{id}/edit
+    defaults: { _controller: "AppBundle:Status:edit", _locale:ru  }
+    requirements:
+        _locale: ru|en
 
 status_update:
-    path:     /{id}/update
-    defaults: { _controller: "AppBundle:Status:update" }
+    path:     /{_locale}/{id}/update
+    defaults: { _controller: "AppBundle:Status:update", _locale:ru  }
+    requirements:
+        _locale: ru|en
     methods:  [POST, PUT]
 
 status_delete:
-    path:     /{id}/delete
-    defaults: { _controller: "AppBundle:Status:delete" }
+    path:     /{_locale}/{id}/delete
+    defaults: { _controller: "AppBundle:Status:delete", _locale:ru  }
+    requirements:
+        _locale: ru|en
     methods:  [POST, DELETE]

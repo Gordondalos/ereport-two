@@ -1,14 +1,10 @@
+news:
+    resource: "@NewsBundle/Resources/config/routing.yml"
+    prefix:   /
+
 _welcome:
     pattern: /
     defaults: {_controller: AppBundle:Default:index}
-
-_settings:
-  pattern: /settings
-  defaults: {_controller: AppBundle:Default:settings}
-
-_reports:
-  pattern: /report
-  defaults: {_controller: AppBundle:Default:reports}
 
 userbundle:
   resource: "@UserBundle/Resources/config/routing.yml"

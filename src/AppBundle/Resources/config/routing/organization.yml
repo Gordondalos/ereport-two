@@ -1,30 +1,44 @@
 organization:
-    path:     /
-    defaults: { _controller: "AppBundle:Organization:index" }
+    path:     /{_locale}/
+    defaults: { _controller: "AppBundle:Organization:index", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 organization_show:
-    path:     /{id}/show
-    defaults: { _controller: "AppBundle:Organization:show" }
+    path:     /{_locale}/{id}/show
+    defaults: { _controller: "AppBundle:Organization:show", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 organization_new:
-    path:     /new
-    defaults: { _controller: "AppBundle:Organization:new" }
+    path:     /{_locale}/new
+    defaults: { _controller: "AppBundle:Organization:new", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 organization_create:
-    path:     /create
-    defaults: { _controller: "AppBundle:Organization:create" }
+    path:     /{_locale}/create
+    defaults: { _controller: "AppBundle:Organization:create", _locale:ru }
     methods:  POST
+    requirements:
+        _locale: ru|en
 
 organization_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "AppBundle:Organization:edit" }
+    path:     /{_locale}/{id}/edit
+    defaults: { _controller: "AppBundle:Organization:edit", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 organization_update:
-    path:     /{id}/update
-    defaults: { _controller: "AppBundle:Organization:update" }
+    path:     /{_locale}/{id}/update
+    defaults: { _controller: "AppBundle:Organization:update", _locale:ru }
     methods:  [POST, PUT]
+    requirements:
+        _locale: ru|en
 
 organization_delete:
-    path:     /{id}/delete
-    defaults: { _controller: "AppBundle:Organization:delete" }
+    path:     /{_locale}/{id}/delete
+    defaults: { _controller: "AppBundle:Organization:delete", _locale:ru }
     methods:  [POST, DELETE]
+    requirements:
+        _locale: ru|en

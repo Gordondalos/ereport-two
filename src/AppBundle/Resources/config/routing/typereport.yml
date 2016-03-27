@@ -1,30 +1,42 @@
 typereport:
-    path:     /
-    defaults: { _controller: "AppBundle:TypeReport:index" }
+    path:     /{_locale}/
+    defaults: { _controller: "AppBundle:TypeReport:index", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 typereport_show:
-    path:     /{id}/show
-    defaults: { _controller: "AppBundle:TypeReport:show" }
+    path:     /{_locale}/{id}/show
+    defaults: { _controller: "AppBundle:TypeReport:show", _locale:ru  }
+    requirements:
+        _locale: ru|en
 
 typereport_new:
-    path:     /new
-    defaults: { _controller: "AppBundle:TypeReport:new" }
+    path:     /{_locale}/new
+    defaults: { _controller: "AppBundle:TypeReport:new", _locale:ru  }
+    requirements:
+        _locale: ru|en
 
 typereport_create:
-    path:     /create
-    defaults: { _controller: "AppBundle:TypeReport:create" }
+    path:     /{_locale}/create
+    defaults: { _controller: "AppBundle:TypeReport:create", _locale:ru  }
+    requirements:
+        _locale: ru|en
     methods:  POST
 
 typereport_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "AppBundle:TypeReport:edit" }
+    path:     /{_locale}/{id}/edit
+    defaults: { _controller: "AppBundle:TypeReport:edit", _locale:ru  }
+    requirements:
+        _locale: ru|en
 
 typereport_update:
-    path:     /{id}/update
-    defaults: { _controller: "AppBundle:TypeReport:update" }
+    path:     /{_locale}/{id}/update
+    defaults: { _controller: "AppBundle:TypeReport:update", _locale:ru  }
+    requirements:
+        _locale: ru|en
     methods:  [POST, PUT]
 
 typereport_delete:
-    path:     /{id}/delete
-    defaults: { _controller: "AppBundle:TypeReport:delete" }
+    path:     /{_locale}/{id}/delete
+    defaults: { _controller: "AppBundle:TypeReport:delete", _locale:ru  }
     methods:  [POST, DELETE]

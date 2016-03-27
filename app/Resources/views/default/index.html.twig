@@ -1,24 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <h1>Добро пожаловать в систему отчетности E-report</h1>
 
     {% if isadmin %}
         {{ render(controller('AppBundle:Default:settings')) }}
 
     {% else %}
-        <a class="btn btn-success btn-lg" href="{{ path('baseforms_create_report') }}">{{ 'send report'|trans }}</a>
+        {#<a class="btn btn-success btn-lg" href="{{ path('baseforms_create_report') }}">{{ 'send report'|trans }}</a>#}
 
-        {#Тут какой то контент для пользоватлей#}
+        {{ render(controller('NewsBundle:News:index')) }}
 
 
     {% endif %}
-
-
-
-
-
-
 
 
 

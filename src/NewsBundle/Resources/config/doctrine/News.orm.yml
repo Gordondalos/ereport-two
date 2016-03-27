@@ -1,0 +1,29 @@
+NewsBundle\Entity\News:
+    type:  entity
+    table: news
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        newsTitle:
+            type: text
+            nullable: false
+            length: 65535
+            fixed: false
+        shortNews:
+            type: text
+            nullable: false
+            length: 65535
+            fixed: false
+        AllNews:
+            type: text
+            nullable: false
+            length: 65535
+            fixed: false
+        dateNews:
+            type: date
+            nullable: false
+    lifecycleCallbacks: {  }
+

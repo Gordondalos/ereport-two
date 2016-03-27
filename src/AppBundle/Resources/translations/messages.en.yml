@@ -49,7 +49,7 @@ Typename: Название типа отчета
 TypeReport: Тип отчета
 TypeReport creation: Создание типа отчета
 TypeReport edit: Правка типа отчета
-hello: Добро пожаловать!
+hello: hello!
 exit: Выход
 User list: Список Пользователей
 User name: Имя Пользователя
@@ -141,6 +141,4 @@ Roles: Роль
 Password: Пароль
 Groups: Группа
 lang: Язык
-News list: Последние новости
-edit: Правка
 

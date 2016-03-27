@@ -1,30 +1,44 @@
 area:
-    path:     /
-    defaults: { _controller: "AppBundle:Area:index" }
+    path:     /{_locale}/
+    defaults: { _controller: "AppBundle:Area:index", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 area_show:
-    path:     /{id}/show
-    defaults: { _controller: "AppBundle:Area:show" }
+    path:     /{_locale}/{id}/show
+    defaults: { _controller: "AppBundle:Area:show", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 area_new:
-    path:     /new
-    defaults: { _controller: "AppBundle:Area:new" }
+    path:     /{_locale}/new
+    defaults: { _controller: "AppBundle:Area:new", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 area_create:
-    path:     /create
-    defaults: { _controller: "AppBundle:Area:create" }
+    path:     /{_locale}/create
+    defaults: { _controller: "AppBundle:Area:create", _locale:ru }
+    requirements:
+        _locale: ru|en
     methods:  POST
 
 area_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "AppBundle:Area:edit" }
+    path:     /{_locale}/{id}/edit
+    defaults: { _controller: "AppBundle:Area:edit", _locale:ru }
+    requirements:
+        _locale: ru|en
 
 area_update:
-    path:     /{id}/update
-    defaults: { _controller: "AppBundle:Area:update" }
+    path:     /{_locale}/{id}/update
+    defaults: { _controller: "AppBundle:Area:update", _locale:ru }
+    requirements:
+        _locale: ru|en
     methods:  [POST, PUT]
 
 area_delete:
-    path:     /{id}/delete
-    defaults: { _controller: "AppBundle:Area:delete" }
+    path:     /{_locale}/{id}/delete
+    defaults: { _controller: "AppBundle:Area:delete", _locale:ru }
+    requirements:
+        _locale: ru|en
     methods:  [POST, DELETE]
