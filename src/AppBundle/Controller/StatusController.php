@@ -16,8 +16,6 @@ class StatusController extends Controller
 {
 
 
-
-
     /**
      * Lists all Status entities.
      *

@@ -25,24 +25,18 @@ class BaseFormsController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $entities = $em->getRepository('AppBundle:BaseForms')->findAll();
-
-
         return $this->render('AppBundle:BaseForms:index.html.twig', array(
             'entities' => $entities,
-
         ));
     }
 
     public function reportAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
             array('isreport' => '1'),
             array('dateAccepted' => 'Desc')
-
         );
 
         return $this->render('AppBundle:BaseForms:indexReport.html.twig', array(
@@ -59,19 +53,17 @@ class BaseFormsController extends Controller
                 'organizationId' => $id
             )
         );
-
         $u = $this->getUser();
         $ent = $em->getRepository('UserBundle:User')->find($u->getId());
         $role = $ent->getRoles();
         $isadmin = in_array('ROLE_ADMIN',$role);
-
-
         return $this->render('AppBundle:BaseForms:form_list.html.twig', array(
             'entities' => $entities,
             'isadmin'=>$isadmin
         ));
     }
 
+    // Возврпщает все отчеты этой организации
     public function organizationAdminAction($id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -79,28 +71,41 @@ class BaseFormsController extends Controller
             array('organizationId' => $id),
             array('dateAccepted' => 'DESC','status'=>'ASC')
         );
-
         return $this->render('AppBundle:BaseForms:form_report_admin_list.html.twig', array(
             'entities' => $entities,
         ));
     }
 
 
-
+// возвращает отчеты текущего пользователя
     public function organizationReportAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-
         $userId = $this->getUser()->getId();
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
             array('organizationId' => $id, 'createUserId' => $userId),
             array('dateAccepted' => 'Desc')
         );
-
         return $this->render('AppBundle:BaseForms:form_report_list.html.twig', array(
             'entities' => $entities,
         ));
     }
+
+// Возвращает все отчеты указанного пользователя данной организации
+// принимает id организацйии и id пользователя
+    public function organizationUserReportAction($id_organization, $id_user)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
+            array('organizationId' => $id_organization, 'createUserId' => $id_user),
+            array('dateAccepted' => 'Desc')
+        );
+        return $this->render('AppBundle:BaseForms:form_report_admin_list.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
+
 
     public function reportAdminAction()
     {
@@ -109,7 +114,6 @@ class BaseFormsController extends Controller
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
             array('isreport' => '1'),
             array('dateAccepted' => 'Desc')
-
         );
 
         return $this->render('AppBundle:BaseForms:indexAdmin.html.twig', array(
@@ -121,9 +125,7 @@ class BaseFormsController extends Controller
 
     public function getStatusNew(){
         $em = $this->getDoctrine()->getManager();
-        $entities = $em->getRepository('AppBundle:Status')->findBy(array(
-            'statusName'=>'Новый'
-        ));
+        $entities = $em->getRepository('AppBundle:Status')->findAll();
         return $entities;
     }
 
@@ -135,27 +137,21 @@ class BaseFormsController extends Controller
     public function createAction(Request $request)
     {
         $entity = new BaseForms();
-
         $form = $this->createCreateForm($entity);
-
         $form->handleRequest($request);
 
 
        if ($form->isValid()) {
-
            $entity->setCreateUser($this->getUser());
            $entity->setDateAccepted(new \DateTime());
-
            $newStatus = $this->getStatusNew();
            $entity->setStatus($newStatus[0]);
-
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
            if($entity->getIsreport()){
-
                return $this->redirect($this->generateUrl('baseforms_show_report', array('id' => $entity->getId())));
            }else{
                return $this->redirect($this->generateUrl('baseforms_show', array('id' => $entity->getId())));
