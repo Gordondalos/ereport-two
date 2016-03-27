@@ -9,17 +9,28 @@
             {{ entity.AllNews }}
     </div>
 
+{% if isadmin %}
+    <a class="btn btn-primary m-y-1" href="{{ path('newsAdmin') }}">
+        {{ 'Back to the list'|trans }}
+    </a>
+{% else %}
+    <a class="btn btn-primary m-y-1" href="{{ path('_welcome') }}">
+        {{ 'Back to the list'|trans }}
+    </a>
+{% endif %}
 
 
 
 
-        <a class="btn btn-primary m-y-1" href="{{ path('_welcome') }}">
-            {{ 'Back to the list'|trans }}
-        </a>
+{% if isadmin %}
+
         <a class="btn btn-primary m-y-1" href="{{ path('news_edit', { 'id': entity.id }) }}">
            {{ 'Edit'|trans }}
         </a>
 
  {{ form(delete_form) }}
+{% endif %}
+
+
 
 {% endblock %}

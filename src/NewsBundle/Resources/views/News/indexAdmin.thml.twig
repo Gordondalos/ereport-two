@@ -1,6 +1,18 @@
+
+    {% extends 'base.html.twig' %}
+
+
 {% block content%}
 
     <h3 class="display-inline-block ">{{ 'News list'|trans }}</h3>
+
+
+        <a class="btn btn-success pull-xs-right" href="{{ path('news_new') }}">
+            {{ 'Create a new entry'|trans }}
+        </a>
+
+
+
     <div class="clearfix p-y-1"></div>
 
     {% for entity in entities %}
@@ -16,10 +28,15 @@
             <a class="text-gray-dark" href="{{ path('news_show', { 'id': entity.id }) }}">{{ entity.shortNews }}</a>
 
 
+                <a href="{{ path('news_edit', { 'id': entity.id }) }}"><b>{{ 'edit'|trans }}</b></a>
+
+
         </div>
         <hr>
-
     {% endfor %}
+
+
+
 
 
 {% endblock %}

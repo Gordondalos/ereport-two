@@ -22,13 +22,31 @@ class NewsController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('NewsBundle:News')->findAll();
-
+              $entities = $em->getRepository('NewsBundle:News')->findAll();
         return $this->render('NewsBundle:News:index.html.twig', array(
             'entities' => $entities,
         ));
     }
+
+    /**
+     * Lists all News entities.
+     *
+     */
+    public function indexAdminAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $u = $this->getUser();
+        $ent = $em->getRepository('UserBundle:User')->find($u->getId());
+        $role = $ent->getRoles();
+        $isadmin = in_array('ROLE_ADMIN',$role);
+        $entities = $em->getRepository('NewsBundle:News')->findAll();
+        return $this->render('NewsBundle:News:indexAdmin.thml.twig', array(
+            'entities' => $entities,
+            'isadmin' => $isadmin,
+        ));
+    }
+
+
     /**
      * Creates a new News entity.
      *
@@ -95,6 +113,10 @@ class NewsController extends Controller
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
+        $u = $this->getUser();
+        $ent = $em->getRepository('UserBundle:User')->find($u->getId());
+        $role = $ent->getRoles();
+        $isadmin = in_array('ROLE_ADMIN',$role);
 
         $entity = $em->getRepository('NewsBundle:News')->find($id);
 
@@ -107,6 +129,7 @@ class NewsController extends Controller
         return $this->render('NewsBundle:News:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
+            'isadmin' => $isadmin,
         ));
     }
 
