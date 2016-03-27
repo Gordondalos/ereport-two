@@ -14,22 +14,6 @@ use UserBundle\Form\UserType;
  */
 class UserController extends Controller
 {
-
-
-//    public function isAdminAction(){
-//        $u = $this->getUser();
-//        $em = $this->getDoctrine()->getManager();
-//        $entities = $em->getRepository('UserBundle:User')->find($u->getId());
-//
-//        $role = $entities->getRoles();
-//        var_dump($role);
-//
-//
-//
-//    }
-
-
-
     /**
      * Lists all User entities.
      *
@@ -212,7 +196,7 @@ class UserController extends Controller
 
             $em->flush();
 
-            // Приведенные ниже манипуляции устанавливают юзеру новый пароль если тот был изменен
+                       // Приведенные ниже манипуляции устанавливают юзеру новый пароль если тот был изменен
             $userManager = $this->container->get('fos_user.user_manager');
             $arruser = $request->request->get('Userbundle_user');
 

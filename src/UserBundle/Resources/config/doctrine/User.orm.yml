@@ -7,11 +7,11 @@ UserBundle\Entity\User:
             generator:
                 strategy: AUTO
     fields:
-    curatorUserId:
-        type: integer
-        nullable: true
-        unsigned: true
-        column: curator_user_id
+        curatorUserId:
+            type: integer
+            nullable: true
+            unsigned: true
+            column: curator_user_id
         description:
             type: text
             nullable: true
@@ -129,7 +129,7 @@ UserBundle\Entity\User:
             fixed: false
     manyToOne:
         curatorUser:
-            targetEntity: UserBundle\Entity\User
+            targetEntity: User
             inversedBy: fosUser
             joinColumn:
                 name: curator_user_id

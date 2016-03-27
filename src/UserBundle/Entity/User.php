@@ -671,4 +671,60 @@ class User extends BaseClass
     {
         return $this->okved;
     }
+    /**
+     * @var \UserBundle\Entity\User
+     */
+    private $curatorUser;
+
+
+    /**
+     * Set curatorUser
+     *
+     * @param \UserBundle\Entity\User $curatorUser
+     * @return User
+     */
+    public function setCuratorUser(\UserBundle\Entity\User $curatorUser = null)
+    {
+        $this->curatorUser = $curatorUser;
+
+        return $this;
+    }
+
+    /**
+     * Get curatorUser
+     *
+     * @return \UserBundle\Entity\User 
+     */
+    public function getCuratorUser()
+    {
+        return $this->curatorUser;
+    }
+    /**
+     * @var integer
+     */
+    private $curatorUserId;
+
+
+    /**
+     * Set curatorUserId
+     *
+     * @param integer $curatorUserId
+     * @return User
+     */
+    public function setCuratorUserId($curatorUserId)
+    {
+        $this->curatorUserId = $curatorUserId;
+
+        return $this;
+    }
+
+    /**
+     * Get curatorUserId
+     *
+     * @return integer 
+     */
+    public function getCuratorUserId()
+    {
+        return $this->curatorUserId;
+    }
 }

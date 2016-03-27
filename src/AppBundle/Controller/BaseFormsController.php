@@ -67,8 +67,10 @@ class BaseFormsController extends Controller
     public function organizationAdminAction($id)
     {
         $em = $this->getDoctrine()->getManager();
+        $u = $this->getUser();
+        $curator_id = $u->getId();
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
-            array('organizationId' => $id),
+            array('organizationId' => $id,'curatorUserId'=>$curator_id),
             array('dateAccepted' => 'DESC','status'=>'ASC')
         );
         return $this->render('AppBundle:BaseForms:form_report_admin_list.html.twig', array(
@@ -142,8 +144,18 @@ class BaseFormsController extends Controller
 
 
        if ($form->isValid()) {
+
+           //Установим создателя отчета
            $entity->setCreateUser($this->getUser());
+           // Установим куратора отчета
+           $curatorUserId = $this->getUser()->getCuratorUserId();
+           $em = $this->getDoctrine()->getManager();
+           $curator = $em->getRepository('UserBundle:User')->findById($curatorUserId);
+           $entity->setCuratorUser( $curator[0] );
+
+            //Установим дату приема
            $entity->setDateAccepted(new \DateTime());
+           //Установим статус отчета
            $newStatus = $this->getStatusNew();
            $entity->setStatus($newStatus[0]);
 
