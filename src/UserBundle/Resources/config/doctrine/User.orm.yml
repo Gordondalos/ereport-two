@@ -47,6 +47,21 @@ UserBundle\Entity\User:
             nullable: true
             length: 255
             fixed: false
+        directorPost:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+        dateRegistration:
+            type: date
+            nullable: true
+            length: 255
+            fixed: false
+        okved:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
         directorPhone:
             type: string
             nullable: true

@@ -586,4 +586,89 @@ class User extends BaseClass
     {
         return $this->okpo;
     }
+
+    /**
+     * @var string
+     */
+    private $directorPost;
+
+
+    /**
+     * Set directorPost
+     *
+     * @param string $directorPost
+     * @return User
+     */
+    public function setDirectorPost($directorPost)
+    {
+        $this->directorPost = $directorPost;
+
+        return $this;
+    }
+
+    /**
+     * Get directorPost
+     *
+     * @return string 
+     */
+    public function getDirectorPost()
+    {
+        return $this->directorPost;
+    }
+    /**
+     * @var string
+     */
+    private $dateRegistration;
+
+
+    /**
+     * Set dateRegistration
+     *
+     * @param string $dateRegistration
+     * @return User
+     */
+    public function setDateRegistration($dateRegistration)
+    {
+        $this->dateRegistration = $dateRegistration;
+
+        return $this;
+    }
+
+    /**
+     * Get dateRegistration
+     *
+     * @return string 
+     */
+    public function getDateRegistration()
+    {
+        return $this->dateRegistration;
+    }
+    /**
+     * @var string
+     */
+    private $okved;
+
+
+    /**
+     * Set okved
+     *
+     * @param string $okved
+     * @return User
+     */
+    public function setOkved($okved)
+    {
+        $this->okved = $okved;
+
+        return $this;
+    }
+
+    /**
+     * Get okved
+     *
+     * @return string 
+     */
+    public function getOkved()
+    {
+        return $this->okved;
+    }
 }

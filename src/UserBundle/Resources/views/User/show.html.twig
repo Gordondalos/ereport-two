@@ -1,39 +1,294 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-    <h1>{{ 'User'|trans }}</h1>
+    <h1>{{ 'Organization'|trans }}: {{ entity.fullNameOrganization }}</h1>
+    <a class="btn btn-primary m-y-1" href="{{ path('user') }}">
+        {{ 'Back to the list'|trans }}
+    </a>
+    <a class="btn btn-primary m-y-1" href="{{ path('user_edit', { 'id': entity.id }) }}">
+        {{ 'Edit'|trans }}
+    </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 m-y-2">
+                <h4 class="b-b p-b-1">{{ 'Organization'|trans }}</h4>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Organization Full Name'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.fullNameOrganization }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Organizationshortname'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.shortNameOrganization }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Ur Adress'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.urAdress }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Phisical Adress'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.phisicalAdress }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Mail Adress'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.mailAdress }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'phone'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.phone }}
+                    </div>
+                </div>
 
-    <table class="record_properties table">
-        <tbody class="thead-default">
-            <tr>
-                <th>{{ 'Id'|trans }}</th>
-                <th>{{ 'User name'|trans }}</th>
-                <th>{{ 'Email'|trans }}</th>
-                <th>{{ 'Description'|trans }}</th>
-                <th>{{ 'Phone'|trans }}</th>
+            </div>
+            <div class="col-xs-12 col-sm-6 m-y-2">
+               <h4 class="b-b p-b-1">{{ 'Contanct piople'|trans }}</h4>
 
-            </tr>
-            <tr>
-                <td>{{ entity.id }}</td>
-                <td>{{ entity.username }}</td>
-                <td>{{ entity.email }}</td>
-                <td>{{ entity.description }}</td>
-                <td>{{ entity.phone }}</td>
-            </tr>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Director'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.director }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Director Post'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.directorPost }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Director Phone'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.directorPhone }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Buhgalter'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.buhgalter }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Buhgalter Phone'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.buhgalterphone }}
+                    </div>
+                </div>
 
-        </tbody>
-    </table>
+
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 m-y-2">
+                <h4 class="b-b p-b-1">{{ 'rekvisit'|trans }}</h4>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'INN'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.inn }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'OKPO'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.okpo }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Date Registration'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.dateRegistration|date('d-m-Y') }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'okved'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.okved }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Sf'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.numberSocialnFond }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'gns'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.gns }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 m-y-2">
+                <h4 class="b-b p-b-1">{{ 'bank rekvizit'|trans }}</h4>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Bank'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.bank }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Bank Bik'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.bankBik }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Bank Account'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.bankAccount }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 m-y-2">
+                <h4 class="b-b p-b-1">{{ 'in addition'|trans }}</h4>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'username'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.username }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'Site'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.site }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'timeJob'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.timeJob }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'email'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.email }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'enabled'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+
+                        {% if entity.enabled %}
+                            {{ 'yes'|trans }}
+                        {% else %}
+                            {{ 'no'|trans }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'locked'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {% if entity.locked %}
+                            {{ 'yes'|trans }}
+                        {% else %}
+                            {{ 'no'|trans }}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        {{ 'password'|trans }}
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ entity.password }}
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-6 m-y-2">
+                <h4 class="b-b p-b-1">{{ 'description'|trans }}</h4>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+
+                        {{ entity.description }}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
-        <a class="btn btn-primary m-y-1" href="{{ path('user') }}">
-            {{ 'Back to the list'|trans }}
-        </a>
 
 
-        <a class="btn btn-primary m-y-1" href="{{ path('user_edit', { 'id': entity.id }) }}">
-            {{ 'Edit'|trans }}
-        </a>
+
+
+
+
 
     {{ form(delete_form) }}
 

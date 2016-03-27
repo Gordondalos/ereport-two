@@ -23,14 +23,6 @@ $(document).ready(function() {
                 $('.navigation-panel').animate({width:'4rem'}, 400);
             }
             setTimeout(func, 400);
-
-
-
         }
     });
-
-
-
-
-
 }); // end of ready()

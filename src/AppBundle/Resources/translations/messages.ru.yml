@@ -82,3 +82,38 @@ Show report: Ваш отчет
 Report edit: Правка Отчета
 Report list: Список Отчетов
 Upload Report: Загрузить отчет
+User organization: Организация
+yes: Да
+no: Нет
+Director: Руководитель
+Organization Full Name: Полное название организации
+Director Post: Должность руководителя
+Buhgalter: Главный бухгалтер
+Director Phone: Телефон Директора
+Buhgalter Phone: Телефон Бухгалтера
+Ur Adress: Юридический Адресс
+Phisical Adress: Физический Адресс
+Mail Adress: Почтовый Адресс
+INN: ИНН
+OKPO: ОКПО
+Date Registration: Дата регистрации
+okved: Основной код ОКВЭД
+Sf: Номер Социального фонда
+gns: ГНС
+Bank: Банк
+Bank Bik: Бик Банка
+Bank Account: Банковский Счет
+Site: Сайт
+timeJob: Время Работы
+email: Электронная Почта
+enabled: Включен
+locked: Заблокирован
+roles: Роль
+password: Пароль
+description: Описание
+phone: Телефон для отчетности
+groups: Группа
+Contanct piople: Контактные лица
+rekvisit: Реквизиты
+bank rekvizit: Банковские Реквизиты
+in addition: Дополнительная информация
