@@ -54,10 +54,29 @@ class UserController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+
+            // Приведенные ниже манипуляции устанавливают юзеру новый пароль
+            $users = $em->getRepository('UserBundle:User')->findAll();
+            $id = $users[count($users)-1]->getId();
+            $userManager = $this->container->get('fos_user.user_manager');
+            $arruser = $request->request->get('Userbundle_user');
+
+            $user = $userManager->findUserBy(array(
+                'id'=> $id,
+            ));
+            $newpassword = $arruser["password"];
+
+            $user->setPlainPassword($newpassword);
+
+            $userManager->updateUser($user);
+            // Конец манипуляций
+
+
 
             return $this->redirect($this->generateUrl('user_show', array('id' => $entity->getId())));
         }
@@ -172,6 +191,7 @@ class UserController extends Controller
      */
     public function updateAction(Request $request, $id)
     {
+
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('UserBundle:User')->find($id);
@@ -180,12 +200,33 @@ class UserController extends Controller
             throw $this->createNotFoundException('Unable to find User entity.');
         }
 
+        $oldpassword = $entity->getPassword();
+
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+
+
+
             $em->flush();
+
+            // Приведенные ниже манипуляции устанавливают юзеру новый пароль если тот был изменен
+            $userManager = $this->container->get('fos_user.user_manager');
+            $arruser = $request->request->get('Userbundle_user');
+
+            $user = $userManager->findUserBy(array(
+                'id'=> $id,
+            ));
+            $newpassword = $arruser["password"];
+            if($newpassword){
+                $user->setPlainPassword($newpassword);
+            }else{
+                $user->setPassword($oldpassword);
+            }
+            $userManager->updateUser($user);
+            // Конец манипуляций
 
             return $this->redirect($this->generateUrl('user_edit', array('id' => $id)));
         }
