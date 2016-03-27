@@ -45,6 +45,11 @@ AppBundle\Entity\BaseForms:
             nullable: false
             unsigned: false
             column: create_user_id
+        curatorUserId:
+            type: integer
+            nullable: false
+            unsigned: false
+            column: curator_user_id
         dateAccepted:
             type: datetime
             nullable: false
@@ -83,6 +88,12 @@ AppBundle\Entity\BaseForms:
             inversedBy: baseForms
             joinColumn:
                 name: create_user_id
+                referencedColumnName: id
+        curatorUser:
+            targetEntity: UserBundle\Entity\User
+            inversedBy: baseForms
+            joinColumn:
+                name: curator_user_id
                 referencedColumnName: id
         area:
             targetEntity: Area

@@ -546,4 +546,60 @@ class BaseForms
     {
         return $this->status;
     }
+    /**
+     * @var integer
+     */
+    private $curatorUserId;
+
+    /**
+     * @var \UserBundle\Entity\User
+     */
+    private $curatorUser;
+
+
+    /**
+     * Set curatorUserId
+     *
+     * @param integer $curatorUserId
+     * @return BaseForms
+     */
+    public function setCuratorUserId($curatorUserId)
+    {
+        $this->curatorUserId = $curatorUserId;
+
+        return $this;
+    }
+
+    /**
+     * Get curatorUserId
+     *
+     * @return integer 
+     */
+    public function getCuratorUserId()
+    {
+        return $this->curatorUserId;
+    }
+
+    /**
+     * Set curatorUser
+     *
+     * @param \UserBundle\Entity\User $curatorUser
+     * @return BaseForms
+     */
+    public function setCuratorUser(\UserBundle\Entity\User $curatorUser = null)
+    {
+        $this->curatorUser = $curatorUser;
+
+        return $this;
+    }
+
+    /**
+     * Get curatorUser
+     *
+     * @return \UserBundle\Entity\User 
+     */
+    public function getCuratorUser()
+    {
+        return $this->curatorUser;
+    }
 }
