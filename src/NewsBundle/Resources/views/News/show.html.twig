@@ -1,44 +1,25 @@
 {% extends '::base.html.twig' %}
 
 {% block content%}
-    <h1>News</h1>
 
-    <table class="record_properties">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Newstitle</th>
-                <td>{{ entity.newsTitle }}</td>
-            </tr>
-            <tr>
-                <th>Shortnews</th>
-                <td>{{ entity.shortNews }}</td>
-            </tr>
-            <tr>
-                <th>Allnews</th>
-                <td>{{ entity.AllNews }}</td>
-            </tr>
-            <tr>
-                <th>Datenews</th>
-                <td>{{ entity.dateNews|date('Y-m-d H:i:s') }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <h2>{{ entity.newsTitle }}</h2>
+{{ entity.dateNews|date('Y-m-d H:i:s') }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('news') }}">
-            Back to the list
+    <div class="p-y-1">
+            {{ entity.AllNews }}
+    </div>
+
+
+
+
+
+        <a class="btn btn-primary m-y-1" href="{{ path('_welcome') }}">
+            {{ 'Back to the list'|trans }}
         </a>
-    </li>
-    <li>
-        <a href="{{ path('news_edit', { 'id': entity.id }) }}">
-            Edit
+        <a class="btn btn-primary m-y-1" href="{{ path('news_edit', { 'id': entity.id }) }}">
+           {{ 'Edit'|trans }}
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+
+ {{ form(delete_form) }}
+
 {% endblock %}

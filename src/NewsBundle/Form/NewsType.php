@@ -18,7 +18,7 @@ class NewsType extends AbstractType
             ->add('newsTitle')
             ->add('shortNews')
             ->add('AllNews')
-            ->add('dateNews')
+
         ;
     }
     

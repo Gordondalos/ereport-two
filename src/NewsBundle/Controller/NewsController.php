@@ -41,6 +41,7 @@ class NewsController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->setDateNews(new \DateTime());
             $em->persist($entity);
             $em->flush();
 
@@ -147,6 +148,8 @@ class NewsController extends Controller
             'method' => 'PUT',
         ));
 
+        $form->add('dateNews');
+
         $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
@@ -202,7 +205,7 @@ class NewsController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('news'));
+        return $this->redirect($this->generateUrl('_welcome'));
     }
 
     /**
