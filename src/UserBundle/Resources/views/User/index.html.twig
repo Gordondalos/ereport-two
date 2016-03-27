@@ -11,7 +11,7 @@
             <tr>
                 <th>{{ 'User organization'|trans }}</th>
                 <th>{{ 'Director'|trans }}</th>
-                <th>{{ 'Email'|trans }}</th>
+                <th>{{ 'Curator'|trans }}</th>
                 <th>{{ 'Enabled'|trans }}</th>
 
 
@@ -24,7 +24,7 @@
             <tr>
                 <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.fullNameOrganization }}</a></td>
                 <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.director }}</a></td>
-                <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.email }}</a></td>
+                <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.curatorUser }}</a></td>
                 <td><a href="{{ path('user_show', { 'id': entity.id }) }}">
                        {% if entity.enabled  %}
                         {{ 'yes'|trans }}
