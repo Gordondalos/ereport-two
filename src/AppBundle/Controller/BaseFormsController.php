@@ -209,6 +209,7 @@ class BaseFormsController extends Controller
             'data' => false,
         ));
 
+        $form->add('description');
 
 
         $form->add('submit', 'submit', array('label' => 'Create'));
@@ -259,6 +260,8 @@ class BaseFormsController extends Controller
         $form->add('isreport', 'hidden', array(
             'data' => true,
         ));
+
+        $form->add('description');
 
 
         $form->add('submit', 'submit', array('label' => 'Send'));
@@ -376,8 +379,6 @@ class BaseFormsController extends Controller
             throw $this->createNotFoundException('Unable to find BaseForms entity.');
         }
 
-
-
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
@@ -449,6 +450,14 @@ class BaseFormsController extends Controller
     */
     private function createEditForm(BaseForms $entity)
     {
+
+        $u = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $ent = $em->getRepository('UserBundle:User')->find($u->getId());
+        $role = $ent->getRoles();
+        $isadmin = in_array('ROLE_ADMIN',$role);
+
+
         $form = $this->createForm(new BaseFormsType(), $entity, array(
             'action' => $this->generateUrl('baseforms_update', array('id' => $entity->getId())),
             'method' => 'PUT',
@@ -482,10 +491,13 @@ class BaseFormsController extends Controller
             'data' => false,
         ));
 
-        $form->add('status','entity',array(
-            'class' => 'AppBundle:Status',
-            'choice_label'=> 'statusName',
-        ));
+        if($isadmin){
+            $form->add('status','entity',array(
+                'class' => 'AppBundle:Status',
+                'choice_label'=> 'statusName',
+            ));
+        }
+
 
         $form->add('submit', 'submit', array('label' => 'Update'));
 
@@ -503,6 +515,13 @@ class BaseFormsController extends Controller
      */
     private function createEditReportForm(BaseForms $entity)
     {
+
+        $u = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $ent = $em->getRepository('UserBundle:User')->find($u->getId());
+        $role = $ent->getRoles();
+        $isadmin = in_array('ROLE_ADMIN',$role);
+
         $form = $this->createForm(new BaseFormsType(), $entity, array(
             'action' => $this->generateUrl('baseforms_update', array('id' => $entity->getId())),
             'method' => 'PUT',
@@ -530,10 +549,12 @@ class BaseFormsController extends Controller
             'choice_label'=> 'nameArea',
         ));
 
-        $form->add('status','entity',array(
-            'class' => 'AppBundle:Status',
-            'choice_label'=> 'statusName',
-        ));
+        if($isadmin){
+            $form->add('status','entity',array(
+                'class' => 'AppBundle:Status',
+                'choice_label'=> 'statusName',
+            ));
+        }
 
 
 
@@ -569,8 +590,20 @@ class BaseFormsController extends Controller
             $em->flush();
 
 
+            $u = $this->getUser();
+            $em = $this->getDoctrine()->getManager();
+            $ent = $em->getRepository('UserBundle:User')->find($u->getId());
+            $role = $ent->getRoles();
+            $isadmin = in_array('ROLE_ADMIN',$role);
+
+
+
             if($entity->getIsreport()){
-                return $this->redirect($this->generateUrl('baseforms_edit_admin', array('id' => $id)));
+                if($isadmin){
+                    return $this->redirect($this->generateUrl('baseforms_edit_admin', array('id' => $id)));
+                }else{
+                    return $this->redirect($this->generateUrl('baseforms_edit_report', array('id' => $id)));
+                }
             }else{
                 return $this->redirect($this->generateUrl('baseforms_edit', array('id' => $id)));
             }

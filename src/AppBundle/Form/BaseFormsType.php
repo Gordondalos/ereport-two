@@ -16,7 +16,7 @@ class BaseFormsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('description')
+
             ->add('imageFile', 'vich_file', array(
                 'required'      => false,
                 'allow_delete'  => true, // not mandatory, default is true
