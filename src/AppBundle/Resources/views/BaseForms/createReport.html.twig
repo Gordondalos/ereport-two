@@ -73,7 +73,7 @@
 
     <div>
 
-        {{ form_widget(form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg'}}) }}
+        {{ form_widget(form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg pull-xs-right'}}) }}
     </div>
 
     {{ form_end(form) }}
@@ -81,8 +81,13 @@
 
 
 
-    <a class="btn btn-primary m-y-1" href="{{ path('baseforms') }}">
+    <a class="btn btn-primary m-y-1" href="{{ path('baseforms_report') }}">
         {{ 'Back to the list'|trans }}
     </a>
 
+
+
+
 {% endblock %}
+
+

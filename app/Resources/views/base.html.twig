@@ -6,12 +6,11 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <title>{% block title %}E-report{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
-
 
         {% block stylesheets %}
             {% stylesheets
             'css/font-awesome.css'
+            'css/jquery.dataTables.css'
             'css/main.css'
             filter='cssrewrite' output='css/compiled/app.css' %}
             <link rel="stylesheet" href="{{ asset_url }}" />
@@ -54,14 +53,13 @@
             'js/jquery.min.js'
             'js/tether.min.js'
             'js/bootstrap.min.js'
+            'js/jquery.dataTables.js'
             'js/main.js'
             output='js/compiled/app.js' %}
             <script src="{{ asset_url }}"></script>
-
             {% endjavascripts %}
-            <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
-
-        {% endblock %}
+            {#<script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>#}
+                    {% endblock %}
 
     </body>
 </html>
