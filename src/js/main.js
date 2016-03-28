@@ -26,3 +26,11 @@ $(document).ready(function() {
         }
     });
 }); // end of ready()
+
+$(document).ready(function() {
+
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        } );
+
+}); // end of ready()

@@ -1,9 +1,85 @@
 {% extends '::base.html.twig' %}
 
-{% block content %}
-    <h3>{{ 'Inform for user'|trans }}</h3>
 
-    {{ form(form) }}
+{% form_theme form 'form/fields.html.twig' %}
+{#{% form_theme form _self %}#}
+{#{%- block form_row -%}#}
+    {#<div class="row">#}
+        {#<div class="col-xs-3">  {{- form_label(form) -}}</div>#}
+        {#<div class="col-xs-9">#}
+            {#{{- form_errors(form) -}}#}
+            {#<div> {{- form_widget(form) -}}</div>#}
+        {#</div>#}
+    {#</div>#}
+    {#<div class="clearfix"></div>#}
+{#{%- endblock form_row -%}#}
+
+{#{% block form_label %}#}
+    {#{{ parent() }}#}
+
+    {#{% if required %}#}
+        {#<span class="required" title="This field is required">*</span>#}
+    {#{% endif %}#}
+{#{% endblock %}#}
+
+
+
+
+
+{% block content %}
+    <h3 class="m-b-2">{{ 'Inform for user'|trans }}</h3>
+
+    {#{{ form(form) }}#}
+    {#{{ form_widget(form) }}#}
+
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {#{{ form_label(form.imageFile) }}#}
+    {{ form_errors(form.imageFile) }}
+    {{ form_widget(form.imageFile) }}
+
+
+    {{ form_row(form.formReport) }}
+    {{ form_row(form.typeReport) }}
+    {{ form_row(form.organization) }}
+    {{ form_row(form.area) }}
+
+    {#{{ form_label(form.formReport) }}#}
+    {#{{ form_errors(form.formReport) }}#}
+    {#{{ form_widget(form.formReport) }}#}
+
+
+    {#{{ form_label(form.typeReport) }}#}
+    {#{{ form_errors(form.typeReport) }}#}
+    {#{{ form_widget(form.typeReport) }}#}
+
+
+    {#{{ form_label(form.organization) }}#}
+    {#{{ form_errors(form.organization) }}#}
+    {#{{ form_widget(form.organization) }}#}
+
+
+    {#{{ form_label(form.area) }}#}
+    {#{{ form_errors(form.area) }}#}
+    {#{{ form_widget(form.area) }}#}
+
+
+    {{ form_label(form.description) }}
+    {{ form_errors(form.description) }}
+    {{ form_widget(form.description) }}
+
+
+    <div>
+
+        {{ form_widget(form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg'}}) }}
+    </div>
+
+    {{ form_end(form) }}
+
+
+
 
     <a class="btn btn-primary m-y-1" href="{{ path('baseforms') }}">
         {{ 'Back to the list'|trans }}

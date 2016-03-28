@@ -6,6 +6,8 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <title>{% block title %}E-report{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+
 
         {% block stylesheets %}
             {% stylesheets
@@ -46,6 +48,8 @@
         {% endblock %}
 
         {% block javascripts %}
+
+
             {% javascripts
             'js/jquery.min.js'
             'js/tether.min.js'
@@ -55,6 +59,8 @@
             <script src="{{ asset_url }}"></script>
 
             {% endjavascripts %}
+            <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+
         {% endblock %}
 
     </body>

@@ -1,0 +1,68 @@
+
+{%- block form_row -%}
+    <div class="row">
+        <div class="col-xs-2">  {{- form_label(form) -}}</div>
+        <div class="col-xs-10">
+            {{- form_errors(form) -}}
+            <div> {{- form_widget(form) -}}</div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+{%- endblock form_row -%}
+
+
+{%- block form_widget_simple -%}
+    {%- set type = type|default('text') -%}
+    <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{%- endblock form_widget_simple -%}
+
+
+
+{%- block textarea_widget -%}
+   <textarea class="display-block p-a-3" {{ block('widget_attributes') }}>{{ value }}</textarea>
+{%- endblock textarea_widget -%}
+
+
+{%- block choice_widget -%}
+    {% if expanded %}
+        {{- block('choice_widget_expanded') -}}
+    {% else %}
+        {{- block('choice_widget_collapsed') -}}
+    {% endif %}
+{%- endblock choice_widget -%}
+
+
+{%- block date_widget -%}
+    {%- if widget == 'single_text' -%}
+        {{ block('form_widget_simple') }}
+    {%- else -%}
+        <div {{ block('widget_container_attributes') }}>
+            {{- date_pattern|replace({
+                '{{ year }}':  form_widget(form.year),
+                '{{ month }}': form_widget(form.month),
+                '{{ day }}':   form_widget(form.day),
+            })|raw -}}
+        </div>
+    {%- endif -%}
+{%- endblock date_widget -%}
+
+
+{%- block password_widget -%}
+    {%- set type = type|default('password') -%}
+    {{ block('form_widget_simple') }}
+{%- endblock password_widget -%}
+
+
+{%- block email_widget -%}
+    {%- set type = type|default('email') -%}
+    {{ block('form_widget_simple') }}
+{%- endblock email_widget -%}
+
+
+{%- block radio_widget -%}
+    <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{%- endblock radio_widget -%}
+
+{%- block checkbox_widget -%}
+    <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{%- endblock checkbox_widget -%}
