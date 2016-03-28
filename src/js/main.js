@@ -32,11 +32,7 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     var gns = $('#gns').find('.records_list').addClass('tablet1');
-
-
     var sf = $('#sf').find('.records_list').addClass('tablet2');
-
-
     var stat = $('#stat').find('.records_list').addClass('tablet3');
 
     $('.tablet1').DataTable({
@@ -58,9 +54,19 @@ $(document).ready(function () {
         }
     });
 
+
     $('.tablet1').css("width",'100%');
     $('.tablet2').css("width",'100%');
     $('.tablet3').css("width",'100%');
+
+    $('.user_table').DataTable({
+        ordering: true,
+        "language": {
+            "url": "/dataTables/i18n/ru_ru.lang"
+        }
+    });
+
+
 
 
 }); // end of ready()

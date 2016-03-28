@@ -6,24 +6,43 @@
     <a class="btn btn-success pull-xs-right" href="{{ path('user_new') }}">
         {{ 'Create a new entry'|trans }}
     </a>
-    <table class="records_list table">
+    <table class="records_list table user_table">
         <thead class="thead-default">
             <tr>
                 <th>{{ 'User organization'|trans }}</th>
-                <th>{{ 'Director'|trans }}</th>
                 <th>{{ 'Curator'|trans }}</th>
                 <th>{{ 'Enabled'|trans }}</th>
-
-
-                <th>{{ 'Phone'|trans }}</th>
                 <th>{{ 'Actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.fullNameOrganization }}</a></td>
-                <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.director }}</a></td>
+                <td>
+                    <a href="{{ path('user_show', { 'id': entity.id }) }}">
+
+                        {{ entity.fullNameOrganization }}</a>
+                    <div class="row">
+                        {{ 'Director'|trans }}:   {{ entity.director }}
+                    </div>
+                    <div class="row">
+                        {{ 'Ur adress'|trans }}:   {{ entity.urAdress }}
+                    </div>
+                    <div class="row">
+                        {{ 'INN'|trans }}:   {{ entity.inn }}
+                    </div>
+                    <div class="row">
+                        {{ 'OKPO'|trans }}:   {{ entity.okpo }}
+                    </div>
+                    <div class="row">
+                        {{ 'email'|trans }}:   {{ entity.email }}
+                    </div>
+                    <div class="row">
+                        {{ 'phone'|trans }}:   {{ entity.phone }}
+                    </div>
+
+                </td>
+
                 <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.curatorUser }}</a></td>
                 <td><a href="{{ path('user_show', { 'id': entity.id }) }}">
                        {% if entity.enabled  %}
@@ -33,9 +52,6 @@
                         {% endif %}
 
                     </a></td>
-
-
-                <td>{{ entity.phone }}</td>
                 <td>
                 <ul class="list-unstyled">
                     {#<li>#}

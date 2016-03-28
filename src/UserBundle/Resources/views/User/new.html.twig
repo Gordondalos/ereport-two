@@ -1,9 +1,66 @@
 {% extends '::base.html.twig' %}
 
+{% form_theme form 'form/fields.html.twig' %}
 {% block content %}
     <h1>{{ 'User creation'|trans }}</h1>
 
-    {{ form(form) }}
+    {#{{ form(form) }}#}
+
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.fullNameOrganization) }}
+    {{ form_row(form.shortNameOrganization) }}
+    {{ form_row(form.phone) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.director) }}
+    {{ form_row(form.directorPost) }}
+    {{ form_row(form.directorPhone) }}
+    {{ form_row(form.buhgalter) }}
+    {{ form_row(form.buhgalterphone) }}
+    {{ form_row(form.inn) }}
+    {{ form_row(form.numberSocialnFond) }}
+
+    {{ form_row(form.bank) }}
+    {{ form_row(form.bankAccount) }}
+    {{ form_row(form.bankBik) }}
+    {{ form_row(form.dateRegistration) }}
+    {{ form_row(form.okved) }}
+    {{ form_row(form.phisicalAdress) }}
+    {{ form_row(form.urAdress) }}
+    {{ form_row(form.mailAdress) }}
+    {{ form_row(form.site) }}
+    {{ form_row(form.timeJob) }}
+    {{ form_row(form.gns) }}
+    {{ form_row(form.okpo) }}
+    {{ form_row(form.curatorUser) }}
+    {{ form_row(form.groups) }}
+
+
+
+
+
+    {#{{ form_label(form.roles) }}#}
+    {{ form_errors(form.roles) }}
+    {{ form_widget(form.roles) }}
+
+
+    {{ form_row(form.password) }}
+    {{ form_row(form.locked) }}
+    {{ form_row(form.enabled) }}
+    {{ form_row(form.username) }}
+
+    {{ form_row(form.description) }}
+
+
+
+    <div>
+<div class="clearfix"></div>
+        {{ form_widget(form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg pull-xs-right'}}) }}
+    </div>
+
+    {{ form_end(form) }}
+
 
 
         <a class="btn btn-primary m-y-1" href="{{ path('user') }}">
