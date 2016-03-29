@@ -3,6 +3,11 @@
 {% block content %}
     <h1>{{ 'Report edit'|trans }}</h1>
 
+    <h5>{{ 'Organization'|trans }}: {{ cruser.fullNameOrganization }}</h5>
+    <h5>{{ 'INN'|trans }}: {{ cruser.inn}}</h5>
+    <h5>{{ 'Buhgalter'|trans }}: {{ cruser.buhgalter }}</h5>
+    <h5>{{ 'Buhgalter Phone'|trans }}: {{ cruser.buhgalterphone }}</h5>
+
     {#{{ form(edit_form) }}#}
 
     {{ form_start(edit_form) }}

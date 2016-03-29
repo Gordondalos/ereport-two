@@ -64,7 +64,7 @@ class BaseFormsController extends Controller
         ));
     }
 
-    // Возврпщает все отчеты этой организации
+    // Возврпщает все отчеты этой организации, с первоначальным статусом
     public function organizationAdminAction($id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -427,11 +427,15 @@ class BaseFormsController extends Controller
         ));
     }
 
+
+// Правка Отчетов и форм в админке
     public function editAdminAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AppBundle:BaseForms')->find($id);
+
+
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find BaseForms entity.');
@@ -444,6 +448,7 @@ class BaseFormsController extends Controller
 
         return $this->render('AppBundle:BaseForms:editAdmin.html.twig', array(
             'entity'      => $entity,
+            'cruser'      => $entity->getCreateUser(),
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
@@ -455,6 +460,7 @@ class BaseFormsController extends Controller
      * Displays a form to edit an existing BaseForms entity.
      *
      */
+
     public function editReportAction($id)
     {
         $em = $this->getDoctrine()->getManager();
