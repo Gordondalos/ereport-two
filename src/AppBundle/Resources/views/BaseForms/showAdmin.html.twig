@@ -19,7 +19,7 @@
                 <td>{{ entity.id }}</td>
                 <td>{{ entity.formReport.getFormName }}</td>
                 <td>{{ entity.typeReport.getTypeName }}</td>
-                <td>{{ entity.description }}</td>
+                <td>{{ entity.description| raw }}</td>
                 <td>{{ entity.organization.getOrganizationShortName }}</td>
                 <td>{{ entity.createUser.username }}</td>
                 <td>{{ entity.dateAccepted|date('Y-m-d H:i:s') }}</td>

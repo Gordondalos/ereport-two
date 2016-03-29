@@ -74,8 +74,8 @@ $(document).ready(function () {
 
 // Запуск ск эдитора
 $(document).ready(function () {
-    if ($('textarea').is('[name = editor1]')) {
-        CKEDITOR.replace('editor1');
+    if ($('textarea').is('[name = description]')) {
+        CKEDITOR.replace('description');
     }
 
 }); // end of ready()

@@ -3,7 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/Resources/views/base.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/Resources/views/default/report.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Resources/views/default/settings.html.twig" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/node_modules/font-awesome/fonts/FontAwesome.otf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/node_modules/font-awesome/fonts/fontawesome-webfont.eot" charset="UTF-8" />

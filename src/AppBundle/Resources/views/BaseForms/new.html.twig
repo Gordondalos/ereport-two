@@ -1,9 +1,28 @@
 {% extends '::base.html.twig' %}
-
+{% form_theme form 'form/fields.html.twig' %}
 {% block content %}
     <h1>{{ 'BaseForms creation'|trans }}</h1>
 
-    {{ form(form) }}
+    {#{{ form(form) }}#}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.imageFile) }}
+    {{ form_row(form.formReport) }}
+    {{ form_row(form.typeReport) }}
+    {{ form_row(form.organization) }}
+    {{ form_row(form.area) }}
+    {#{{ form_row(form.status) }}#}
+    {{ form_row(form.description) }}
+
+
+
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="clearfix"></div>
+        {{ form_widget(form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg pull-xs-right'}}) }}
+    </div>
+    {{ form_end(form) }}
 
         <a class="btn btn-primary m-y-1" href="{{ path('baseforms') }}">
           {{ 'Back to the list'|trans }}

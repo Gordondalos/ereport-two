@@ -143,6 +143,8 @@ class BaseFormsController extends Controller
         $form->handleRequest($request);
 
 
+        $entity->setDescription($request->request->get('description'));
+
        if ($form->isValid()) {
 
            //Установим создателя отчета
@@ -153,7 +155,7 @@ class BaseFormsController extends Controller
            $curator = $em->getRepository('UserBundle:User')->findById($curatorUserId);
            $entity->setCuratorUser( $curator[0] );
 
-            //Установим дату приема
+            //Установим дату сдачи
            $entity->setDateAccepted(new \DateTime());
            //Установим статус отчета
            $newStatus = $this->getStatusNew();
@@ -221,7 +223,7 @@ class BaseFormsController extends Controller
             'data' => false,
         ));
 
-        $form->add('description');
+
 
 
         $form->add('submit', 'submit', array('label' => 'Create'));
@@ -245,6 +247,13 @@ class BaseFormsController extends Controller
         $form = $this->createForm(new BaseFormsType(), $entity, array(
             'action' => $this->generateUrl('baseforms_create'),
             'method' => 'POST',
+        ));
+
+        $form->add('imageFile', 'vich_file', array(
+        'required'      => true,
+        'allow_delete'  => true, // not mandatory, default is true
+        'download_link' => true, // not mandatory, default is true
+
         ));
 
         $form->add('formReport','entity',array(
@@ -273,7 +282,6 @@ class BaseFormsController extends Controller
             'data' => true,
         ));
 
-        $form->add('description');
 
 
         $form->add('submit', 'submit', array('label' => 'Send'));
@@ -503,6 +511,8 @@ class BaseFormsController extends Controller
             'data' => false,
         ));
 
+        $form->add('description');
+
         if($isadmin){
             $form->add('status','entity',array(
                 'class' => 'AppBundle:Status',
@@ -561,6 +571,7 @@ class BaseFormsController extends Controller
             'choice_label'=> 'nameArea',
         ));
 
+
         if($isadmin){
             $form->add('status','entity',array(
                 'class' => 'AppBundle:Status',
@@ -568,6 +579,7 @@ class BaseFormsController extends Controller
             ));
         }
 
+        $form->add('description');
 
 
         $form->add('isreport', 'hidden', array(
@@ -595,8 +607,13 @@ class BaseFormsController extends Controller
         }
 
         $deleteForm = $this->createDeleteForm($id);
+
         $editForm = $this->createEditForm($entity);
+
         $editForm->handleRequest($request);
+
+        $entity->setDescription($request->request->get('description'));
+
 
         if ($editForm->isValid()) {
             $em->flush();
