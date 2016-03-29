@@ -78,4 +78,13 @@ $(document).ready(function () {
         CKEDITOR.replace('description');
     }
 
+    if ($('form').is('[name = newsbundle_news]')) {
+        CKEDITOR.replace('newsbundle_news[newsTitle]');
+        CKEDITOR.replace('newsbundle_news[shortNews]');
+        CKEDITOR.replace('newsbundle_news[AllNews]');
+    }
+
+
+
+
 }); // end of ready()

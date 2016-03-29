@@ -1,15 +1,39 @@
 {% extends '::base.html.twig' %}
 
+
 {% block content%}
-    <h1>{{ 'News creation'|trans }}</h1>
-
-    {{ form(form) }}
 
 
-        <a class="btn btn-success m-y-1" href="{{ path('_welcome') }}">
-            {{ 'Back to the list'|trans }}
-        </a>
+    {#{{ form(form) }}#}
 
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <h1 class="display-inline-block">{{ 'News creation'|trans }}</h1>
+    <div>
+        {{ form_widget(form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg pull-xs-right'}}) }}
+    </div>
+    <div class="clearfix"></div>
+
+    <h5>{{ 'News title'|trans }}</h5>
+    {{ form_widget(form.newsTitle,{'attr':{'class':'m-y-1'}}) }}
+    <h5>{{ 'Short news'|trans }}</h5>
+    {{ form_widget(form.shortNews,{'attr':{'class':'m-y-1'}}) }}
+    <h5>{{ 'All news'|trans }}</h5>
+    {{ form_widget(form.AllNews,{'attr':{'class':'m-y-1'}}) }}
+
+
+
+
+
+    <div class="clearfix"></div>
+
+    <a class="btn btn-primary m-y-1" href="{{ path('_welcome') }}">
+        {{ 'Back to the list'|trans }}
+    </a>
+
+
+    {{ form_end(form) }}
 
 
 {% endblock %}

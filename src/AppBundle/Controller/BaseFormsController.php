@@ -18,10 +18,7 @@ use AppBundle\Form\BaseFormsType;
 class BaseFormsController extends Controller
 {
 
-    /**
-     * Lists all BaseForms entities.
-     *
-     */
+    // Данная форма не выводится введу изменениея логики
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -31,6 +28,8 @@ class BaseFormsController extends Controller
         ));
     }
 
+
+    // Данная форма не выводится введу изменениея логики
     public function reportAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -44,13 +43,15 @@ class BaseFormsController extends Controller
         ));
     }
 
-
+// Возвращает все формы для этой организации
     public function organizationAction($id)
     {
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
             array(
-                'organizationId' => $id
+                'organizationId' => $id,
+                'isreport' => null
+
             )
         );
         $u = $this->getUser();
@@ -70,7 +71,11 @@ class BaseFormsController extends Controller
         $u = $this->getUser();
         $curator_id = $u->getId();
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
-            array('organizationId' => $id,'curatorUserId'=>$curator_id),
+            array(
+                'organizationId' => $id,
+                'curatorUserId'=>$curator_id,
+                'isreport' => 1
+            ),
             array('dateAccepted' => 'DESC','status'=>'ASC')
         );
         return $this->render('AppBundle:BaseForms:form_report_admin_list.html.twig', array(
@@ -85,7 +90,11 @@ class BaseFormsController extends Controller
         $em = $this->getDoctrine()->getManager();
         $userId = $this->getUser()->getId();
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
-            array('organizationId' => $id, 'createUserId' => $userId),
+            array(
+                'organizationId' => $id,
+                'createUserId' => $userId,
+                'isreport' => 1
+            ),
             array('dateAccepted' => 'Desc')
         );
         return $this->render('AppBundle:BaseForms:form_report_list.html.twig', array(
@@ -99,7 +108,11 @@ class BaseFormsController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
-            array('organizationId' => $id_organization, 'createUserId' => $id_user),
+            array(
+                'organizationId' => $id_organization,
+                'createUserId' => $id_user,
+                'isreport' => 1
+            ),
             array('dateAccepted' => 'Desc')
         );
         return $this->render('AppBundle:BaseForms:form_report_admin_list.html.twig', array(
@@ -108,7 +121,7 @@ class BaseFormsController extends Controller
     }
 
 
-
+// Данный метод выводит отчеты, но не используется из за логики
     public function reportAdminAction()
     {
         $em = $this->getDoctrine()->getManager();

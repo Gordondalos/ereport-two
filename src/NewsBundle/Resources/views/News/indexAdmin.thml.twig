@@ -19,13 +19,13 @@
 
         <h5 class="display-inline-block">
             <small class="p-x-05 text-muted">{{ entity.dateNews|date("m/d/Y") }}: </small>
-            <a class="text-gray-dark" href="{{ path('news_show', { 'id': entity.id }) }}">{{ entity.newsTitle }}
+            <a class="text-gray-dark" href="{{ path('news_show', { 'id': entity.id }) }}">{{ entity.newsTitle|raw }}
             </a>
         </h5>
 
         <div class="clearfix"></div>
         <div>
-            <a class="text-gray-dark" href="{{ path('news_show', { 'id': entity.id }) }}">{{ entity.shortNews }}</a>
+            <a class="text-gray-dark" href="{{ path('news_show', { 'id': entity.id }) }}">{{ entity.shortNews|raw }}</a>
 
 
                 <a href="{{ path('news_edit', { 'id': entity.id }) }}"><b>{{ 'edit'|trans }}</b></a>

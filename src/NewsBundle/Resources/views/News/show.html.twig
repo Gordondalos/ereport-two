@@ -2,11 +2,11 @@
 
 {% block content%}
 
-    <h2>{{ entity.newsTitle }}</h2>
+    <h2>{{ entity.newsTitle|raw }}</h2>
 {{ entity.dateNews|date('Y-m-d H:i:s') }}
 
     <div class="p-y-1">
-            {{ entity.AllNews }}
+            {{ entity.AllNews|raw }}
     </div>
 
 {% if isadmin %}
