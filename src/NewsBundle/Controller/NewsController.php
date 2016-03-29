@@ -22,7 +22,12 @@ class NewsController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-              $entities = $em->getRepository('NewsBundle:News')->findAll();
+          $entities = $em->getRepository('NewsBundle:News')->findBy(
+              array(),
+              array( 'dateNews'=>'DESC'),
+              $limit    = 10
+
+          );
         return $this->render('NewsBundle:News:index.html.twig', array(
             'entities' => $entities,
         ));
@@ -39,7 +44,15 @@ class NewsController extends Controller
         $ent = $em->getRepository('UserBundle:User')->find($u->getId());
         $role = $ent->getRoles();
         $isadmin = in_array('ROLE_ADMIN',$role);
-        $entities = $em->getRepository('NewsBundle:News')->findAll();
+
+        $entities = $em->getRepository('NewsBundle:News')->findBy(
+            array(),
+            array( 'dateNews'=>'DESC'),
+            $limit    = 10
+
+        );
+
+
         return $this->render('NewsBundle:News:indexAdmin.thml.twig', array(
             'entities' => $entities,
             'isadmin' => $isadmin,
