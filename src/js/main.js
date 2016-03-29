@@ -39,19 +39,22 @@ $(document).ready(function () {
         ordering: true,
         "language": {
             "url": "/dataTables/i18n/ru_ru.lang"
-        }
+        },
+        "order": [[ 0, "desc" ]]
     });
     $('.tablet2').DataTable({
         ordering: true,
         "language": {
             "url": "/dataTables/i18n/ru_ru.lang"
-        }
+        },
+        "order": [[ 0, "desc" ]]
     });
     $('.tablet3').DataTable({
         ordering: true,
         "language": {
             "url": "/dataTables/i18n/ru_ru.lang"
-        }
+        },
+        "order": [[ 0, "desc" ]]
     });
 
 

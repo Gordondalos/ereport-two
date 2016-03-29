@@ -70,13 +70,18 @@ class BaseFormsController extends Controller
         $em = $this->getDoctrine()->getManager();
         $u = $this->getUser();
         $curator_id = $u->getId();
+
+        $status = $this->getStatusNew();
+
         $entities = $em->getRepository('AppBundle:BaseForms')->findBy(
             array(
                 'organizationId' => $id,
                 'curatorUserId'=>$curator_id,
-                'isreport' => 1
+                'isreport' => 1,
+                'status'=>$status[0]
+
             ),
-            array('dateAccepted' => 'DESC','status'=>'ASC')
+            array('dateAccepted' => 'DESC')
         );
         return $this->render('AppBundle:BaseForms:form_report_admin_list.html.twig', array(
             'entities' => $entities,

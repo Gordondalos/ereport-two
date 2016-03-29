@@ -31,7 +31,7 @@
 
             {#<td>{{ entity.organization.getOrganizationShortName }}</td>#}
             <td>
-                <a href="{{ path('user_show', { 'id': entity.createUser.id }) }}"> {{ entity.createUser.username }}</a>
+                <a href="{{ path('user_show', { 'id': entity.createUser.id }) }}"> {{ entity.createUser.fullNameOrganization }}</a>
 
             </td>
             <td>{% if entity.status %}{{ entity.status.statusName }}{% endif %}</td>
