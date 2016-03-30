@@ -30,8 +30,6 @@ class DefaultController extends Controller
         return $this->render('default/settings.html.twig');
     }
 
-
-
     public function hooImAction(){
         $us  = $this -> getUser();
         //var_dump($us); //die;

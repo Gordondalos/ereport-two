@@ -1,0 +1,106 @@
+// главнй враппер
+.ht_menu {
+	color: $gray-light;
+	position: relative;
+	@include size(41rem, 23rem);
+	border: 1px solid $gray-light;
+	.nav-tabs .nav-link {
+		border: none;
+		color: $gray-light;
+		&.active,
+		&:hover,
+		&:focus {
+			color: $brand-info;
+			border-bottom: 2px solid $brand-info;
+		}
+	}
+	.card-block {
+		line-height: $font-size-h2;
+	}
+	.tab-pane {
+		padding: $font-size-h2;
+		.ht_img {
+			@include size(12.5rem);
+			@include border-radius();
+			background-image: url(/img/navbar/watch.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+	.card {
+		border: none;
+	}
+
+}
+
+#stat {
+	table {
+		@include border-radius();
+	}
+	tbody {
+		border-bottom: 1px solid $brand-info;
+	}
+	.thead-default {
+		th {
+			background-color: $brand-info;
+			color: $white;
+			border-bottom: 1px solid $brand-info;
+		}
+	}
+	.btn-success {
+		background-color: $brand-info;
+		border-color: $brand-info;
+		color: $white;
+	}
+	a {
+		color: $brand-info;
+	}
+}
+
+#sf {
+	tbody {
+		border-bottom: 1px solid $brand-primary;
+	}
+	table {
+		@include border-radius();
+	}
+	.thead-default {
+		th {
+			background-color: $brand-primary;
+			color: $white;
+			border-bottom: 1px solid $brand-primary;
+		}
+	}
+	.btn-success {
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+		color: $white;
+	}
+	a {
+		color: $brand-primary;
+	}
+}
+
+#gns {
+	tbody {
+		border-bottom: 1px solid $brand-success;
+	}
+	table {
+		@include border-radius();
+	}
+	.thead-default {
+		th {
+			background-color: $brand-success;
+			color: $white;
+			border-bottom: 1px solid $brand-success;
+		}
+	}
+	.btn-success {
+		background-color: $brand-success;
+		border-color: $brand-success;
+		color: $white;
+	}
+	a {
+		color: $brand-success;
+	}
+}
