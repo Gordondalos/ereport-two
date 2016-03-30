@@ -1,0 +1,193 @@
+/*Стили боковой панели*/
+
+.navigation-panel {
+	width: 4rem;
+	@include gradient-vertical(green, yellow);
+	height: 100%;
+	position: fixed;
+	z-index: 1500;
+	color: #fff;
+	top: 0;
+}
+
+.links {
+	display: none;
+	color: #fff;
+
+}
+
+.links:hover {
+	text-transform: none;
+	color: #fff;
+	text-decoration: none;
+}
+
+.navigation-panel .fa-bars {
+	padding: 7px 7px;
+	border: 1px solid $gray-lightest;
+	border-radius: 4px;
+}
+
+.navigation-panel .list-unstyled .fa {
+	font-size: 1.5rem;
+
+}
+
+.b-b {
+	border-bottom: 1px solid $gray-lightest;
+}
+
+.b-t {
+	border-top: 1px solid $gray-lightest;
+}
+
+.navigation-panel li:hover {
+	background-color: green;
+}
+
+.superlative {
+	display: none;
+	position: absolute;
+	top: 1.8rem;
+	left: 3rem;
+
+}
+
+.superlative:hover {
+	text-decoration: none;
+	color: #FFF;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+
+}
+
+header ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+header ul li {
+	display: inline-block;
+	padding: 0 20px;
+}
+
+section {
+	float: left;
+	display: block;
+	height: 100%;
+	margin: 0;
+	overflow-y: hidden;
+}
+
+#section-section1 {
+	background-image: url(../img/section1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.section-section2 {
+	@include gradient-vertical(#7A1A91, #3D00D3);
+	height: 100%;
+}
+
+#section-section3 {
+	background-image: url(../img/bg3.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 3rem;
+	.card {
+		max-width: 18rem;
+		float: left;
+		margin-right: 1rem;
+		background-color: rgba(255, 255, 255, .7);
+		transition: All ease .8s;
+		position: relative;
+		&:hover {
+			background-color: rgba(255, 255, 255, 1);
+			transform: scale(1.25);
+			z-index: 3;
+
+		}
+	}
+}
+
+.section-section4 {
+	@include gradient-vertical(#09710c, #69971c);
+	height: 100%;
+}
+
+.section-section5 {
+	background-color: #2a62e0;
+	height: 100%;
+	img {
+		max-width: 250px;
+	}
+}
+
+.horizon-prev, .horizon-next {
+	position: fixed;
+	top: 50%;
+	margin-top: -24px;
+	z-index: 9999;
+}
+
+.horizon-prev {
+	left: 20px;
+}
+
+.horizon-next {
+	right: 20px;
+}
+
+.wrapper-logo {
+	margin-top: 40%;
+	margin-left: 6%;
+}
+
+.logo2 {
+	margin-top: -0.5rem;
+	margin-left: 1rem;
+}
+
+.block {
+	margin-top: 70%;
+}
+
+.form-wrapper {
+	@include box-shadow(-1px 3px 18px $gray);
+	@include border-radius(0.5rem);
+	min-width: 330px;
+}
+
+.phones {
+	text-shadow: 1px 1px 2px $gray-light;
+}
+
+.specbutton {
+	border-radius: 10rem;
+	@include size(3rem);
+	border-bottom: 3px solid green;
+	border-right: 3px solid green;
+	position: absolute;
+	right: 0;
+	top: 4.4rem;
+}
+
+.namber {
+	font-size: 8rem;
+}
+
+.job {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 4rem;
+	text-align: center;
+}

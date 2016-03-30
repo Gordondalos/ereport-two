@@ -155,6 +155,10 @@ Form name: Название формы отчета
 Date news: Дата новости
 Status name: Название Статуса
 Type name: Название Типа отчета
+security.login.username: Логин
+security.login.password: Пароль
+security.login.remember_me: Запомнить меня
+security.login.submit: Войти
 
 
 
