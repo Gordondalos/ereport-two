@@ -25,3 +25,5 @@
 /src/AppBundle/Entity/TypeReport.php~
 /src/AppBundle/Entity/User.php~
 /node_modules
+/web/report
+/bd/*.sql
