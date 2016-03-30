@@ -1,12 +1,49 @@
 {% extends '::base.html.twig' %}
 
+{% form_theme form _self %}
+
+{%- block form_row -%}
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="m-y-05">
+                {{- form_label(form) -}}:
+            </div>
+
+        </div>
+        <div class="col-xs-9">
+            {{- form_errors(form) -}}
+            <div class="m-y-05">
+                {{- form_widget(form, { 'attr': {'class': 'form-control'} }) -}}
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+{%- endblock form_row -%}
+
+
 {% block content %}
     <h1>{{ 'Organization creation'|trans }}</h1>
 
-    {{ form(form) }}
+    {#{{ form(form) }}#}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.organizationName) }}
+    {{ form_row(form.organizationShortName) }}
+    {{ form_row(form.organizationPhone) }}
+    {{ form_row(form.organizationDescription) }}
+
+    <div class="clearfix"></div>
+    <div>
+
+        {{ form_widget(form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg pull-xs-right'}}) }}
+    </div>
+
+    {{ form_end(form) }}
 
 
-        <a class="btn btn-success m-y-1" href="{{ path('organization') }}">
+        <a class="btn btn-primary m-y-1" href="{{ path('organization') }}">
             {{ 'Back to the list'|trans }}
         </a>
 

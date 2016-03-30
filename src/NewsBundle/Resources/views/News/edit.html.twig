@@ -1,15 +1,59 @@
 {% extends '::base.html.twig' %}
 
+{% form_theme edit_form _self %}
+
+{%- block form_row -%}
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="m-y-05">
+                {{- form_label(form) -}}:
+            </div>
+
+        </div>
+        <div class="col-xs-9">
+            {{- form_errors(form) -}}
+            <div class="m-y-05">
+                {{- form_widget(form, { 'attr': {'class': 'form-control'} }) -}}
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+{%- endblock form_row -%}
+
 {% block content%}
-    <h1>{{ 'News edit'|trans }}</h1>
+    <h1 class="display-inline-block">{{ 'News edit'|trans }}</h1>
 
-    {{ form(edit_form) }}
+    <div class="pull-xs-right">
+        {{ form(delete_form) }}
+    </div>
+
+    {#{{ form(edit_form) }}#}
 
 
-        <a class="btn btn-primary m-y-1" href="{{ path('_welcome') }}">
+    {{ form_start(edit_form) }}
+    {{ form_errors(edit_form) }}
+
+
+    {{ form_row(edit_form.newsTitle) }}
+    {{ form_row(edit_form.shortNews) }}
+    {{ form_row(edit_form.AllNews) }}
+    {{ form_row(edit_form.dateNews) }}
+
+
+    <div>
+
+        {{ form_widget(edit_form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg pull-xs-right'}}) }}
+    </div>
+
+    {{ form_end(edit_form) }}
+
+
+
+    <a class="btn btn-primary m-y-1" href="{{ path('_welcome') }}">
             {{ 'Back to the list'|trans }}
         </a>
 
-    {{ form(delete_form) }}
+
 
 {% endblock %}

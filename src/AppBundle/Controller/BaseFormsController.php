@@ -161,8 +161,6 @@ class BaseFormsController extends Controller
         $form->handleRequest($request);
 
 
-        $entity->setDescription($request->request->get('description'));
-
        if ($form->isValid()) {
 
            //Установим создателя отчета
@@ -537,12 +535,13 @@ class BaseFormsController extends Controller
 
         $form->add('description');
 
-        if($isadmin){
-            $form->add('status','entity',array(
-                'class' => 'AppBundle:Status',
-                'choice_label'=> 'statusName',
-            ));
-        }
+
+//        if($isadmin){
+//            $form->add('status','entity',array(
+//                'class' => 'AppBundle:Status',
+//                'choice_label'=> 'statusName',
+//            ));
+//        }
 
 
         $form->add('submit', 'submit', array('label' => 'Update'));
@@ -635,9 +634,6 @@ class BaseFormsController extends Controller
         $editForm = $this->createEditForm($entity);
 
         $editForm->handleRequest($request);
-
-        $entity->setDescription($request->request->get('description'));
-
 
         if ($editForm->isValid()) {
             $em->flush();

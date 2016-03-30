@@ -25,7 +25,7 @@ class NewsController extends Controller
           $entities = $em->getRepository('NewsBundle:News')->findBy(
               array(),
               array( 'dateNews'=>'DESC'),
-              $limit    = 10
+              $limit    = 30
 
           );
         return $this->render('NewsBundle:News:index.html.twig', array(

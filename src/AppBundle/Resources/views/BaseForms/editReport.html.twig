@@ -1,5 +1,26 @@
 {% extends '::base.html.twig' %}
-{% form_theme edit_form 'form/fields.html.twig' %}
+
+{% form_theme edit_form _self %}
+
+{%- block form_row -%}
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="m-y-05">
+                {{- form_label(form) -}}:
+            </div>
+
+        </div>
+        <div class="col-xs-9">
+            {{- form_errors(form) -}}
+            <div class="m-y-05">
+                {{- form_widget(form, { 'attr': {'class': 'form-control'} }) -}}
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+{%- endblock form_row -%}
+
 {% block content %}
     <h1>{{ 'Report edit'|trans }}</h1>
 
@@ -20,7 +41,7 @@
         <div class="clearfix"></div>
         {{ form_widget(edit_form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg pull-xs-right'}}) }}
     </div>
-    {{ form_end(edit_form) }}t
+    {{ form_end(edit_form) }}
 
         <a class="btn-primary btn m-y-1" href="{{ path('baseforms_report') }}">
            {{ 'Back to the list'|trans }}

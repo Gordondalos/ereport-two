@@ -1,12 +1,25 @@
 {% extends '::base.html.twig' %}
 
+{% form_theme form 'form/fields.html.twig' %}
 {% block content%}
     <h1>{{ 'FormReport creation'|trans }}</h1>
 
-    {{ form(form) }}
+    {#{{ form(form) }}#}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    {{ form_row(form.formName) }}
+
+    <div class="clearfix"></div>
+    <div>
+
+        {{ form_widget(form.submit,{'attr':{'class':'btn btn-success m-y-1 btn-lg pull-xs-right'}}) }}
+    </div>
+
+    {{ form_end(form) }}
 
 
-        <a class="btn btn-success m-y-1" href="{{ path('formreport') }}">
+        <a class="btn btn-primary m-y-1" href="{{ path('formreport') }}">
             {{ 'Back to the list'|trans }}
         </a>
 

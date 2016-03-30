@@ -87,6 +87,15 @@ $(document).ready(function () {
         CKEDITOR.replace('newsbundle_news[AllNews]');
     }
 
+    if ($('form').is('[name = appbundle_organization]')) {
+        CKEDITOR.replace('appbundle_organization[organizationDescription]');
+
+    }
+    if ($('form').is('[name = appbundle_baseforms]')) {
+        CKEDITOR.replace('appbundle_baseforms[description]');
+
+    }
+
 
 
 
